@@ -1,0 +1,47 @@
+{
+  "name": "order",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "total_quantity": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "shipping_address": {
+      "type": "string",
+      "required": true
+    },
+    "total_price": {
+      "type": "string",
+      "required": true
+    },
+    "order_date": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "listings": {
+      "type": "embedsMany",
+      "model": "listing",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true,
+        "forceId": false,
+        "persistent": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

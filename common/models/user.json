@@ -1,0 +1,48 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "user_type": {
+      "type": "string",
+      "required": true,
+      "default": "buyer"
+    },
+    "items": {
+      "type": "array",
+      "required": true
+    },
+    "phone_number": {
+      "type": "number",
+      "required": true
+    },
+    "addresses": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "orders": {
+      "type": "hasMany",
+      "model": "order",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
