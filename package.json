@@ -6,24 +6,51 @@
     "node": ">=4"
   },
   "scripts": {
-    "lint": "eslint .",
-    "start": "node .",
-    "posttest": "npm run lint && nsp check"
+    "watch": "webpack -w",
+    "build": "webpack",
+    "start": "node ."
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.1",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
+    "dateformat": "^3.0.3",
+    "dotenv": "^5.0.1",
+    "dotenv-webpack": "^1.5.5",
     "helmet": "^3.10.0",
+    "json-loader": "^0.5.7",
+    "loopback": "^3.0.0",
     "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^5.0.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-devtools": "^3.4.1",
+    "redux-promise-middleware": "^5.0.0",
+    "save": "^2.3.2",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^2.0.0",
-    "loopback-component-explorer": "^5.0.0",
-    "loopback": "^3.0.0"
+    "webpack": "^4.1.1"
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.14.1",
+    "babel": "^6.23.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-airbnb": "^2.4.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-register": "^6.26.0",
     "eslint": "^3.17.1",
     "eslint-config-loopback": "^8.0.0",
-    "nsp": "^2.1.0"
+    "file-loader": "^1.1.11",
+    "less": "^3.0.1",
+    "less-plugin-autoprefix": "^1.5.1",
+    "nsp": "^2.1.0",
+    "url-loader": "^1.0.1",
+    "webpack-cli": "^2.0.10"
   },
   "repository": {
     "type": "",
