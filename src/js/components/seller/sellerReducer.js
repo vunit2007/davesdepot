@@ -11,9 +11,10 @@ export default function sellerReducer (state = defaultState, action) {
     switch (type) {
         
         case "SELLER": {
-            
+            let input = payload.input;
             return {
-                
+                ...state,
+                input
             }
         }
 
@@ -25,10 +26,9 @@ export default function sellerReducer (state = defaultState, action) {
         }
         
         case "SELLER_BTN": {
-            let input = payload.input;
+            
             return {
-                ...state,
-                input
+                
             }
         }
 

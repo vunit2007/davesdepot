@@ -11,9 +11,10 @@ export default function homeReducer (state = defaultState, action) {
     switch (type) {
         
         case "HOME": {
-            
+            let input = payload.input;
             return {
-                
+                ...state,
+                input
             }
         }
 
@@ -25,10 +26,9 @@ export default function homeReducer (state = defaultState, action) {
         }
         
         case "HOME_BTN": {
-            let input = payload.input;
+            
             return {
-                ...state,
-                input
+                
             }
         }
 

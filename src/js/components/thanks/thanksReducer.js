@@ -11,9 +11,10 @@ export default function thanksReducer (state = defaultState, action) {
     switch (type) {
         
         case "THANKS": {
-            
+            let input = payload.input;
             return {
-                
+                ...state,
+                input
             }
         }
 
@@ -25,10 +26,9 @@ export default function thanksReducer (state = defaultState, action) {
         }
         
         case "THANKS_BTN": {
-            let input = payload.input;
+            
             return {
-                ...state,
-                input
+                
             }
         }
 

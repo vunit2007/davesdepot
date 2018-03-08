@@ -10,26 +10,20 @@ import {
 class Catbar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            input : "Catbar"
-        }
         
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeCatbar = this.handleChangeCatbar.bind(this);
         this.handleCatbarBtn = this.handleCatbarBtn.bind(this);
     }
 
-    handleChange(e){
+    handleChangeCatbar(e){
         let input = e.target.value;
-        let name = e.target.name;
-        this.setState({
-            input
-        })
+        const {dispatch} = this.props;
+        dispatch(catbar(input));
     }
 
     handleCatbarBtn(e){
-        let input = this.state.input;
         const {dispatch} = this.props;
-        dispatch(catbarBtn(input))
+        dispatch(catbarBtn());
     }
     
     render() {
@@ -37,7 +31,7 @@ class Catbar extends React.Component {
         return (
             <div>
                 <h1>Hello Catbar {this.props.input}</h1>
-                <input type="text" onChange={this.handleChange}/>
+                <input type="text" onChange={this.handleChangeCatbar}/>
                 <button type="button" onClick={this.handleCatbarBtn}>Change</button>
             </div>
         )

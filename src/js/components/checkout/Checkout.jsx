@@ -10,26 +10,20 @@ import {
 class Checkout extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            input : "Checkout"
-        }
         
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeCheckout = this.handleChangeCheckout.bind(this);
         this.handleCheckoutBtn = this.handleCheckoutBtn.bind(this);
     }
 
-    handleChange(e){
+    handleChangeCheckout(e){
         let input = e.target.value;
-        let name = e.target.name;
-        this.setState({
-            input
-        })
+        const {dispatch} = this.props;
+        dispatch(checkout(input));
     }
 
     handleCheckoutBtn(e){
-        let input = this.state.input;
         const {dispatch} = this.props;
-        dispatch(checkoutBtn(input))
+        dispatch(checkoutBtn());
     }
     
     render() {
@@ -37,7 +31,7 @@ class Checkout extends React.Component {
         return (
             <div>
                 <h1>Hello Checkout {this.props.input}</h1>
-                <input type="text" onChange={this.handleChange}/>
+                <input type="text" onChange={this.handleChangeCheckout}/>
                 <button type="button" onClick={this.handleCheckoutBtn}>Change</button>
             </div>
         )

@@ -11,9 +11,10 @@ export default function detailsReducer (state = defaultState, action) {
     switch (type) {
         
         case "DETAILS": {
-            
+            let input = payload.input;
             return {
-                
+                ...state,
+                input
             }
         }
 
@@ -25,10 +26,9 @@ export default function detailsReducer (state = defaultState, action) {
         }
         
         case "DETAILS_BTN": {
-            let input = payload.input;
+            
             return {
-                ...state,
-                input
+                
             }
         }
 

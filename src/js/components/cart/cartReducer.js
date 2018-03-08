@@ -11,9 +11,10 @@ export default function cartReducer (state = defaultState, action) {
     switch (type) {
         
         case "CART": {
-            
+            let input = payload.input;
             return {
-                
+                ...state,
+                input
             }
         }
 
@@ -25,10 +26,9 @@ export default function cartReducer (state = defaultState, action) {
         }
         
         case "CART_BTN": {
-            let input = payload.input;
+            
             return {
-                ...state,
-                input
+                
             }
         }
 

@@ -27725,7 +27725,7 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'container' },
-            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _addListing2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _login2.default })
           )
         )
@@ -27780,31 +27780,25 @@ var AddListing = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (AddListing.__proto__ || Object.getPrototypeOf(AddListing)).call(this, props));
 
-        _this.state = {
-            input: "AddListing"
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeAddListing = _this.handleChangeAddListing.bind(_this);
         _this.handleAddListingBtn = _this.handleAddListingBtn.bind(_this);
         return _this;
     }
 
     _createClass(AddListing, [{
-        key: "handleChange",
-        value: function handleChange(e) {
+        key: "handleChangeAddListing",
+        value: function handleChangeAddListing(e) {
+            var dispatch = this.props.dispatch;
+
             var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
+            dispatch((0, _addListingActions.addListing)(input));
         }
     }, {
         key: "handleAddListingBtn",
         value: function handleAddListingBtn(e) {
-            var input = this.state.input;
             var dispatch = this.props.dispatch;
 
-            dispatch((0, _addListingActions.addListingBtn)(input));
+            dispatch((0, _addListingActions.addListingBtn)());
         }
     }, {
         key: "render",
@@ -27819,11 +27813,20 @@ var AddListing = function (_React$Component) {
                     "Hello AddListing ",
                     this.props.input
                 ),
-                _react2.default.createElement("input", { type: "text", onChange: this.handleChange }),
+                _react2.default.createElement("input", { type: "text", onChange: this.handleChangeAddListing }),
                 _react2.default.createElement(
                     "button",
                     { type: "button", onClick: this.handleAddListingBtn },
                     "Change"
+                ),
+                _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: "/login" },
+                    _react2.default.createElement(
+                        "button",
+                        { type: "button" },
+                        "Login"
+                    )
                 )
             );
         }
@@ -27919,8 +27922,10 @@ function addListingReducer() {
 
         case "ADDLISTING":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "ADDLISTING_CACHE":
@@ -27931,10 +27936,8 @@ function addListingReducer() {
 
         case "ADDLISTING_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return _extends({}, state);
             }
 
         default:
@@ -28019,31 +28022,25 @@ var Buyer = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Buyer.__proto__ || Object.getPrototypeOf(Buyer)).call(this, props));
 
-        _this.state = {
-            input: "Buyer"
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeBuyer = _this.handleChangeBuyer.bind(_this);
         _this.handleBuyerBtn = _this.handleBuyerBtn.bind(_this);
         return _this;
     }
 
     _createClass(Buyer, [{
-        key: "handleChange",
-        value: function handleChange(e) {
+        key: "handleChangeBuyer",
+        value: function handleChangeBuyer(e) {
             var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
+            var dispatch = this.props.dispatch;
+
+            dispatch((0, _buyerActions.buyer)(input));
         }
     }, {
         key: "handleBuyerBtn",
         value: function handleBuyerBtn(e) {
-            var input = this.state.input;
             var dispatch = this.props.dispatch;
 
-            dispatch((0, _buyerActions.buyerBtn)(input));
+            dispatch((0, _buyerActions.buyerBtn)());
         }
     }, {
         key: "render",
@@ -28058,7 +28055,7 @@ var Buyer = function (_React$Component) {
                     "Hello Buyer ",
                     this.props.input
                 ),
-                _react2.default.createElement("input", { type: "text", onChange: this.handleChange }),
+                _react2.default.createElement("input", { type: "text", onChange: this.handleChangeBuyer }),
                 _react2.default.createElement(
                     "button",
                     { type: "button", onClick: this.handleBuyerBtn },
@@ -28158,8 +28155,10 @@ function buyerReducer() {
 
         case "BUYER":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "BUYER_CACHE":
@@ -28170,10 +28169,8 @@ function buyerReducer() {
 
         case "BUYER_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return {};
             }
 
         default:
@@ -28258,31 +28255,25 @@ var Cart = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).call(this, props));
 
-        _this.state = {
-            input: "Cart"
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeCart = _this.handleChangeCart.bind(_this);
         _this.handleCartBtn = _this.handleCartBtn.bind(_this);
         return _this;
     }
 
     _createClass(Cart, [{
-        key: "handleChange",
-        value: function handleChange(e) {
+        key: "handleChangeCart",
+        value: function handleChangeCart(e) {
             var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
+            var dispatch = this.props.dispatch;
+
+            dispatch((0, _cartActions.cart)(input));
         }
     }, {
         key: "handleCartBtn",
         value: function handleCartBtn(e) {
-            var input = this.state.input;
             var dispatch = this.props.dispatch;
 
-            dispatch((0, _cartActions.cartBtn)(input));
+            dispatch((0, _cartActions.cartBtn)());
         }
     }, {
         key: "render",
@@ -28297,7 +28288,7 @@ var Cart = function (_React$Component) {
                     "Hello Cart ",
                     this.props.input
                 ),
-                _react2.default.createElement("input", { type: "text", onChange: this.handleChange }),
+                _react2.default.createElement("input", { type: "text", onChange: this.handleChangeCart }),
                 _react2.default.createElement(
                     "button",
                     { type: "button", onClick: this.handleCartBtn },
@@ -28397,8 +28388,10 @@ function cartReducer() {
 
         case "CART":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "CART_CACHE":
@@ -28409,10 +28402,8 @@ function cartReducer() {
 
         case "CART_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return {};
             }
 
         default:
@@ -28497,31 +28488,25 @@ var Catbar = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Catbar.__proto__ || Object.getPrototypeOf(Catbar)).call(this, props));
 
-        _this.state = {
-            input: "Catbar"
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeCatbar = _this.handleChangeCatbar.bind(_this);
         _this.handleCatbarBtn = _this.handleCatbarBtn.bind(_this);
         return _this;
     }
 
     _createClass(Catbar, [{
-        key: "handleChange",
-        value: function handleChange(e) {
+        key: "handleChangeCatbar",
+        value: function handleChangeCatbar(e) {
             var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
+            var dispatch = this.props.dispatch;
+
+            dispatch((0, _catbarActions.catbar)(input));
         }
     }, {
         key: "handleCatbarBtn",
         value: function handleCatbarBtn(e) {
-            var input = this.state.input;
             var dispatch = this.props.dispatch;
 
-            dispatch((0, _catbarActions.catbarBtn)(input));
+            dispatch((0, _catbarActions.catbarBtn)());
         }
     }, {
         key: "render",
@@ -28536,7 +28521,7 @@ var Catbar = function (_React$Component) {
                     "Hello Catbar ",
                     this.props.input
                 ),
-                _react2.default.createElement("input", { type: "text", onChange: this.handleChange }),
+                _react2.default.createElement("input", { type: "text", onChange: this.handleChangeCatbar }),
                 _react2.default.createElement(
                     "button",
                     { type: "button", onClick: this.handleCatbarBtn },
@@ -28636,8 +28621,10 @@ function catbarReducer() {
 
         case "CATBAR":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "CATBAR_CACHE":
@@ -28648,10 +28635,8 @@ function catbarReducer() {
 
         case "CATBAR_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return {};
             }
 
         default:
@@ -28736,31 +28721,25 @@ var Checkout = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Checkout.__proto__ || Object.getPrototypeOf(Checkout)).call(this, props));
 
-        _this.state = {
-            input: "Checkout"
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeCheckout = _this.handleChangeCheckout.bind(_this);
         _this.handleCheckoutBtn = _this.handleCheckoutBtn.bind(_this);
         return _this;
     }
 
     _createClass(Checkout, [{
-        key: "handleChange",
-        value: function handleChange(e) {
+        key: "handleChangeCheckout",
+        value: function handleChangeCheckout(e) {
             var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
+            var dispatch = this.props.dispatch;
+
+            dispatch((0, _checkoutActions.checkout)(input));
         }
     }, {
         key: "handleCheckoutBtn",
         value: function handleCheckoutBtn(e) {
-            var input = this.state.input;
             var dispatch = this.props.dispatch;
 
-            dispatch((0, _checkoutActions.checkoutBtn)(input));
+            dispatch((0, _checkoutActions.checkoutBtn)());
         }
     }, {
         key: "render",
@@ -28775,7 +28754,7 @@ var Checkout = function (_React$Component) {
                     "Hello Checkout ",
                     this.props.input
                 ),
-                _react2.default.createElement("input", { type: "text", onChange: this.handleChange }),
+                _react2.default.createElement("input", { type: "text", onChange: this.handleChangeCheckout }),
                 _react2.default.createElement(
                     "button",
                     { type: "button", onClick: this.handleCheckoutBtn },
@@ -28875,8 +28854,10 @@ function checkoutReducer() {
 
         case "CHECKOUT":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "CHECKOUT_CACHE":
@@ -28887,10 +28868,8 @@ function checkoutReducer() {
 
         case "CHECKOUT_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return {};
             }
 
         default:
@@ -28975,31 +28954,25 @@ var Details = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Details.__proto__ || Object.getPrototypeOf(Details)).call(this, props));
 
-        _this.state = {
-            input: "Details"
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeDetails = _this.handleChangeDetails.bind(_this);
         _this.handleDetailsBtn = _this.handleDetailsBtn.bind(_this);
         return _this;
     }
 
     _createClass(Details, [{
-        key: "handleChange",
-        value: function handleChange(e) {
+        key: "handleChangeDetails",
+        value: function handleChangeDetails(e) {
             var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
+            var dispatch = this.props.dispatch;
+
+            dispatch((0, _detailsActions.details)(input));
         }
     }, {
         key: "handleDetailsBtn",
         value: function handleDetailsBtn(e) {
-            var input = this.state.input;
             var dispatch = this.props.dispatch;
 
-            dispatch((0, _detailsActions.detailsBtn)(input));
+            dispatch((0, _detailsActions.detailsBtn)());
         }
     }, {
         key: "render",
@@ -29014,7 +28987,7 @@ var Details = function (_React$Component) {
                     "Hello Details ",
                     this.props.input
                 ),
-                _react2.default.createElement("input", { type: "text", onChange: this.handleChange }),
+                _react2.default.createElement("input", { type: "text", onChange: this.handleChangeDetails }),
                 _react2.default.createElement(
                     "button",
                     { type: "button", onClick: this.handleDetailsBtn },
@@ -29114,8 +29087,10 @@ function detailsReducer() {
 
         case "DETAILS":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "DETAILS_CACHE":
@@ -29126,10 +29101,8 @@ function detailsReducer() {
 
         case "DETAILS_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return {};
             }
 
         default:
@@ -29214,10 +29187,6 @@ var Home = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
-        _this.state = {
-            input: ""
-        };
-
         _this.handleChange = _this.handleChange.bind(_this);
         _this.handleHomeBtn = _this.handleHomeBtn.bind(_this);
         return _this;
@@ -29227,18 +29196,16 @@ var Home = function (_React$Component) {
         key: "handleChange",
         value: function handleChange(e) {
             var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
+            var dispatch = this.props.dispatch;
+
+            dispatch((0, _homeActions.home)(input));
         }
     }, {
         key: "handleHomeBtn",
         value: function handleHomeBtn(e) {
-            var input = this.state.input;
             var dispatch = this.props.dispatch;
 
-            dispatch((0, _homeActions.homeBtn)(input));
+            dispatch((0, _homeActions.homeBtn)());
         }
     }, {
         key: "render",
@@ -29362,8 +29329,10 @@ function homeReducer() {
 
         case "HOME":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "HOME_CACHE":
@@ -29374,10 +29343,8 @@ function homeReducer() {
 
         case "HOME_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return {};
             }
 
         default:
@@ -29463,31 +29430,25 @@ var Listings = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Listings.__proto__ || Object.getPrototypeOf(Listings)).call(this, props));
 
-        _this.state = {
-            input: "Listings"
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeListings = _this.handleChangeListings.bind(_this);
         _this.handleListingsBtn = _this.handleListingsBtn.bind(_this);
         return _this;
     }
 
     _createClass(Listings, [{
-        key: "handleChange",
-        value: function handleChange(e) {
+        key: "handleChangeListings",
+        value: function handleChangeListings(e) {
             var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
+            var dispatch = this.props.dispatch;
+
+            dispatch((0, _listingsActions.listings)(input));
         }
     }, {
         key: "handleListingsBtn",
         value: function handleListingsBtn(e) {
-            var input = this.state.input;
             var dispatch = this.props.dispatch;
 
-            dispatch((0, _listingsActions.listingsBtn)(input));
+            dispatch((0, _listingsActions.listingsBtn)());
         }
     }, {
         key: "render",
@@ -29502,7 +29463,7 @@ var Listings = function (_React$Component) {
                     "Hello Listings ",
                     this.props.input
                 ),
-                _react2.default.createElement("input", { type: "text", onChange: this.handleChange }),
+                _react2.default.createElement("input", { type: "text", onChange: this.handleChangeListings }),
                 _react2.default.createElement(
                     "button",
                     { type: "button", onClick: this.handleListingsBtn },
@@ -29634,8 +29595,10 @@ function listingsReducer() {
 
         case "LISTINGS":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "LISTINGS_CACHE":
@@ -29646,10 +29609,8 @@ function listingsReducer() {
 
         case "LISTINGS_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return {};
             }
 
         default:
@@ -29702,31 +29663,25 @@ var Login = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
 
-        _this.state = {
-            input: "Login"
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeLogin = _this.handleChangeLogin.bind(_this);
         _this.handleLoginBtn = _this.handleLoginBtn.bind(_this);
         return _this;
     }
 
     _createClass(Login, [{
-        key: "handleChange",
-        value: function handleChange(e) {
+        key: "handleChangeLogin",
+        value: function handleChangeLogin(e) {
             var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
+            var dispatch = this.props.dispatch;
+
+            dispatch((0, _loginActions.login)(input));
         }
     }, {
         key: "handleLoginBtn",
         value: function handleLoginBtn(e) {
-            var input = this.state.input;
             var dispatch = this.props.dispatch;
 
-            dispatch((0, _loginActions.loginBtn)(input));
+            dispatch((0, _loginActions.loginBtn)());
         }
     }, {
         key: "render",
@@ -29741,7 +29696,7 @@ var Login = function (_React$Component) {
                     "Hello Login ",
                     this.props.input
                 ),
-                _react2.default.createElement("input", { type: "text", onChange: this.handleChange }),
+                _react2.default.createElement("input", { type: "text", onChange: this.handleChangeLogin }),
                 _react2.default.createElement(
                     "button",
                     { type: "button", onClick: this.handleLoginBtn },
@@ -29876,8 +29831,10 @@ function loginReducer() {
 
         case "LOGIN":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "LOGIN_CACHE":
@@ -29888,10 +29845,8 @@ function loginReducer() {
 
         case "LOGIN_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return {};
             }
 
         default:
@@ -29944,31 +29899,25 @@ var Navbar = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this, props));
 
-        _this.state = {
-            input: "Navbar"
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeNavbar = _this.handleChangeNavbar.bind(_this);
         _this.handleNavbarBtn = _this.handleNavbarBtn.bind(_this);
         return _this;
     }
 
     _createClass(Navbar, [{
-        key: "handleChange",
-        value: function handleChange(e) {
+        key: "handleChangeNavbar",
+        value: function handleChangeNavbar(e) {
             var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
+            var dispatch = this.props.dispatch;
+
+            dispatch((0, _navbarActions.navbar)(input));
         }
     }, {
         key: "handleNavbarBtn",
         value: function handleNavbarBtn(e) {
-            var input = this.state.input;
             var dispatch = this.props.dispatch;
 
-            dispatch((0, _navbarActions.navbarBtn)(input));
+            dispatch((0, _navbarActions.navbarBtn)());
         }
     }, {
         key: "render",
@@ -29983,7 +29932,7 @@ var Navbar = function (_React$Component) {
                     "Hello Navbar ",
                     this.props.input
                 ),
-                _react2.default.createElement("input", { type: "text", onChange: this.handleChange }),
+                _react2.default.createElement("input", { type: "text", onChange: this.handleChangeNavbar }),
                 _react2.default.createElement(
                     "button",
                     { type: "button", onClick: this.handleNavbarBtn },
@@ -30115,8 +30064,10 @@ function navbarReducer() {
 
         case "NAVBAR":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "NAVBAR_CACHE":
@@ -30127,10 +30078,8 @@ function navbarReducer() {
 
         case "NAVBAR_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return {};
             }
 
         default:
@@ -30183,31 +30132,25 @@ var Seller = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Seller.__proto__ || Object.getPrototypeOf(Seller)).call(this, props));
 
-        _this.state = {
-            input: "Seller"
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeSeller = _this.handleChangeSeller.bind(_this);
         _this.handleSellerBtn = _this.handleSellerBtn.bind(_this);
         return _this;
     }
 
     _createClass(Seller, [{
-        key: "handleChange",
-        value: function handleChange(e) {
+        key: "handleChangeSeller",
+        value: function handleChangeSeller(e) {
             var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
+            var dispatch = this.props.dispatch;
+
+            dispatch((0, _sellerActions.seller)(input));
         }
     }, {
         key: "handleSellerBtn",
         value: function handleSellerBtn(e) {
-            var input = this.state.input;
             var dispatch = this.props.dispatch;
 
-            dispatch((0, _sellerActions.sellerBtn)(input));
+            dispatch((0, _sellerActions.sellerBtn)());
         }
     }, {
         key: "render",
@@ -30222,7 +30165,7 @@ var Seller = function (_React$Component) {
                     "Hello Seller ",
                     this.props.input
                 ),
-                _react2.default.createElement("input", { type: "text", onChange: this.handleChange }),
+                _react2.default.createElement("input", { type: "text", onChange: this.handleChangeSeller }),
                 _react2.default.createElement(
                     "button",
                     { type: "button", onClick: this.handleSellerBtn },
@@ -30352,8 +30295,10 @@ function sellerReducer() {
 
         case "SELLER":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "SELLER_CACHE":
@@ -30364,10 +30309,8 @@ function sellerReducer() {
 
         case "SELLER_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return {};
             }
 
         default:
@@ -30420,31 +30363,25 @@ var Signup = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Signup.__proto__ || Object.getPrototypeOf(Signup)).call(this, props));
 
-        _this.state = {
-            input: "Signup"
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeSignup = _this.handleChangeSignup.bind(_this);
         _this.handleSignupBtn = _this.handleSignupBtn.bind(_this);
         return _this;
     }
 
     _createClass(Signup, [{
-        key: "handleChange",
-        value: function handleChange(e) {
-            var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
+        key: "handleChangeSignup",
+        value: function handleChangeSignup(e) {
+            var input = this.state.input;
+            var dispatch = this.props.dispatch;
+
+            dispatch((0, _signupActions.signup)(input));
         }
     }, {
         key: "handleSignupBtn",
         value: function handleSignupBtn(e) {
-            var input = this.state.input;
             var dispatch = this.props.dispatch;
 
-            dispatch((0, _signupActions.signupBtn)(input));
+            dispatch((0, _signupActions.signupBtn)());
         }
     }, {
         key: "render",
@@ -30459,7 +30396,7 @@ var Signup = function (_React$Component) {
                     "Hello Signup ",
                     this.props.input
                 ),
-                _react2.default.createElement("input", { type: "text", onChange: this.handleChange }),
+                _react2.default.createElement("input", { type: "text", onChange: this.handleChangeSignup }),
                 _react2.default.createElement(
                     "button",
                     { type: "button", onClick: this.handleSignupBtn },
@@ -30591,8 +30528,10 @@ function signupReducer() {
 
         case "SIGNUP":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "SIGNUP_CACHE":
@@ -30603,10 +30542,8 @@ function signupReducer() {
 
         case "SIGNUP_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return {};
             }
 
         default:
@@ -30659,31 +30596,25 @@ var Thanks = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Thanks.__proto__ || Object.getPrototypeOf(Thanks)).call(this, props));
 
-        _this.state = {
-            input: "Thanks"
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeThanks = _this.handleChangeThanks.bind(_this);
         _this.handleThanksBtn = _this.handleThanksBtn.bind(_this);
         return _this;
     }
 
     _createClass(Thanks, [{
-        key: "handleChange",
-        value: function handleChange(e) {
-            var input = e.target.value;
-            var name = e.target.name;
-            this.setState({
-                input: input
-            });
-        }
-    }, {
-        key: "handleThanksBtn",
-        value: function handleThanksBtn(e) {
+        key: "handleChangeThanks",
+        value: function handleChangeThanks(e) {
             var input = this.state.input;
             var dispatch = this.props.dispatch;
 
             dispatch((0, _thanksActions.thanksBtn)(input));
+        }
+    }, {
+        key: "handleThanksBtn",
+        value: function handleThanksBtn(e) {
+            var dispatch = this.props.dispatch;
+
+            dispatch((0, _thanksActions.thanksBtn)());
         }
     }, {
         key: "render",
@@ -30698,7 +30629,7 @@ var Thanks = function (_React$Component) {
                     "Hello Thanks (home) ",
                     this.props.input
                 ),
-                _react2.default.createElement("input", { type: "text", onChange: this.handleChange }),
+                _react2.default.createElement("input", { type: "text", onChange: this.handleChangeThanks }),
                 _react2.default.createElement(
                     "button",
                     { type: "button", onClick: this.handleThanksBtn },
@@ -30830,8 +30761,10 @@ function thanksReducer() {
 
         case "THANKS":
             {
-
-                return {};
+                var input = payload.input;
+                return _extends({}, state, {
+                    input: input
+                });
             }
 
         case "THANKS_CACHE":
@@ -30842,10 +30775,8 @@ function thanksReducer() {
 
         case "THANKS_BTN":
             {
-                var input = payload.input;
-                return _extends({}, state, {
-                    input: input
-                });
+
+                return {};
             }
 
         default:

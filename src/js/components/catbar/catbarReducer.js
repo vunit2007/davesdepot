@@ -11,9 +11,10 @@ export default function catbarReducer (state = defaultState, action) {
     switch (type) {
         
         case "CATBAR": {
-            
+            let input = payload.input;
             return {
-                
+                ...state,
+                input
             }
         }
 
@@ -25,10 +26,9 @@ export default function catbarReducer (state = defaultState, action) {
         }
         
         case "CATBAR_BTN": {
-            let input = payload.input;
+            
             return {
-                ...state,
-                input
+                
             }
         }
 
