@@ -19,6 +19,7 @@
     "dateformat": "^3.0.3",
     "dotenv": "^5.0.1",
     "dotenv-webpack": "^1.5.5",
+    "electron": "^1.8.3",
     "helmet": "^3.10.0",
     "json-loader": "^0.5.7",
     "loopback": "^3.0.0",
