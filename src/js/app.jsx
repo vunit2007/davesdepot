@@ -13,7 +13,9 @@ import Cart from "./components/cart";
 import Checkout from "./components/checkout";
 import AddListing from "./components/addListing";
 import Thanks from "./components/thanks";
-import {Jumbotron} from "reactstrap";
+import { Button, Jumbotron } from 'reactstrap';
+
+
 export default class App extends React.Component {
   render() {
     return (
