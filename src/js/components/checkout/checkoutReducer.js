@@ -11,9 +11,10 @@ export default function checkoutReducer (state = defaultState, action) {
     switch (type) {
         
         case "CHECKOUT": {
-            
+            let input = payload.input;
             return {
-                
+                ...state,
+                input
             }
         }
 
@@ -25,10 +26,9 @@ export default function checkoutReducer (state = defaultState, action) {
         }
         
         case "CHECKOUT_BTN": {
-            let input = payload.input;
+            
             return {
-                ...state,
-                input
+                
             }
         }
 

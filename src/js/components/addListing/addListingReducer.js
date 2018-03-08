@@ -11,9 +11,10 @@ export default function addListingReducer (state = defaultState, action) {
     switch (type) {
         
         case "ADDLISTING": {
-            
+            let input = payload.input;
             return {
-                
+                ...state,
+                input
             }
         }
 
@@ -25,10 +26,9 @@ export default function addListingReducer (state = defaultState, action) {
         }
         
         case "ADDLISTING_BTN": {
-            let input = payload.input;
+            
             return {
-                ...state,
-                input
+                ...state
             }
         }
 

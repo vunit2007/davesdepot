@@ -10,26 +10,20 @@ import {
 class Cart extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            input : "Cart"
-        }
         
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeCart = this.handleChangeCart.bind(this);
         this.handleCartBtn = this.handleCartBtn.bind(this);
     }
 
-    handleChange(e){
+    handleChangeCart(e){
         let input = e.target.value;
-        let name = e.target.name;
-        this.setState({
-            input
-        })
+        const {dispatch} = this.props;
+        dispatch(cart(input));
     }
 
     handleCartBtn(e){
-        let input = this.state.input;
         const {dispatch} = this.props;
-        dispatch(cartBtn(input))
+        dispatch(cartBtn());
     }
     
     render() {
@@ -37,7 +31,7 @@ class Cart extends React.Component {
         return (
             <div>
                 <h1>Hello Cart {this.props.input}</h1>
-                <input type="text" onChange={this.handleChange}/>
+                <input type="text" onChange={this.handleChangeCart}/>
                 <button type="button" onClick={this.handleCartBtn}>Change</button>
             </div>
         )

@@ -11,9 +11,10 @@ export default function signupReducer (state = defaultState, action) {
     switch (type) {
         
         case "SIGNUP": {
-            
+            let input = payload.input;
             return {
-                
+                ...state,
+                input
             }
         }
 
@@ -25,10 +26,9 @@ export default function signupReducer (state = defaultState, action) {
         }
         
         case "SIGNUP_BTN": {
-            let input = payload.input;
+            
             return {
-                ...state,
-                input
+                
             }
         }
 

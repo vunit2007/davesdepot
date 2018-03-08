@@ -11,9 +11,10 @@ export default function loginReducer (state = defaultState, action) {
     switch (type) {
         
         case "LOGIN": {
-            
+            let input = payload.input;
             return {
-                
+                ...state,
+                input
             }
         }
 
@@ -25,10 +26,9 @@ export default function loginReducer (state = defaultState, action) {
         }
         
         case "LOGIN_BTN": {
-            let input = payload.input;
+            
             return {
-                ...state,
-                input
+                
             }
         }
 

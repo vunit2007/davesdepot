@@ -11,9 +11,10 @@ export default function navbarReducer (state = defaultState, action) {
     switch (type) {
         
         case "NAVBAR": {
-            
+            let input = payload.input;
             return {
-                
+                ...state,
+                input
             }
         }
 
@@ -25,10 +26,9 @@ export default function navbarReducer (state = defaultState, action) {
         }
         
         case "NAVBAR_BTN": {
-            let input = payload.input;
+
             return {
-                ...state,
-                input
+                
             }
         }
 

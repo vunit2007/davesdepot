@@ -10,26 +10,20 @@ import {
 class Signup extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            input : "Signup"
-        }
         
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeSignup = this.handleChangeSignup.bind(this);
         this.handleSignupBtn = this.handleSignupBtn.bind(this);
     }
 
-    handleChange(e){
-        let input = e.target.value;
-        let name = e.target.name;
-        this.setState({
-            input
-        })
+    handleChangeSignup(e){
+        let input = this.state.input;
+        const {dispatch} = this.props;
+        dispatch(signup(input));
     }
 
     handleSignupBtn(e){
-        let input = this.state.input;
         const {dispatch} = this.props;
-        dispatch(signupBtn(input))
+        dispatch(signupBtn());
     }
     
     render() {
@@ -37,7 +31,7 @@ class Signup extends React.Component {
         return (
             <div>
                 <h1>Hello Signup {this.props.input}</h1>
-                <input type="text" onChange={this.handleChange}/>
+                <input type="text" onChange={this.handleChangeSignup}/>
                 <button type="button" onClick={this.handleSignupBtn}>Change</button>
             </div>
         )

@@ -10,26 +10,20 @@ import {
 class Seller extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            input : "Seller"
-        }
         
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeSeller = this.handleChangeSeller.bind(this);
         this.handleSellerBtn = this.handleSellerBtn.bind(this);
     }
 
-    handleChange(e){
+    handleChangeSeller(e){
         let input = e.target.value;
-        let name = e.target.name;
-        this.setState({
-            input
-        })
+        const {dispatch} = this.props;
+        dispatch(seller(input));
     }
 
     handleSellerBtn(e){
-        let input = this.state.input;
         const {dispatch} = this.props;
-        dispatch(sellerBtn(input))
+        dispatch(sellerBtn());
     }
     
     render() {
@@ -37,7 +31,7 @@ class Seller extends React.Component {
         return (
             <div>
                 <h1>Hello Seller {this.props.input}</h1>
-                <input type="text" onChange={this.handleChange}/>
+                <input type="text" onChange={this.handleChangeSeller}/>
                 <button type="button" onClick={this.handleSellerBtn}>Change</button>
             </div>
         )

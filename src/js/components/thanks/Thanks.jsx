@@ -10,26 +10,20 @@ import {
 class Thanks extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            input : "Thanks"
-        }
         
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeThanks = this.handleChangeThanks.bind(this);
         this.handleThanksBtn = this.handleThanksBtn.bind(this);
     }
 
-    handleChange(e){
-        let input = e.target.value;
-        let name = e.target.name;
-        this.setState({
-            input
-        })
+    handleChangeThanks(e){
+        let input = this.state.input;
+        const {dispatch} = this.props;
+        dispatch(thanksBtn(input));
     }
 
     handleThanksBtn(e){
-        let input = this.state.input;
         const {dispatch} = this.props;
-        dispatch(thanksBtn(input))
+        dispatch(thanksBtn());
     }
     
     render() {
@@ -37,7 +31,7 @@ class Thanks extends React.Component {
         return (
             <div>
                 <h1>Hello Thanks (home) {this.props.input}</h1>
-                <input type="text" onChange={this.handleChange}/>
+                <input type="text" onChange={this.handleChangeThanks}/>
                 <button type="button" onClick={this.handleThanksBtn}>Change</button>
             </div>
         )

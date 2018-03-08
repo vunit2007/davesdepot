@@ -10,26 +10,20 @@ import {
 class Listings extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            input : "Listings"
-        }
         
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeListings = this.handleChangeListings.bind(this);
         this.handleListingsBtn = this.handleListingsBtn.bind(this);
     }
 
-    handleChange(e){
+    handleChangeListings(e){
         let input = e.target.value;
-        let name = e.target.name;
-        this.setState({
-            input
-        })
+        const {dispatch} = this.props;
+        dispatch(listings(input));
     }
 
     handleListingsBtn(e){
-        let input = this.state.input;
         const {dispatch} = this.props;
-        dispatch(listingsBtn(input))
+        dispatch(listingsBtn());
     }
     
     render() {
@@ -37,7 +31,7 @@ class Listings extends React.Component {
         return (
             <div>
                 <h1>Hello Listings {this.props.input}</h1>
-                <input type="text" onChange={this.handleChange}/>
+                <input type="text" onChange={this.handleChangeListings}/>
                 <button type="button" onClick={this.handleListingsBtn}>Change</button>
             </div>
         )
