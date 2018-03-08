@@ -36,6 +36,10 @@ module.exports = {
         test: /\.html$/,
         loader: 'file?name=[name].[ext]',
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
     ],
   },
 };

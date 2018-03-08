@@ -13,17 +13,15 @@ import Cart from "./components/cart";
 import Checkout from "./components/checkout";
 import AddListing from "./components/addListing";
 import Thanks from "./components/thanks";
-
+import {Jumbotron} from "reactstrap";
 export default class App extends React.Component {
   render() {
     return (
-      <div className='container'>
-        <div className="jumbotron jumbotron-fluid">
-          <div className="container">
+      <div>
+        <Jumbotron>
             <h1 className="display-4">Origin Etsy Application</h1>
             <p className="lead">stuff!</p>
-          </div>
-        </div>
+        </Jumbotron>
 
         <Router >
           <div className="container">
