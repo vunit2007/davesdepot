@@ -1,34 +1,50 @@
 const defaultState = {
-    input: "",
-    cache: {},
-    listings: {},
-    history: []
+    name: "",
+    email: "",
+    password: "",
+    phoneNumber: "",
+    user: "false",
+    address:"",
+    user_type:"false",
+    username:"",
+    error: false
 };
 
-export default function signupReducer (state = defaultState, action) {
+export default function signupReducer(state = defaultState, action) {
     const { type, payload } = action;
 
     switch (type) {
-        
-        case "SIGNUP": {
-            let input = payload.input;
-            return {
-                ...state,
-                input
+
+
+        case "INPUT_CHANGE":{  
+            console.log("payload: ", payload)        
+          return{
+                ...state, 
+                ...payload
+                
             }
+            
         }
 
-        case "SIGNUP_CACHE": {
-            
+        case 'SIGN_UP_FULFILLED': {
+            console.log("reducer: ", payload)
             return {
-                
+                ...state,
+                user: payload,
+                error: false
             }
         }
-        
-        case "SIGNUP_BTN": {
-            
-            return {
-                
+        case "SIGN_UP_REJECTED":{
+            console.log("payload", payload)
+
+            var error = state.error;
+
+            if (payload.includes('email')) {
+                error = 'email'
+            }
+            return{
+                ...state,
+                error
             }
         }
 
@@ -38,3 +54,4 @@ export default function signupReducer (state = defaultState, action) {
     }
     return state;
 };
+
