@@ -10,7 +10,7 @@ import {
 class Home extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.handleChange = this.handleChange.bind(this);
         this.handleHomeBtn = this.handleHomeBtn.bind(this);
     }
@@ -25,7 +25,7 @@ class Home extends React.Component {
         const {dispatch} = this.props;
         dispatch(homeBtn());
     }
-    
+
     render() {
 
         return (
@@ -33,7 +33,9 @@ class Home extends React.Component {
                 <h1>Hello Home {this.props.input}</h1>
                 <input type="text" onChange={this.handleChange}/>
                 <button type="button" onClick={this.handleHomeBtn}>Change</button>
-                <Link to="/login"><button type="button">Login</button></Link>
+                <Link to="/listings/electronics"><button type="button">Electronics</button></Link>
+                <Link to="/listings/tools"><button type="button">tools</button></Link>
+                <Link to="/listings/art"><button type="button">art</button></Link>
             </div>
         )
     }
