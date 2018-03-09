@@ -39,7 +39,6 @@ export default class App extends React.Component {
             <Route path="/thanks" component={Thanks} />
           </div>
         </Router>
-
       </div>
     );
   }

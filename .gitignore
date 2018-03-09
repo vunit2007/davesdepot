@@ -29,3 +29,4 @@ dist
 client/bundle.js
 client/bundle.js.map
 package-lock.json
+client/style.css
