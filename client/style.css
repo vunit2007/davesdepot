@@ -1,0 +1,79 @@
+.VaddListingsInfo {
+  margin-left: 300px;
+  margin-right: 300px;
+}
+#VregPrice {
+  margin-right: 10px;
+}
+.VfirstRow {
+  display: inline-block;
+  margin-bottom: 60px;
+}
+.VsecondRow {
+  display: inline-block;
+  margin-bottom: 60px;
+}
+.Vitem1 {
+  display: inline-block;
+  margin-right: 40px;
+}
+.Vitem2 {
+  display: inline-block;
+  margin-left: 40px;
+}
+.Vitem3 {
+  display: inline-block;
+  margin-right: 40px;
+}
+.Vitem4 {
+  display: inline-block;
+  margin-left: 40px;
+}
+.Vcart {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+#VcartBox {
+  display: inline-block;
+}
+.VitemImage {
+  float: left;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+.VitemInfo {
+  display: inline-block;
+  margin: auto 0;
+}
+.VcheckOut {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+.Vexpiration {
+  border: 1px solid #bbbbbb;
+}
+.Vexpiration input {
+  border: 1px ;
+}
+.VexpirationDiv {
+  display: inline-block;
+  margin-right: 40px;
+  color: #9E9898;
+}
+.VpostalCodeDiv {
+  display: inline-block;
+  margin-right: 40px;
+  color: #9E9898;
+}
+.VsecurityCodeDiv {
+  display: inline-block;
+  color: #9E9898;
+}
+.VstateDiv {
+  display: inline-block;
+  margin-right: 40px;
+  color: #9E9898;
+}
+#VsubTotal {
+  font-size: 50px;
+}

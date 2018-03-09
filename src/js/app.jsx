@@ -27,8 +27,9 @@ export default class App extends React.Component {
 
         <Router >
           <div className="container">
-            <Route exact path="/" component={AddListing} />
-            <Route path="/login" component={Login} /> 
+            <Route exact path="/" component={Home} />
+            <Route path="/listings/:cat" component={AddListing} />
+            <Route path="/login" component={Login} />
           </div>
         </Router>
 

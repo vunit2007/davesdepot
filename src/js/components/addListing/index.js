@@ -3,7 +3,9 @@ import AddListing from "./AddListing";
 
 function mapStoreToProps(store) {
     return {
-        input: store.addListing.input
+        input: store.addListing.input,
+        dropdownOpen: store.addListing.dropdownOpen,
+        rSelected: store.addListing.rSelected
     }
 }
 
