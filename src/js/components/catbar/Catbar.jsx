@@ -29,11 +29,19 @@ class Catbar extends React.Component {
     render() {
 
         return (
-            <div>
-                <h1>Hello Catbar {this.props.input}</h1>
-                <input type="text" onChange={this.handleChangeCatbar}/>
-                <button type="button" onClick={this.handleCatbarBtn}>Change</button>
-            </div>
+            <nav className = 'EcatBar' id='EcatBar'>
+     
+           
+                <ul  className ='EcatUl' id = 'EcatUl'>
+                 <li className='EcatList' id='EcatList'>  <button className='EcatButton' id='EcatButton'> Electronics</button></li> 
+                 <li className='EcatList' id='EcatList'>  <button className='EcatButton' id='EcatButton'> Clothing</button></li> 
+                 <li className='EcatList' id='EcatList'>  <button className='EcatButton' id='EcatButton'> Art</button></li> 
+                 <li className='EcatList' id='EcatList'>  <button className='EcatButton' id='EcatButton'> Sports</button></li> 
+                 <li className='EcatList' id='EcatList'>  <button className='EcatButton' id='EcatButton'> Tools</button></li> 
+                </ul>
+          
+      
+        </nav>
         )
     }
 }

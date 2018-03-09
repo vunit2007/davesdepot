@@ -1,5 +1,6 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Button, Jumbotron } from 'reactstrap';
 
 import {
     home,
@@ -15,14 +16,14 @@ class Home extends React.Component {
         this.handleHomeBtn = this.handleHomeBtn.bind(this);
     }
 
-    handleChange(e){
+    handleChange(e) {
         let input = e.target.value;
-        const {dispatch} = this.props;
+        const { dispatch } = this.props;
         dispatch(home(input));
     }
 
-    handleHomeBtn(e){
-        const {dispatch} = this.props;
+    handleHomeBtn(e) {
+        const { dispatch } = this.props;
         dispatch(homeBtn());
     }
 
@@ -30,13 +31,52 @@ class Home extends React.Component {
 
         return (
             <div>
-                <h1>Hello Home {this.props.input}</h1>
-                <input type="text" onChange={this.handleChange}/>
-                <button type="button" onClick={this.handleHomeBtn}>Change</button>
-                <Link to="/listings/electronics"><button type="button">Electronics</button></Link>
-                <Link to="/listings/tools"><button type="button">tools</button></Link>
-                <Link to="/listings/art"><button type="button">art</button></Link>
+
+                <div className="Eresponsive">
+                    <div className="Egallery">
+                        <a target="_blank" href="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg">
+                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg"  width="300" height="200" />
+                        </a>
+                        <div className="EimgDesc">You on EASY STREET!!!!</div>
+                    </div>
+                </div>
+
+
+                <div className="Eresponsive">
+                    <div className="Egallery">
+                        <a target="_blank" href="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg">
+                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg"  width="600" height="400" />
+                        </a>
+                        <div className="EimgDesc">You on EASY STREET!!!!</div>
+                    </div>
+                </div>
+
+                <div className="Eresponsive">
+                    <div className="Egallery">
+                        <a target="_blank" href="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg">
+                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg"  width="600" height="400" />
+                        </a>
+                        <div className="EimgDesc">You on EASY STREET!!!!</div>
+                    </div>
+                </div>
+
+                <div className="Eresponsive">
+                    <div className="Egallery">
+                        <a target="_blank" href="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg">
+                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg"  width="600" height="400" />
+                        </a>
+                        <div className="EimgDesc">You on EASY STREET!!!!</div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
             </div>
+
         )
     }
 }
