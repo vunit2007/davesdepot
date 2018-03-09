@@ -14,42 +14,42 @@
     ]
   },
   "User": {
-    "dataSource": "db",
+    "dataSource": "localmongodb",
     "public": false
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "localmongodb",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "localmongodb",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "localmongodb",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "localmongodb",
     "public": false
   },
   "user": {
-    "dataSource": "db",
+    "dataSource": "localmongodb",
     "public": true
   },
   "listing": {
-    "dataSource": "db",
+    "dataSource": "localmongodb",
     "public": true
   },
   "category": {
-    "dataSource": "db",
+    "dataSource": "localmongodb",
     "public": true
   },
   "order": {
-    "dataSource": "db",
+    "dataSource": "localmongodb",
     "public": true
   }
 }

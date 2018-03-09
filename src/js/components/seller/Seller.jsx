@@ -1,5 +1,7 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Alert, Button, UncontrolledAlert } from "reactstrap";
+import History from "../history";
 
 import {
     seller,
@@ -10,29 +12,43 @@ import {
 class Seller extends React.Component {
     constructor(props) {
         super(props);
-        
+
+        this.state = {
+            visible: true
+        };
+    
+        this.onDismiss = this.onDismiss.bind(this);
+
         this.handleChangeSeller = this.handleChangeSeller.bind(this);
         this.handleSellerBtn = this.handleSellerBtn.bind(this);
     }
 
-    handleChangeSeller(e){
+    handleChangeSeller(e) {
         let input = e.target.value;
-        const {dispatch} = this.props;
+        const { dispatch } = this.props;
         dispatch(seller(input));
     }
 
-    handleSellerBtn(e){
-        const {dispatch} = this.props;
+    handleSellerBtn(e) {
+        const { dispatch } = this.props;
         dispatch(sellerBtn());
     }
-    
+
+    onDismiss() {
+        this.setState({ visible: false });
+    }
+
     render() {
 
         return (
             <div>
                 <h1>Hello Seller {this.props.input}</h1>
-                <input type="text" onChange={this.handleChangeSeller}/>
-                <button type="button" onClick={this.handleSellerBtn}>Change</button>
+                <input type="text" onChange={this.handleChangeSeller} />
+                <Button color="success" onClick={this.handleSellerBtn}>Change</Button>
+                <UncontrolledAlert color="info">
+                    I am an alert and I can be dismissed!
+                </UncontrolledAlert>
+                <History userId={this.props.match.params.id} />
             </div>
         )
     }

@@ -1,8 +1,6 @@
 const defaultState = {
     input: "",
-    cache: {},
-    listings: {},
-    history: []
+    user: null
 };
 
 export default function loginReducer (state = defaultState, action) {

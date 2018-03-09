@@ -36,6 +36,7 @@
       "model": "listing",
       "foreignKey": "",
       "options": {
+        "validate": false,
         "nestRemoting": true,
         "forceId": false,
         "persistent": true

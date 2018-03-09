@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import History from "../history/History";
 
 import {
     buyer,

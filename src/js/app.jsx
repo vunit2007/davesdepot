@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Catbar from "./components/catbar";
 import Navbar from "./components/navbar";
 import Home from "./components/home";
@@ -20,16 +20,23 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Jumbotron>
-            <h1 className="display-4">Origin Etsy Application</h1>
-            <p className="lead">stuff!</p>
-        </Jumbotron>
-
+        
         <Router >
           <div className="container">
+            <Route component={Navbar}/>
+            <Route exact path="/" component={Catbar} />
+            <Route path="/listings" component={Catbar} />
             <Route exact path="/" component={Home} />
-            <Route path="/listings/:cat" component={AddListing} />
+            <Route path="/seller/:id" component={Seller} />
+            <Route path="/buyer/:id" component={Buyer} />
             <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/listings/:cat" component={Listings} />
+            <Route path="/details/:item" component={Details} />
+            <Route path="/cart" component={Cart} />
+            <Route path="/checkout" component={Checkout} />
+            <Route path="/addlisting" component={AddListing} />
+            <Route path="/thanks" component={Thanks} />
           </div>
         </Router>
 
