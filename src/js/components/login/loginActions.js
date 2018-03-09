@@ -3,7 +3,8 @@ import axios from "axios";
 export function login(input) {
     return {
         type: "LOGIN",
-        payload: {input}
+        payload: axios.get("/api/users",data)
+        .then(res => res.data)
     }
 }
 
@@ -15,9 +16,9 @@ export const loginBtn = (input) => {
     }
 }
 
-export const loginCache = (obj) => {
+export function signOut(value) {
     return {
-        type: "LOGIN_CACHE",
-        payload: obj
+        type:"UPDATE_LOGOUT",
+        payload: value
     }
 }

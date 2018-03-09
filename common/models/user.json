@@ -17,17 +17,22 @@
     },
     "items": {
       "type": "array",
-      "required": true
+      "required": false,
+      "default": []
     },
-    "phone_number": {
+    "phoneNumber": {
       "type": "number",
       "required": true
     },
-    "addresses": {
+    "address": {
       "type": "string",
       "required": true
     },
     "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
       "type": "string",
       "required": true
     }

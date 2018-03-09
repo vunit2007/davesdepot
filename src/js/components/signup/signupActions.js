@@ -1,25 +1,19 @@
 import axios from "axios";
 
-export function signup(input) {
-    
+
+export function signUp(data) {
+    console.log("data: ", data)
     return {
-        type: "SIGNUP",
-        payload: {input}
+        type: 'SIGN_UP',
+        payload: axios.post("/api/users", data).then(result => result.data)
     }
 }
 
-export const signupBtn = (input) => {
 
-    return {
-        type: "SIGNUP_BTN",
-        payload: {input}
+export function inputChange(obj){
+    return{
+        type:"INPUT_CHANGE",
+        payload:obj
     }
 }
-
-export const signupCache = (obj) => {
-
-    return {
-        type: "SIGNUP_CACHE",
-        payload: obj
-    }
-}
+   
