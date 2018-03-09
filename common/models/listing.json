@@ -44,6 +44,14 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "seller": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "sellerId",
+      "options": {
+        "nestRemoting": true
+      }
     }
   },
   "acls": [],

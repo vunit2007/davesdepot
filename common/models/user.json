@@ -41,6 +41,14 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "listing": {
+      "type": "hasMany",
+      "model": "listing",
+      "foreignKey": "sellerId",
+      "options": {
+        "nestRemoting": false
+      }
     }
   },
   "acls": [],

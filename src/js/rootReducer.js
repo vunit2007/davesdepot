@@ -12,10 +12,12 @@ import cartReducer from "./components/cart/cartReducer";
 import checkoutReducer from "./components/checkout/checkoutReducer";
 import addListingReducer from "./components/addListing/addListingReducer";
 import thanksReducer from "./components/thanks/thanksReducer";
+import historyReducer from './components/history/historyReducer';
 
 const rootReducer = combineReducers({
     buyer: buyerReducer,
     seller: sellerReducer,
+    history: historyReducer,
     catbar: catbarReducer,
     navbar: navbarReducer,
     home: homeReducer,

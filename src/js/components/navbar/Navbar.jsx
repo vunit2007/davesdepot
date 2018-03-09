@@ -33,6 +33,8 @@ class Navbar extends React.Component {
                 <h1>Hello Navbar {this.props.input}</h1>
                 <input type="text" onChange={this.handleChangeNavbar}/>
                 <button type="button" onClick={this.handleNavbarBtn}>Change</button>
+                <Link to="/buyer/1" ><button>Buyer</button></Link>
+                <Link to="/seller/5aa2c25f86ca680bf58521b0" ><button>Seller</button></Link>
             </div>
         )
     }
