@@ -64,7 +64,7 @@ class Cart extends React.Component {
 
 </div>
 <br /> <br />
-<a href="#" className="btn btn-primary">Check Out</a>
+<Link to="/Checkout" className="btn btn-primary">Check Out</Link>
 <br/><br/><br />
 </div>
 

@@ -10,6 +10,9 @@ import {
 class Listings extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+      listings: []
+    };
 
         this.handleChangeListings = this.handleChangeListings.bind(this);
         this.handleListingsBtn = this.handleListingsBtn.bind(this);
@@ -25,6 +28,15 @@ class Listings extends React.Component {
         const {dispatch} = this.props;
         dispatch(listingsBtn());
     }
+
+    componentWillMount() {
+    axios
+      .get("/api/listings")
+      .then(response => response.data)
+      .then(data => this.setState({ listings: data }));
+      console.log(listings)
+  }
+
 
    //functionwillmountthing axios.get("/api/listings")
     render() {

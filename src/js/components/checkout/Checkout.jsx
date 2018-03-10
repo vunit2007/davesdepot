@@ -115,7 +115,7 @@ class Checkout extends React.Component {
 </div>
 
 <br/><br/>
-<a href="#" className="btn btn-primary">Place Order</a><br/><br/><br/>
+<Link to="/Thanks" className="btn btn-primary">Place Order</Link><br/><br/><br/>
 
 
 </center>
