@@ -6,7 +6,8 @@ function mapStoreToProps(store) {
         orders: store.history.orders,
         status: store.history.status,
         userSignUp: store.signup.user,
-        userLogin: store.login.user
+        userLogin: store.login.user,
+        email: store.login.email
     };
 }
 

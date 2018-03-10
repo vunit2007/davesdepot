@@ -56,8 +56,8 @@ export default class Login extends Component {
                                         </select>
                                         <br/>
                                         <br/>                  
-                                        <label htmlFor="username"><strong>Email:</strong></label><br/>
-                                        <input type="email" name='username' placeholder='Enter your email..'  className="form-control" onChange={this.handleInputChange}/>
+                                        <label htmlFor="email"><strong>Email:</strong></label><br/>
+                                        <input type="email" name='email' placeholder='Enter your email..'  className="form-control" onChange={this.handleInputChange}/>
                                         <br/>
                                         <label htmlFor="password"><strong>Password:</strong></label><br/>
                                         <input type="password" name='password' placeholder='Enter your password...'  className="form-control" onChange={this.handleInputChange}/>

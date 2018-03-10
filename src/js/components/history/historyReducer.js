@@ -1,8 +1,6 @@
 const defaultState = {
     orders: null,
-    status: null,
-    userSignUp: null,
-    userLogin: null
+    status: null
 };
 
 export default function historyReducer (state = defaultState, action) {
