@@ -26,7 +26,7 @@ export default function loginReducer (state = defaultState, action) {
         case "LOGIN_FULFILLED": {
             return {
                 ...state,
-                user: payload[0],
+                user: payload,
                 error: false,
                 redirect: true
             }
