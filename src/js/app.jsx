@@ -20,19 +20,19 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        
+
         <Router >
           <div>
             <Route component={Navbar}/>
             <Route exact path="/" component={Catbar} />
             <Route path="/listings" component={Catbar} />
             <Route exact path="/" component={Home} />
-            <Route path="/seller/:id" component={Seller} />
-            <Route path="/buyer/:id" component={Buyer} />
+            <Route path="/seller" component={Seller} />
+            <Route path="/buyer" component={Buyer} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/listings/:cat" component={Listings} />
-            <Route path="/details/:item" component={Details} />
+            <Route path="/listings" component={Listings} />
+            <Route path="/details" component={Details} />
             <Route path="/cart" component={Cart} />
             <Route path="/checkout" component={Checkout} />
             <Route path="/addlisting" component={AddListing} />

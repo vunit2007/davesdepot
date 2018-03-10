@@ -145,8 +145,7 @@ class AddListing extends React.Component {
       </div>
       <br />
 
-
-      <button type="button" className="btn btn-primary">Post</button>
+      <Link to="/Seller" className="btn btn-primary">Post</Link>
 
 </div>
 </center>
