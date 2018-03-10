@@ -5,7 +5,8 @@ function mapStoreToProps(store) {
     return {
         orders: store.history.orders,
         status: store.history.status,
-        user: store.login.user
+        userSignUp: store.signup.user,
+        userLogin: store.login.user
     };
 }
 

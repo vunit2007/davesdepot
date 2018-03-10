@@ -10,7 +10,7 @@
       "type": "string",
       "required": true
     },
-    "user_type": {
+    "userType": {
       "type": "string",
       "required": true,
       "default": "buyer"

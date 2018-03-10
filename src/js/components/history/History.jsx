@@ -7,15 +7,22 @@ export default class History extends React.Component{
         super(props);
     }
     //When component mounts, go get order history
-    componentDidMount() {
-        const { dispatch, userId } = this.props;
-        dispatch(getOrderHistory(userId));
+    componentWillMount() {
+        ;
+        const { dispatch, whereFrom, userLogin, userSignUp } = this.props;
+        var user = userSignUp;
+        if (whereFrom === "login"){
+            user = userLogin;
+        }
+        
+        console.log("user: ", user);
+        dispatch(getOrderHistory(user));
     }
 
     render(){
         //get orders from props
-        const { orders, status } = this.props;
-
+        const { orders, status, user } = this.props;
+        
         return (
             <div>
             { status === 'loading' ? <div>{status}</div>
@@ -28,14 +35,6 @@ export default class History extends React.Component{
                 </thead>
                 <tbody>
 
-                    {/* {axios.all(response.data.Search.map((movie, index) => {
-                        return axios.get(``)
-                            .then(response => {
-                                return response.data;
-                            })
-                    })).then(listItems => { */}
-                    
-
                     {!!orders && orders.map((item,index) => {
                         return (
                             <tr key={index}>
@@ -45,7 +44,6 @@ export default class History extends React.Component{
                         )
                     })}
 
-                    {/* })} */}
                 </tbody>
             </Table>
             }

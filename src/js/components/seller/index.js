@@ -3,7 +3,8 @@ import Seller from "./Seller";
 
 function mapStoreToProps(store) {
     return {
-        input: store.seller.input
+        input: store.seller.input,
+        user: store.signup.user
     }
 }
 

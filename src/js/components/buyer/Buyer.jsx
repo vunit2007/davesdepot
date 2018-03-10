@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import History from "../history/History";
+import History from "../history";
 
 import {
     buyer,
@@ -34,6 +34,7 @@ class Buyer extends React.Component {
                 <h1>Hello Buyer {this.props.input}</h1>
                 <input type="text" onChange={this.handleChangeBuyer}/>
                 <button type="button" onClick={this.handleBuyerBtn}>Change</button>
+                <History  whereFrom={this.props.match.params.id} />
             </div>
         )
     }

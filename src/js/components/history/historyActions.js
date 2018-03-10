@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export function getOrderHistory(userId) {
+export function getOrderHistory(user) {
     return {
         type: 'GET_ORDER_HISTORY',
-        payload: axios.get(`/api/users/${userId}/orders`).then(r => r.data)
+        payload: axios.get(`/api/users/${user.id}/orders`).then(r => r.data)
     }
 }
