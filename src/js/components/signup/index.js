@@ -9,9 +9,10 @@ function mapStoreToProps(store) {
     phoneNumber: store.signup.phoneNumber,
     address:store.signup.address,
     username:store.signup.username,
-    user: store.signup.user,
+    userType: store.signup.userType,
     activeUser: store.login.activeUser,
     activeCustomer: store.login.activeCustomer,
+    redirect: store.signup.redirect,
     error:store.signup.error,
     };
 }

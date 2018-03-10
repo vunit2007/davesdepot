@@ -3,10 +3,10 @@ const defaultState = {
     email: "",
     password: "",
     phoneNumber: "",
-    user: "false",
+    userType: "buyer",
     address:"",
-    user_type:"false",
     username:"",
+    redirect: false,
     error: false
 };
 
@@ -16,8 +16,7 @@ export default function signupReducer(state = defaultState, action) {
     switch (type) {
 
 
-        case "INPUT_CHANGE":{  
-            console.log("payload: ", payload)        
+        case "SIGNUP_INPUT_CHANGE":{         
           return{
                 ...state, 
                 ...payload
@@ -27,21 +26,18 @@ export default function signupReducer(state = defaultState, action) {
         }
 
         case 'SIGN_UP_FULFILLED': {
-            console.log("reducer: ", payload)
             return {
                 ...state,
                 user: payload,
-                error: false
+                error: false,
+                redirect: true
             }
         }
         case "SIGN_UP_REJECTED":{
-            console.log("payload", payload)
+            console.log("rejected payload", payload)
 
             var error = state.error;
 
-            if (payload.includes('email')) {
-                error = 'email'
-            }
             return{
                 ...state,
                 error

@@ -5,8 +5,7 @@ import History from "../history";
 
 import {
     seller,
-    sellerBtn,
-    sellerCache
+    sellerBtn
 } from "./sellerActions"
 
 class Seller extends React.Component {
@@ -16,8 +15,6 @@ class Seller extends React.Component {
         this.state = {
             visible: true
         };
-    
-        this.onDismiss = this.onDismiss.bind(this);
 
         this.handleChangeSeller = this.handleChangeSeller.bind(this);
         this.handleSellerBtn = this.handleSellerBtn.bind(this);
@@ -34,12 +31,8 @@ class Seller extends React.Component {
         dispatch(sellerBtn());
     }
 
-    onDismiss() {
-        this.setState({ visible: false });
-    }
-
     render() {
-
+        
         return (
             <div>
                 <h1>Hello Seller {this.props.input}</h1>
@@ -48,7 +41,7 @@ class Seller extends React.Component {
                 <UncontrolledAlert color="info">
                     I am an alert and I can be dismissed!
                 </UncontrolledAlert>
-                <History userId={this.props.match.params.id} />
+                <History whereFrom={this.props.match.params.id} />
             </div>
         )
     }

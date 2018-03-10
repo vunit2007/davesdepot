@@ -22,7 +22,7 @@ export default class App extends React.Component {
       <div>
         
         <Router >
-          <div className="container">
+          <div>
             <Route component={Navbar}/>
             <Route exact path="/" component={Catbar} />
             <Route path="/listings" component={Catbar} />
