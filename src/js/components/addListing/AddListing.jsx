@@ -199,7 +199,7 @@ console.log("tacos", this.props.posted)
                 <Link to="/"><button type="button">Login</button></Link>
 
 <center>
-      <div className="jumbotron jumbotron-fluid">
+      <div className="jumbotron jumbotron-fluid alert-primary" id='VaddListingJumbo'>
         <div className="container">
           <h1 className="display-4">Add New Listings</h1>
         </div>
@@ -269,15 +269,27 @@ console.log("tacos", this.props.posted)
       <Button color="secondary" id="VregPrice" onClick={() => this.onRadioBtnClick(1)} active={this.props.rSelected === 1}>Regular Price</Button>
       <Button color="secondary" onClick={() => this.onRadioBtnClick(2)} active={this.props.rSelected === 2}>Sale Price</Button> */}
 
+     {/* Erik's Code w/ ID's
+       <Button color="secondary" id="VregPrice" onClick={() => this.onRadioBtnClick(1)} active={this.props.rSelected === 1}>Regular Price</Button>
+      <Button color="secondary" id='VsalePrice' onClick={() => this.onRadioBtnClick(2)} active={this.props.rSelected === 2}>Sale Price</Button> */}
+
 
       < br/><br />
 
       <div className="input-group input-group-lg">
-      <input type="text" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="URL Image" onChange={ this.handleUrlInput} />
+      <input type="text" className="form-control" id='formGroupExampleInput' aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="URL Image" onChange={ this.handleUrlInput} />
     </div>
       <br />
 
       <button className="btn btn-primary" onClick={this.handlePost}>Post</button><br/><br/>
+ {/*   Erik's code
+    <button
+              type='button'
+              className='btn btn-danger col-12 mb-5' id='VtestingBtn'
+              onClick={ this.handlePost }
+            >Testing
+            </button>
+      <Link to="/Seller" className="btn btn-primary" id='VaddListingBtn'>Post</Link> */}
 
 </div>
 </center>
