@@ -24,7 +24,7 @@ class Seller extends React.Component {
 
         return (
             <div className="dTopMargin">
-                {this.props.user !=null && this.props.user.userType === "seller" &&
+                {this.props.user != null && this.props.user.userType === "seller" &&
                     <div>
                     <h3 className="dTextCenter">Your Listings</h3>
                             <History />

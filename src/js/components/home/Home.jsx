@@ -34,7 +34,6 @@ class Home extends React.Component {
 
                 <div className="Eresponsive">
                     <div className="Egallery">
-                    <Link to="/AddListing" className="btn btn-primary">Add Products</Link>
                         < Link to='/details'>
                             <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
                         </Link>
@@ -108,6 +107,8 @@ class Home extends React.Component {
                 </div>
 
 
+<Link to="/AddListing" className="btn btn-primary">Add Products</Link>
+<Link to="/Listings" className="btn btn-primary">Listings Page</Link>
 
             </div>
 

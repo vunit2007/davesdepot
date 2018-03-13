@@ -33,11 +33,11 @@ class Catbar extends React.Component {
      
            
                 <ul  className ='EcatUl' id = 'EcatUl'>
-                 <li className='EcatList' id='EcatList'>  <button className='EcatButton' id='EcatButton'> Electronics</button></li> 
-                 <li className='EcatList' id='EcatList'>  <button className='EcatButton' id='EcatButton'> Clothing</button></li> 
-                 <li className='EcatList' id='EcatList'>  <button className='EcatButton' id='EcatButton'> Art</button></li> 
-                 <li className='EcatList' id='EcatList'>  <button className='EcatButton' id='EcatButton'> Sports</button></li> 
-                 <li className='EcatList' id='EcatList'>  <button className='EcatButton' id='EcatButton'> Tools</button></li> 
+                 <li className='EcatList' id='EcatList'> <Link to="/Listings" id='EcatButton'> Electronics</Link></li> 
+                 <li className='EcatList' id='EcatList'> <Link to="/Listings" id='EcatButton'> Clothing</Link></li> 
+                 <li className='EcatList' id='EcatList'> <Link to="/Listings" id='EcatButton'> Art</Link></li> 
+                 <li className='EcatList' id='EcatList'> <Link to="/Listings" id='EcatButton'> Sports</Link></li> 
+                 <li className='EcatList' id='EcatList'> <Link to="/Listings" id='EcatButton'> Tools</Link></li> 
                 </ul>
           
       
