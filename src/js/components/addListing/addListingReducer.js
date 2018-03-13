@@ -5,6 +5,11 @@ const defaultState = {
     listings: {},
     history: [],
     rSelected: false,
+    productname: '',
+    description: '',
+    price: '',
+    condition: '',
+    url: '',
 };
 
 export default function addListingReducer (state = defaultState, action) {
@@ -48,6 +53,57 @@ export default function addListingReducer (state = defaultState, action) {
                             rSelected: !rSelected
                         }
                     }
+
+       case 'UPDATE_PRODUCT_NAME': {
+
+      return {
+
+        ...state,
+
+        productname: payload.productname
+      };
+    }
+
+    case 'UPDATE_DESCRIPTION': {
+
+      return {
+
+        ...state,
+
+        description: payload.description
+      };
+    }
+
+    case 'UPDATE_PRICE': {
+        return {
+            ...state,
+            price: payload.price
+        };
+    }
+
+    case 'UPDATE_CONDITION': {
+        return {
+            ...state,
+            condition: payload.condition
+        };
+    }
+
+    case 'UPDATE_URL': {
+        return {
+            ...state,
+            url: payload.url
+        };
+    }
+
+    case 'UPDATE_POST_FULFILLED': {
+      const { productname, description, price, url } = action.payload;
+      return {
+        ...state,
+
+
+      };
+    }
+
 
         default: {
             return state;

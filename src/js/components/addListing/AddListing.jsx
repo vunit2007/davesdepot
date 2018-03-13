@@ -9,7 +9,12 @@ import {
     addListingBtn,
     addListingCache,
     toggleDropdown,
-    radioSale
+    radioSale,
+    updateProductName,
+    updateDescription,
+    updatePrice,
+    updateCondition,
+    updatePost
 } from "./addListingActions"
 
 class AddListing extends React.Component {
@@ -19,7 +24,13 @@ class AddListing extends React.Component {
         this.handleChangeAddListing = this.handleChangeAddListing.bind(this);
         this.handleAddListingBtn = this.handleAddListingBtn.bind(this);
         this.handleToggle = this.handleToggle.bind(this);
-        this.onRadioBtnClick = this.onRadioBtnClick.bind(this)
+        this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
+        this.handleProductNameInput = this.handleProductNameInput.bind(this);
+        this.handleDescriptionInput = this.handleDescriptionInput.bind(this);
+        this.handlePriceInput = this.handlePriceInput.bind(this);
+        this.handleUrlInput = this.handleUrlInput.bind(this);
+        this.handlePost = this.handlePost.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
     }
 
     handleChangeAddListing(e){
@@ -43,44 +54,94 @@ class AddListing extends React.Component {
         dispatch(radioSale())
     }
 
+    handleProductNameInput(event) {
+      // dispatch was provided by connect()
+      const { dispatch } = this.props;
+      const { value } = event.target;
+      dispatch(updateProductName(value));
+    }
+
+    handleDescriptionInput(event) {
+      const { dispatch } = this.props;
+      const { value } = event.target;
+      dispatch(updateDescription(value))
+    }
+
+    handlePriceInput(event) {
+      const {dispatch} = this.props;
+      const {value } = event.target;
+      dispatch(updatePrice(value))
+    }
+
+    handleUrlInput(event) {
+      const {dispatch} = this.props;
+      const {value} = event.target;
+      dispatch(updateUrl(value))
+    }
+
+
+    handleSelect(event) {
+      // this.setState({
+      //   dropdownOpen: !this.state.dropdownOpen,
+      //   condition: event.target.value
+      // });
+      const {dispatch} = this.props;
+      const {value} = event.target;
+      dispatch(updateCondition(value))
+    }
+
+
+
+
+    handlePost() {
+      const { dispatch, productname, description,  price, url } = this.props;
+      let obj = {
+//put in name: productname
+description: description
+      };
+      dispatch(updatePost(userId, obj));
+
+    }
+
+    // handleAddExpense() {
+    //   const { description, amount, dispatch } = this.props;
+    //   dispatch(addExpense(description, amount));
+    // }
+
+
     render() {
 
         return (
             <div>
+
                 <h1>Hello AddListing {this.props.input}</h1>
                 <input type="text" onChange={this.handleChangeAddListing}/>
                 <button type="button" onClick={this.handleAddListingBtn}>Change</button>
                 <Link to="/"><button type="button">Login</button></Link>
 
-                <center>
+<center>
       <div className="jumbotron jumbotron-fluid">
         <div className="container">
           <h1 className="display-4">Add New Listings</h1>
         </div>
       </div>
-        <br />
 
-<div className="VaddListingsInfo">
-      <div className="input-group input-group-lg">
-        <input type="text" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Name of Product" />
-      </div>
-      <br/>
-        <div className="form-group">
-          {/* <label for="exampleFormControlTextarea1">Description</label> */}
-          <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description of Product" ></textarea>
-        </div>
-      <br/>
+      <div className="VaddListingsInfo">
 
+      <div className="form-group">
+      <label htmlFor="formGroupExampleInput">Name of Product</label>
+      <input type="text" className="form-control" id="formGroupExampleInput" placeholder="..." onChange={ this.handleProductNameInput }/>
+    </div>
 
+    <div className="form-group">
+      <label htmlFor="formGroupExampleInput">Description</label>
+      <input type="text" className="form-control" id="formGroupExampleInput" placeholder="..." onChange={ this.handleDescriptionInput }/>
+    </div>
 
-      <div className="input-group mb-3">
-        <div className="input-group-prepend">
-          <span className="input-group-text">$</span>
-          <span className="input-group-text">0.00</span>
-        </div>
-        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-      </div>
-      <br/>
+    <div className="form-group">
+      <label htmlFor="formGroupExampleInput">Price</label>
+      <input type="text" size="4" className="form-control" id="formGroupExampleInput" placeholder="$0.00" onChange={ this.handlePriceInput}/>
+    </div>
 
 
 
@@ -89,38 +150,41 @@ class AddListing extends React.Component {
         Condition
       </DropdownToggle>
       <DropdownMenu>
-        <DropdownItem>Fair</DropdownItem>
-        <DropdownItem>Good</DropdownItem>
-        <DropdownItem>Excellent</DropdownItem>
+        <DropdownItem value="fair" onClick={this.handleSelect} defaultSelected={
+          (this.props.condition === 'fair' ? 'selected' : '') > Fair</DropdownItem>
+          <DropdownItem value="good" onClick={this.handleSelect} defaultChecked={
+          (this.props.condition === 'good' ? 'selected' : '') > Good</DropdownItem>
+          <DropdownItem value="excellent" onClick={this.handleSelect} defaultChecked={
+          (this.props.condition === 'excellent' ? 'selected' : '') > Excellent</DropdownItem>
       </DropdownMenu>
     </ButtonDropdown>
-<br />
 
 
 
 
-
-
-       < br />
       <div className="form-check form-check-inline">
         <input className="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
-        <label className="form-check-label" for="inlineCheckbox1" >Electronics</label>
+        <label className="form-check-label" htmlFor="inlineCheckbox1" >Electronics</label>
       </div>
+
       <div className="form-check form-check-inline">
         <input className="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
-        <label className="form-check-label" for="inlineCheckbox2">Clothing</label>
+        <label className="form-check-label" htmlFor="inlineCheckbox2">Clothing</label>
       </div>
+
       <div className="form-check form-check-inline">
         <input className="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" />
-        <label className="form-check-label" for="inlineCheckbox3">Art</label>
+        <label className="form-check-label" htmlFor="inlineCheckbox3">Art</label>
       </div>
+
       <div className="form-check form-check-inline">
         <input className="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4" />
-        <label className="form-check-label" for="inlineCheckbox4">Sports</label>
+        <label className="form-check-label" htmlFor="inlineCheckbox4">Sports</label>
       </div>
+
       <div className="form-check form-check-inline">
         <input className="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5" />
-        <label className="form-check-label" for="inlineCheckbox5">Tools</label>
+        <label className="form-check-label" htmlFor="inlineCheckbox5">Tools</label>
       </div>
 
       < br/> <br />
@@ -129,28 +193,22 @@ class AddListing extends React.Component {
       <Button color="secondary" onClick={() => this.onRadioBtnClick(2)} active={this.props.rSelected === 2}>Sale Price</Button>
 
 
-
-
-
       < br/><br />
 
-      <div className="input-group mb-3">
-        <div className="input-group-prepend">
-          <span className="input-group-text">Upload</span>
-        </div>
-        <div className="custom-file">
-          <input type="file" className="custom-file-input" id="inputGroupFile01" />
-          <label className="custom-file-label" for="inputGroupFile01">Choose file</label>
-        </div>
-      </div>
+      <div className="input-group input-group-lg">
+      <input type="text" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="URL Image" onChange={ this.handleUrlInput} />
+    </div>
       <br />
-
+      <button
+              type='button'
+              className='btn btn-danger col-12 mb-5'
+              onClick={ this.handlePost }
+            >Testing
+            </button>
       <Link to="/Seller" className="btn btn-primary">Post</Link>
 
 </div>
 </center>
-
-
 
 
             </div>

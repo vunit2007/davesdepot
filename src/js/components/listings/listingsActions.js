@@ -1,25 +1,20 @@
 import axios from "axios";
 
-export function listings(input) {
-    
+export function updateListing(listingsitem) {
+    console.log("food", )
+    const payload = axios.get(`http://localhost:3000/api/listings`)
     return {
-        type: "SIGNUP",
-        payload: {input}
+        type: 'UPDATE_LISTINGS',
+        payload
+    };
+}
+
+
+export const categoryUpdate = (categorything) => {
+
+    return {
+        type: "CATEGORY_UPDATE",
+        payload: categorything
     }
 }
 
-export const listingsBtn = (input) => {
-
-    return {
-        type: "SIGNUP_BTN",
-        payload: {input}
-    }
-}
-
-export const listingsCache = (obj) => {
-
-    return {
-        type: "SIGNUP_CACHE",
-        payload: obj
-    }
-}
