@@ -1,11 +1,16 @@
 const defaultState = {
-    email:"",
-    password:"",
     userType:"buyer",
-    user: {id: "5aa311e7d46de5ee2046a1b1"},
+    email: null,
+    password: null,
+    username: null,
+    name: null,
+    phoneNumber: null,
+    address: null,
     redirect: false,
-    error: false
-
+    error: false,
+    user: null,
+    loginSignUpBoolean: true,
+    completeFirstAxios: false
 
 };
 
@@ -24,16 +29,16 @@ export default function loginReducer (state = defaultState, action) {
         }
 
         case "LOGIN_FULFILLED": {
+
             return {
                 ...state,
-                user: payload,
+                user: {id: payload.userId},
                 error: false,
-                redirect: true
+                completeFirstAxios: true
             }
         }
 
         case "LOGIN_REJECTED":{
-            console.log("rejected payload", payload)
 
             var error = state.error;
 
@@ -43,7 +48,66 @@ export default function loginReducer (state = defaultState, action) {
             }
         }
 
+        case "SET_NULL": {
+            return{
+                ...state,
+                user: null,
+                redirect: false,
+                loginSignUpBoolean: true
+            }
+        }
 
+        case "LOGIN_SIGNUP": {
+            return {
+                ...state,
+                loginSignUpBoolean: payload
+            }
+        }
+
+        case 'SIGN_UP_FULFILLED': {
+
+            return {
+                ...state,
+                user: {id: payload.id},
+                error: false,
+                completeFirstAxios: true
+            }
+        }
+        case "SIGN_UP_REJECTED":{
+
+            var error = state.error;
+
+            return{
+                ...state,
+                error
+            }
+        }
+
+        case "SET_USER_TYPE_PENDING" : {
+            return {
+                ...state,
+                status: 'loading...'
+            }
+        }
+        
+        case "SET_USER_TYPE_FULFILLED": {
+
+            return {
+                ...state,
+                user: payload,
+                status: null,
+                redirect: true,
+                completeFirstAxios: false
+            }
+        }
+
+        case "SET_USER_TYPE_REJECTED" : {
+            return {
+                ...state,
+                status: 'Failed'
+            }
+        }
+        
         default: {
             return state;
         }
