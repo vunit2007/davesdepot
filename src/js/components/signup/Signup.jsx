@@ -47,13 +47,13 @@ class Signup extends React.Component {
 
                 <div className="container-fluid Ashortbg">
                     <div className="row mb-5 justify-content-center">
-                        <div className="col-4 mb-5">
+                        <div className="col-4 mb-5" id='AsignupCard'>
                             <div className="card text-center mt-5">
-                                <div className="card-header alert-primary">
+                                <div className="card-header alert-primary" id='AsignupHeader'>
                                     <strong>Create An Account</strong>
                                 </div>
-                                <form id='signup-form' onSubmit={this.handleClick} autoComplete="off">
-                                    <div className="card-body form-group">
+                                <form id='Asignup-form' onSubmit={this.handleClick} autoComplete="off">
+                                    <div className="card-body form-group" id='AsignupBody'>
                                     <select name="userType" id="userType" defaultValue="buyer" onChange={this.handleInputChange}>
                                             <option value="buyer">Buyer</option>
                                             <option value="seller">Seller</option>
@@ -62,26 +62,26 @@ class Signup extends React.Component {
                                         <br />
 
                                         <label htmlFor="username"><strong>Username:</strong></label><br />
-                                        <input type="username" name='username' id='username' placeholder='Enter your Username' className="form-control" onChange={this.handleInputChange} />
+                                        <input type="username" name='username' id='AusernameSignup' placeholder='Enter your Username' className="form-control" onChange={this.handleInputChange} />
                                         <br />
                                         {!!this.props.error && this.props.error === 'email' && <div>Bad Email</div>}
                                         <label htmlFor="email"><strong>Email:</strong></label><br />
-                                        <input type="email" name='email' id='email' placeholder='Enter your Email' className="form-control" onChange={this.handleInputChange} />
+                                        <input type="email" name='email' id='AemailSignup' placeholder='Enter your Email' className="form-control" onChange={this.handleInputChange} />
                                         <br />
                                         <label htmlFor="password"><strong>Password:</strong></label><br />
-                                        <input type="password" name='password' id='password' placeholder='Enter your Password' className="form-control" onChange={this.handleInputChange} />
+                                        <input type="password" name='password' id='ApasswordSignup' placeholder='Enter your Password' className="form-control" onChange={this.handleInputChange} />
                                         <br />
                                         <label htmlFor="name"><strong>Name:</strong></label><br />
-                                        <input type="text" name='name' id='name' placeholder='Enter your Name' className='form-control' onChange={this.handleInputChange} />
+                                        <input type="text" name='name' id='AnameSignup' placeholder='Enter your Name' className='form-control' onChange={this.handleInputChange} />
                                         <br />
                                         <label htmlFor="phoneNumber"><strong>Phone Number:</strong></label><br />
-                                        <input type="number" name='phoneNumber' id='phoneNumber' placeholder='Enter your Phone Number' value={phoneNumber} className='form-control' onChange={this.handleInputChange} />
+                                        <input type="number" name='phoneNumber' id='AphoneNumberSignup' placeholder='Enter your Phone Number' value={phoneNumber} className='form-control' onChange={this.handleInputChange} />
                                         <br />
                                         <label htmlFor="address"><strong>Address:</strong></label>
-                                        <input type="text" name='address' id='address' placeholder='Please enter your Address' className='form-control' onChange={this.handleInputChange} />
+                                        <input type="text" name='address' id='AaddressSignup' placeholder='Please enter your Address' className='form-control' onChange={this.handleInputChange} />
                                     </div>
-                                    <div className="card-footer text-muted">
-                                        <button className="btn btn-primary" onClick={this.handleClick} >Sign Up</button>
+                                    <div className="card-footer text-muted" id='AsignupFooter'>
+                                        <button className="btn btn-primary" id='AsignupBtn' onClick={this.handleClick} >Sign Up</button>
                                     </div>
                                 </form>
                             </div>
