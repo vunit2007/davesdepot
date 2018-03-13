@@ -2,7 +2,7 @@ const defaultState = {
     email:"",
     password:"",
     userType:"buyer",
-    user: null,
+    user: {id: "5aa311e7d46de5ee2046a1b1"},
     redirect: false,
     error: false
 
@@ -14,15 +14,15 @@ export default function loginReducer (state = defaultState, action) {
 
     switch (type) {
 
-        case "LOGIN_INPUT_CHANGE":{     
+        case "LOGIN_INPUT_CHANGE":{
           return{
-                ...state, 
+                ...state,
                 ...payload
-                
+
             }
-            
+
         }
-        
+
         case "LOGIN_FULFILLED": {
             return {
                 ...state,
@@ -43,7 +43,7 @@ export default function loginReducer (state = defaultState, action) {
             }
         }
 
-        
+
         default: {
             return state;
         }

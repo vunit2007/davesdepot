@@ -1,18 +1,17 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 import {
-    listings,
-    listingsBtn,
-    listingsCache
+    categoryUpdate,
+    updateListing,
 } from "./listingsActions"
 
 class Listings extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-      listings: []
-    };
+
+
 
         this.handleChangeListings = this.handleChangeListings.bind(this);
         this.handleListingsBtn = this.handleListingsBtn.bind(this);
@@ -29,20 +28,30 @@ class Listings extends React.Component {
         dispatch(listingsBtn());
     }
 
-    componentWillMount() {
-    axios
-      .get("/api/listings")
-      .then(response => response.data)
-      .then(data => this.setState({ listings: data }));
-      console.log(listings)
-  }
+    // handleListingsItem (e) {
+    //     const {dispatch} = this.props;
+    //     dispatch(updateListing())
+    // }
 
+    componentWillMount() {
+        const {dispatch} = this.props;
+        dispatch(updateListing())
+      }
 
    //functionwillmountthing axios.get("/api/listings")
     render() {
-        console.log("props: ", this.props.match.params.cat);
-        const cat = this.props.match.params.cat;
-
+        // console.log("props: ", this.props.match.params.cat);
+        // const cat = this.props.match.params.cat;
+        let catlist = [];
+        this.props.listings.length > 0 &&
+        this.props.listings.map(listing => {
+            console.log(listing)
+            if(listing.categoryId == this.props.category) {
+                catlist.push(listing)
+            };
+        })
+        console.log("Tacos", this.props.listings > 0)
+        console.log('DaTa', catlist)
 
         return (
             <div>
@@ -53,35 +62,24 @@ class Listings extends React.Component {
 <center>
  <div className="jumbotron jumbotron-fluid">
   <div className="container">
-    <h1 className="display-4">Category Title</h1>
+    <h1 className="display-4" id="VcatTitle">{this.props.category}</h1>
   </div>
 </div>
+        {catlist.length > 0 &&
+        catlist.map(catitem => {
+return(
 
-<div className="VfirstRow">
-<div className="Vitem1">
-<p>Rainbow Seeds Abstract Gold Canvas Art by Lisa Audit</p>
-<a href=""><img src="https://i5.walmartimages.com/asr/bba3e620-36c9-415c-b0a2-8f699168101c_1.d29d6993dd1a0925e1bafd4c274b3812.jpeg" height="200px"/></a>
-<p>$47.99</p>
-</div>
-<div className="Vitem2">
-<p>Rainbow Seeds Abstract Gold Canvas Art by Lisa Audit</p>
-<a href=""><img src="https://i5.walmartimages.com/asr/bba3e620-36c9-415c-b0a2-8f699168101c_1.d29d6993dd1a0925e1bafd4c274b3812.jpeg" height="200px"/></a>
-<p>$47.99</p>
-</div>
-</div>
+            <div key={catitem.id} className="Vitem1">
+                <div className="Vinfo">
+            <p>{catitem.name}</p>
+            <div className="Vimage"><a href=""><img src={catitem.images[0]} height="200px" width="200px"/></a></div>
+            <p>${catitem.price}</p>
+            </div>
+            </div>
+)
+        })
+        }
 
-<div className="VsecondRow">
-<div className="Vitem3">
-<p>Rainbow Seeds Abstract Gold Canvas Art by Lisa Audit</p>
-    <a href=""><img src="https://i5.walmartimages.com/asr/bba3e620-36c9-415c-b0a2-8f699168101c_1.d29d6993dd1a0925e1bafd4c274b3812.jpeg" height="200px"/></a>
-    <p>$47.99</p>
-</div>
-<div className="Vitem4">
-<p>Rainbow Seeds Abstract Gold Canvas Art by Lisa Audit</p>
-<a href=""><img src="https://i5.walmartimages.com/asr/bba3e620-36c9-415c-b0a2-8f699168101c_1.d29d6993dd1a0925e1bafd4c274b3812.jpeg" height="200px"/></a>
-<p>$47.99</p>
-</div>
-</div>
 
 </center>
 

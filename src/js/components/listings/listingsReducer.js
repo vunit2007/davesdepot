@@ -1,34 +1,28 @@
 const defaultState = {
-    input: "",
-    cache: {},
     listings: {},
-    history: []
+    category: "sports",
 };
 
 export default function listingsReducer (state = defaultState, action) {
     const { type, payload } = action;
 
     switch (type) {
-        
-        case "LISTINGS": {
-            let input = payload.input;
+
+        case "UPDATE_LISTINGS_FULFILLED": {
+
             return {
                 ...state,
-                input
+                listings: payload.data
             }
         }
 
-        case "LISTINGS_CACHE": {
-            
+
+
+        case "CATEGORY_UPDATE": {
+
             return {
-                
-            }
-        }
-        
-        case "LISTINGS_BTN": {
-            
-            return {
-                
+             ...state,
+             category: payload
             }
         }
 
@@ -38,3 +32,4 @@ export default function listingsReducer (state = defaultState, action) {
     }
     return state;
 };
+
