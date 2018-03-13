@@ -3,7 +3,8 @@ import Details from "./Details";
 
 function mapStoreToProps(store) {
     return {
-        input: store.details.input
+        listings: store.home.listings,
+        index: store.details.index
     }
 }
 

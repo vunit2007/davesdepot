@@ -1,87 +1,90 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 
 import {
-    categoryUpdate,
     updateListing,
-} from "./listingsActions"
+    listingRedirectTrue
+} from "./listingsActions";
+
+import {
+    setListingId
+} from "../details/detailsActions";
 
 class Listings extends React.Component {
     constructor(props) {
         super(props);
 
-
-
-        this.handleChangeListings = this.handleChangeListings.bind(this);
-        this.handleListingsBtn = this.handleListingsBtn.bind(this);
+        this.handleSetListingId = this.handleSetListingId.bind(this);
     }
-
-    handleChangeListings(e){
-        let input = e.target.value;
-        const {dispatch} = this.props;
-        dispatch(listings(input));
-    }
-
-    handleListingsBtn(e){
-        const {dispatch} = this.props;
-        dispatch(listingsBtn());
-    }
-
-    // handleListingsItem (e) {
-    //     const {dispatch} = this.props;
-    //     dispatch(updateListing())
-    // }
 
     componentWillMount() {
-        const {dispatch} = this.props;
+        const { dispatch } = this.props;
         dispatch(updateListing())
-      }
+    }
 
-   //functionwillmountthing axios.get("/api/listings")
+    handleSetListingId(e){
+        const {dispatch} = this.props;
+        const {index} = e.target.dataset;
+        console.log("listings: ", e.target.dataset)
+        dispatch(setListingId(index));
+        dispatch(listingRedirectTrue())
+    }
+    
     render() {
-        // console.log("props: ", this.props.match.params.cat);
-        // const cat = this.props.match.params.cat;
+        let {listings, category, index, redirect} = this.props;
         let catlist = [];
-        this.props.listings.length > 0 &&
-        this.props.listings.map(listing => {
-            console.log(listing)
-            if(listing.categoryId == this.props.category) {
-                catlist.push(listing)
-            };
-        })
-        console.log("Tacos", this.props.listings > 0)
-        console.log('DaTa', catlist)
+        // if listings exists run code
+        if (listings.length > 0 ){
+            // if a category has not been selected, set all items to show
+            if (category === undefined){
+                listings.map(listing => {
+                    listing.show = true;
+                    catlist.push(listing)
+                });
+            } else {
+                // else show only items in selected category
+                listings.map(listing => {
+                    if (listing.categoryId === category) {
+                        listing.show = true;
+                    } else {
+                        listing.show = false;
+                    }
+                    catlist.push(listing);
+                });
+            }
+        }
+
+        if(!!index && redirect){
+            return <Redirect push to={`/details`} />
+        }
 
         return (
             <div>
-                <h1>Hello Listings {this.props.input}</h1>
-                <input type="text" onChange={this.handleChangeListings}/>
-                <button type="button" onClick={this.handleListingsBtn}>Change</button>
-                <Link to="/"><button type="button">Login</button></Link>
-<center>
- <div className="jumbotron jumbotron-fluid">
-  <div className="container">
-    <h1 className="display-4" id="VcatTitle">{this.props.category}</h1>
-  </div>
-</div>
-        {catlist.length > 0 &&
-        catlist.map(catitem => {
-return(
+                
+                <center>
+                    <div className="jumbotron jumbotron-fluid">
+                        <div className="container">
+                            <h1 className="display-4" id="VcatTitle">{category === undefined ? "All Categories": (this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1))}</h1>
+                        </div>
+                    </div>
+                    {catlist.map((catitem, index) => {
+                        if(catitem.show){
+                            return (
 
-            <div key={catitem.id} className="Vitem1">
-                <div className="Vinfo">
-            <p>{catitem.name}</p>
-            <div className="Vimage"><a href=""><img src={catitem.images[0]} height="200px" width="200px"/></a></div>
-            <p>${catitem.price}</p>
-            </div>
-            </div>
-)
-        })
-        }
+                                <div to="/details" key={catitem.id} className="Vitem1">
+                                    <div className="Vinfo">
+                                        <p>{catitem.name}</p>
+                                        <div className="Vimage"><img onClick={this.handleSetListingId} data-index={index} src={catitem.images[0]} height="200px" width="200px" /></div>
+                                        <p>${catitem.price}</p>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    })}
 
 
-</center>
+                </center>
 
 
 

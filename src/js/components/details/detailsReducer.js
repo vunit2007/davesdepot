@@ -1,8 +1,6 @@
 const defaultState = {
-    input: "",
-    cache: {},
-    listings: {},
-    history: []
+    itemDetails: {},
+    index: null
 };
 
 export default function detailsReducer (state = defaultState, action) {
@@ -10,25 +8,19 @@ export default function detailsReducer (state = defaultState, action) {
 
     switch (type) {
         
-        case "DETAILS": {
-            let input = payload.input;
+        case "GET_DETAILS_FULFILLED": {
+
             return {
                 ...state,
-                input
+                itemDetails: payload[0]
             }
         }
 
-        case "DETAILS_CACHE": {
-            
+        case "SET_LISTING_ID": {
+            console.log("first details: ", payload)
             return {
-                
-            }
-        }
-        
-        case "DETAILS_BTN": {
-            
-            return {
-                
+                ...state,
+                index: payload,
             }
         }
 

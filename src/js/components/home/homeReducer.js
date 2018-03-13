@@ -1,8 +1,7 @@
 const defaultState = {
-    input: "",
-    cache: {},
-    listings: {},
-    history: []
+    listings: [],
+    listingId: null,
+    redirect: false
 };
 
 export default function homeReducer (state = defaultState, action) {
@@ -10,25 +9,27 @@ export default function homeReducer (state = defaultState, action) {
 
     switch (type) {
         
-        case "HOME": {
-            let input = payload.input;
+        case "HOME_GET_FEATURED_FULFILLED": {
+
             return {
                 ...state,
-                input
+                listings: payload
             }
         }
 
-        case "HOME_CACHE": {
-            
+        case "HOME_REDIRECT_TRUE": {
+
             return {
-                
+                ...state,
+                redirect: payload
             }
         }
-        
-        case "HOME_BTN": {
-            
+
+        case "HOME_REDIRECT_FALSE": {
+
             return {
-                
+                ...state,
+                redirect: payload
             }
         }
 

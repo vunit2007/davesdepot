@@ -1,0 +1,282 @@
+[
+  {
+    "name": "Apple MacBook Air",
+    "description": "The Macbook Air is thin, light, powerful, and ready for anything.  This product has a flash storage that is housed in a package that's the same size as a conventional hard drive. The chip iself occupies a very small portion of that housing. And just like that, there's room for other important things, like a bigger battery. Now you have a notebook that weighs practically nothing and runs for hours on a single charge. That's mobility mastered.",
+    "price": 999.99,
+    "condition": "fair",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/222ca03d-5418-4624-886d-ac1fb2479a41_1.456ad5c8a21579bed8213c9a598232d3.jpeg",
+      "https://i5.walmartimages.com/asr/09942a90-cbd4-4ba0-bd06-65f7d4789484_1.e3995d54465c00577bea0b1b8e49531a.jpeg",
+      "https://i5.walmartimages.com/asr/ef68adf7-daa2-47ea-b0a2-1f4db7ed4e51_1.578125ac3f72706e3ca7a0f744a206e3.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "electronics"
+  },
+  {
+    "name": "GoPro HERO Session Waterproof HD Action Camera",
+    "description": "The GoPro HERO Session is a strong choice for both first time GoPro users and enthusiasts looking for a no fuss secondary camera. It packs power into a convenient grab-and-go product for your adventures. Convenience and simplicity usually come at the expense of quality, but not in this case. This GoPro action camera offers stunning 1080p video at 60 frames per second, allowing you to capture every second of your adventures with stunning clarity. As well as video, the HERO Session offers 8 megapixel photo capture. All of these features are activated through a single button. Their ultra simple operation, high quality capture, and rugged design make the GoPro HERO Session the perfect small camera to take on any outdoor or sporting trip.",
+    "price": 199.99,
+    "condition": "Excellent",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/7e19488b-d07e-45fa-8b53-a894f6674331_1.cf17f24733dfc92245f2c50014d624a2.jpeg",
+      "https://i5.walmartimages.com/asr/599107e5-c959-49e7-9b96-f60f768da570_1.1e4e9f20ac463fcddce884c747513624.jpeg",
+      "https://i5.walmartimages.com/asr/1dee44eb-348c-42f5-938f-ca9f848395a3_1.4493df4a5588fdb37bcc9c78cc4fee2a.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "electronics"
+  },
+  {
+    "name": "Apple iPhone 6S Plus",
+    "description": "This product gives you real-time feedback in the form of subtle taps from the all-new Taptic Engine. The 12-megapixel iSight camera captures sharp, detailed photos. It takes brilliant 4K video, up to four times the resolution of 1080p HD video. iPhone 6s Plus also takes selfies worthy of a self-portrait with the new 5-megapixel FaceTime HD camera. And it introduces Live Photos, a new way to relive your favorite memories. It captures the moments just before and after your picture and sets it in motion with just the press of a finger.",
+    "price": 469.99,
+    "condition": "Good",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/d430f4a9-ea23-47d7-ace4-bb961b937133_1.3b2e4c12beb415779b99d635a54b20bf.jpeg",
+      "https://i5.walmartimages.com/asr/c9df384f-476c-45b9-9095-0f80a53f7579_1.9c1ddc5f3da7d4b000f5d214db3f8c46.jpeg",
+      "https://i5.walmartimages.com/asr/f1b9b661-c0d3-4031-9f8d-347021012fa8_1.262b72b8f3b703bce7a0755618957317.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "electronics"
+  },
+  {
+    "name": "6-in-1 Victrola Entertainment Center",
+    "description": "This 3-speed turntable is a true beauty for your home. You can use it when you have guest over or give it as a gift to your friends and family. It can stream music from smartphones, tablets, and more via Bluetooth. It is an FM radio and CD player in vintage, timeless style.  This product should be displayed, played, and cherished through generations.",
+    "price": 89.99,
+    "condition": "Good",
+    "sale": true,
+    "images": [
+      "https://i5.walmartimages.com/asr/4c93d075-4a8d-44c0-8e35-39700b844383_1.b1b1146a07931000c89e7508ceb6d80f.jpeg",
+      "https://i5.walmartimages.com/asr/38b388b0-c2df-4f07-83aa-ed3a673c3a69_1.4869bed3ca054f3f1ade9a2ffd8d643c.jpeg",
+      "https://i5.walmartimages.com/asr/d19292ea-7947-4db8-9b79-d30280c75bd3_1.49363249dee9b68ef4dbb1e31435a84f.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "electronics"
+  },
+  {
+    "name": "Hanes Fleece Pullover Hoodie",
+    "description": "Why fuss with a zipper? Just pull this medium weight 7.8-oz Hanes Big & Tall Men's EcoSmart Fleece Pullover Hood with Front Pocket over your head and get going. Soft, durable fleece with reinforced two-needle stitching at neck and armholes for increased durability. Machine wash this sweatshirt again and again without hesitation because it's pill-resistant. Ribbed waistband and cuffs and roomy front pocket. Made with up to 5% polyester created from recycled plastic bottles.",
+    "price": 11.99,
+    "condition": "Fair",
+    "sale": true,
+    "images": [
+      "https://i5.walmartimages.com/asr/5c836168-67b7-4720-ab07-e327f16e1d90_1.75f0f4cd0831a745c9cb747ad4037eed.jpeg",
+      "https://i5.walmartimages.com/asr/aa51c859-50d6-4a2c-9b3c-421247c7de12_1.bad2e354d2bbb5cbd0df6bd9f94e3288.jpeg",
+      "https://i5.walmartimages.com/asr/bf1baf4b-7e74-4563-a0cb-ee01ca1e751d_1.dde1ce0296b2791a8f51bd9f05a02306.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "clothing"
+  },
+  {
+    "name": "No Boundaries Halloween Leggings",
+    "description": "These leggings made of soft and stretchy fabric with a seamless construction for a wonderfully smooth feel on your skin, and they have a colorful pattern printed all over with various Halloween imagery including ghosts, pumpkins, cats and more. The covered elastic waistband provides a snug, flattering fit, while the inner is tag-free for added comfort. These ankle-length leggings are available in assorted Halloween styles. They're great for casual errand runs, parties or just lounging around the house.",
+    "price": 17.99,
+    "condition": "Good",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/fe40d8e6-9cf9-40e5-9257-db90cbf62012_1.45953927de2e2448dc84a32073ae743a.jpeg",
+      "https://i5.walmartimages.com/asr/25d87d5e-24a2-403f-bcf3-0eeedf7e9719_3.f062c9d391270ad586658f8246b71edb.jpeg",
+      "https://i5.walmartimages.com/asr/24332b74-268e-4249-b55c-3bf7a494e1bd_3.b959e1f355c0c173c46c6612884e4b2e.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "clothing"
+  },
+  {
+    "name": "New York Laundry Peasant Top",
+    "description": "This V-neck twisted top with crochet trim is comfortable yet stylish. You can wear it to a party, family gathering, girls night out, or on a date with your special someone. It has elastic sleeves for a boho look and dyed to match crochet trim around neckline.",
+    "price": 16.99,
+    "condition": "Good",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/6c039de8-f996-4dce-a97e-c54b02ddd4a5_1.57e95251df269c9807e408ab3e151dd2.jpeg",
+      "https://i5.walmartimages.com/asr/170f5671-e200-4746-a5b0-02ccaf17f51b_2.cb499c359172ed1cb95edc721476b740.jpeg",
+      "https://i5.walmartimages.com/asr/8b670b54-4488-4aeb-80be-ab345ed607b2_4.de4951d32281f905393dca56a3f07399.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "clothing"
+  },
+  {
+    "name": "Blue Gear Men's Casual Button Down Shirt",
+    "description": "This men's long sleeve printed chambray woven shirt is made in Europe. It is comfortable, trendy, masculine, and the stylish. You can wear this long sleeve button up shirt to an interview, on the job, on a date, or family gatherings. Blue Gear is a very popular brand known for it's quality and fair pricing.",
+    "price": 36.99,
+    "condition": "Excellent",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/7e4d6d41-4f0f-44f9-99f7-2a8a33913cc4_1.40d8087de75ba51ee445343706ec1ec0.jpeg",
+      "https://i5.walmartimages.com/asr/8850ce70-f5a1-4d13-8612-6a377ceab7f8_3.392cf9b26a367afad4a57b220c825fe0.jpeg",
+      "https://i5.walmartimages.com/asr/28f30850-d29a-4397-8fd5-6b2468621379_3.dfa02043a90c908f19495d44d48f1727.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "clothing"
+  },
+  {
+    "name": "It Is A Cloudy Day Canvas Art by Robert Farkas",
+    "description": "This ready to hang, gallery-wrapped art piece features a surreal image of clouds, mountains, and a spiral staircase making up the silhouette of a person's head. This is a contemporary style gallery-wrapped canvas painted by the talented and artistic Robert Farkas.",
+    "price": 56.99,
+    "condition": "Excellent",
+    "sale": true,
+    "images": [
+      "https://i5.walmartimages.com/asr/5d970475-7ae2-4465-9c7c-9003a5e11101_1.1b011e2cc239fac660d9b7b22ef8ca01.jpeg",
+      "https://i5.walmartimages.com/asr/cb74aae4-3469-4e7d-841b-6f471c63625c_1.44215c0a660311855e1931cdf413dfee.jpeg",
+      "https://i5.walmartimages.com/asr/d65ae70e-f2ce-4379-8d99-08f8842994ee_1.cd6f296206f7e117e406f1e612029c9e.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "art"
+  },
+  {
+    "name": "Mohawk Home Caravan Medallion Printed Nylon Rug",
+    "description": "Contemporary and chic, the mix of floral medallions in varied jewel tones makes this rug a conversation piece. Create a dramatic room by using this rug as inspiration. Printed on the same machines that manufacture one of the world's leading brands of printed carpet, this rug is extremely durable and vibrant. This technology allows the use of multiple colors to create a rug that is wonderfully designed and applicable to any room in your home. This rug is made from durable stain-resistant nylon.",
+    "price": 39.99,
+    "condition": "Good",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/e8959913-bbaf-44a1-bf32-6f5cff5f68e3_1.7ba64f0341cc4522bb45a1e26aab13c7.jpeg",
+      "https://i5.walmartimages.com/asr/16a53920-c2e0-4216-9cfe-ab62f224e5cf_1.61837a8a2ed792c4afc42e8329984a9f.jpeg",
+      "https://i5.walmartimages.com/asr/a0b2a705-ac91-4611-8e21-129fc133fb02_1.d66dc229b6582f46ad3a5a29e5e26bde.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "art"
+  },
+  {
+    "name": "Rainbow Seeds Abstract Gold Canvas Art by Lisa Audit",
+    "description": "This beautiful contemporary style gallery-wrapped canvas art was made by Lisa Audit. Printed using giclee, which is an advanced printmaking process. Reproductions are virtually indistinguishable from the originals. Giclee is accepted by many galleries, museums, and private collectors. Gallery wrapped so that the canvas wraps around the sides and hides the wooden frame. It allows for a frameless presentation of the finished painting.",
+    "price": 47.99,
+    "condition": "Good",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/bba3e620-36c9-415c-b0a2-8f699168101c_1.d29d6993dd1a0925e1bafd4c274b3812.jpeg",
+      "https://i5.walmartimages.com/asr/79cc5b20-91a0-4c31-90ad-8e590bda89cf_1.73e8a8a1065d800af91a6222b124c842.jpeg",
+      "https://i5.walmartimages.com/asr/b4f8222c-1fd4-4b76-8030-d93ab377719d_1.97ab13fc56f609ffbfbfc53db8bd69f0.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "art"
+  },
+  {
+    "name": "Pink & Blue Canvas Art by Pied Piper Creative",
+    "description": "Style your walls with Paint Swatch Line Texture Contemporary Modern Trendy Abstract Painting Pink and Blue Canvas Art by Pied Piper Creative! This ready-to-hang, high-quality, canvas gallery wrap from Eazl will add interest to your living space. Pigment-based inks ensure that your canvas will never fade and is scratch-resistant. Paint Swatch Line Texture Contemporary Modern Trendy Abstract Painting Pink and Blue Canvas Art by Pied Piper Creative is a fine art, gallery wrapped piece that features pink and blue to complement any decor.",
+    "price": 17.99,
+    "condition": "Fair",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/650aa844-baab-4402-913e-c6aa095820f7_1.c52953186154e54d4c5845dd80ae765b.jpeg",
+      "https://i5.walmartimages.com/asr/603e591f-b1ad-4c32-891b-1327ad48f549_1.e9188ad522e087d987220b403cb56234.jpeg",
+      "https://i5.walmartimages.com/asr/d51c5516-1c0f-44f7-9034-152276985a22_1.7035d7857a32b9c9def856a77a5abc0e.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "art"
+  },
+  {
+    "name": "Spalding NBA Super Tack Basketball",
+    "description": "Sports up with the Spalding NBA Super Tack Basketball. You can play this indoors or outdoors. It is durable and the pricing is definitely a steal. You cannot find a better deal elsewhere. Spend time with your friends and family playing basketball year round with this product.",
+    "price": 12.99,
+    "condition": "Fair",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/4336ada2-cd1d-461c-8f2e-793ce243d123_1.61088e3ca5b716e89924f3fb12aca826.jpeg",
+      "https://i5.walmartimages.com/asr/103e1cb0-74b6-47ca-860a-f6856856b0fd_1.c4955ea3980251ac21b8371c2ca7ea65.jpeg",
+      "https://i5.walmartimages.com/asr/8a45d02f-77b5-45d7-a049-8fb4843997a5_1.9d728f7ab61fb0afd145b50c3281bfb5.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "sports"
+  },
+  {
+    "name": "26 Inches Ladies Schwinn Sidewinder",
+    "description": "This trail-ready mountain bike really packs a punch, thanks to the light aluminum mountain-style frame and front suspension fork that soak up bumps and thumps on the trail. 21-speed Shimano Revo twist shifters ensure easy, smooth gear changes, while the Shimano rear derailleur can handle any trail you're willing to tackle. Front and rear linear pull brakes ensure crisp stopping and steady speed control on descents, and the durable alloy crank makes sure everything is running smoothly.",
+    "price": 119.99,
+    "condition": "Good",
+    "sale": true,
+    "images": [
+      "https://i5.walmartimages.com/asr/be006acc-aeb1-4487-97fb-4ed1a730bcc8_1.7a47ef7afb7c8ffbca6b009b35eb7260.jpeg",
+      "https://i5.walmartimages.com/asr/495934d5-d411-4928-8776-e63de9f8e55a_1.7f1583655be569d05d31603a9cba3332.jpeg",
+      "https://i5.walmartimages.com/asr/b9ca0fd2-9265-4fff-b19c-e1fb1d889ef6_2.bb6ed268b7b6be40dbd46050e811a998.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "sports"
+  },
+  {
+    "name": "Gold's Gym Cycle Trainer Recumbent Exercise Bike",
+    "description": "The new Gold's Gym Cycle Trainer 400 Ri Exercise Bike has all the favorite features of the Cycle Trainer 390, but now includes an integrated tablet holder and is iFit Ready. Take an easier path to fitness by bringing your entertainment to your exercise. The Gold's Gym Cycle Trainer 400 Ri Exercise Bike features an integrated tablet holder that seats your device safely above the console so that you can your favorite media while you work out. iFit technology allows you to connect your tablet to this bike to maximize your exercise with fitness programs, stats, and more.",
+    "price": 247.95,
+    "condition": "Excellent",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/ab540739-965a-45bd-bb9e-24878605b8f0_1.37d1cc84d04b00ddef7a3bc1ef2576f9.jpeg",
+      "https://i5.walmartimages.com/asr/79907550-f627-461e-ba8c-7fd901c3fb84_1.d0e3942f3cd33a2aa5f58adddb3cad2a.jpeg",
+      "https://i5.walmartimages.com/asr/dd2a45b9-e688-4a58-a6f3-59487fdf9abd_1.906dcc76c00cbbbb26abb68a513128e3.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "sports"
+  },
+  {
+    "name": "Louisville Slugger Youth Genuine 225 Ash Wood Bat",
+    "description": "The Louisville Slugger Youth Genuine 225 Ash Wood Bat is built from dependable ash wood and are lightweight and flexible. Its flexibility allows for a larger and more forgiving sweet spot",
+    "price": 16.99,
+    "condition": "Excellent",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/8c043b3f-a74f-4bcd-b215-737f172cd1d9_1.f34c9caa9df37ee4914ce693401cf8df.jpeg",
+      "https://i5.walmartimages.com/asr/6524a2f7-731f-480d-a68f-b04567dfc217_1.2b62bdf8a573ea4bdd862c03041a7c50.jpeg",
+      "https://i5.walmartimages.com/asr/1425a259-9e01-46ec-a99a-124cfe11588d_1.3214ed98f0ef91c8a10542e2be51a674.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "sports"
+  },
+  {
+    "name": "Hyper Tough 2.4Amp Random Orbit Sander",
+    "description": "This high-performance 2.4-amp motor and 12,500 orbits per minute help you sand and smooth easily. The hook and loop sandpaper fastening system makes for quick-and-easy sand paper changes. Our mechanical pad brake reduces free-spin to virtually eliminate gouging. Through-the pad dust extraction and the dust collection bag allow you to keep your workspace cleaner.",
+    "price": 18.73,
+    "condition": "Fair",
+    "sale": true,
+    "images": [
+      "https://i5.walmartimages.com/asr/dae32fde-2e0f-498d-82f5-67e87357f9cc_1.2756eb3160afa18df70400918951d62d.jpeg",
+      "https://i5.walmartimages.com/asr/8dbac963-a47e-4822-989a-47cca4d21fb1_1.961865ea7b56ded970f79e80ef57f2ac.jpeg",
+      "https://i5.walmartimages.com/asr/af81965e-56d9-4e00-80cb-dcb75b77d1c1_1.597b7be2ade3e38ed94a7c3e1f6f24ff.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "tools"
+  },
+  {
+    "name": "Porter-Cable PC1500HG 1500-Watt Heat Gun",
+    "description": "The Porter-Cable PC1500HG Heat Gun has a dual fan speed selector that delivers high and low fan speed settings. The variable temperature control dial allows for easy adjustment of temperatures. It has an integrated hands free support stand that allows the gun to sit upright for hands free use. The integrated hanging hook is ideal for storage. The lightweight, only 2-pound, gun offers less fatigue when holding. It has a 1500-Watt motor that delivers high heat and multiple fan settings.",
+    "price": 29.99,
+    "condition": "Excellent",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/2eb30375-b096-4f45-8699-8c1864e387fd_1.6ef2ea47524e0c841b3788fd3cabdc44.jpeg",
+      "https://i5.walmartimages.com/asr/9e91ece7-9ccc-4f29-8296-f822c2cc096d_1.d6c69c49dbcd9bb282d9e7c51b2ade68.jpeg",
+      "https://i5.walmartimages.com/asr/5b5ca121-0fcc-47f8-89a5-8fac409935d8_1.e96bb168c8ffba0d82f49410cdf22707.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "tools"
+  },
+  {
+    "name": "Black & Decker Portable Project Center",
+    "description": "Portable Project Center, Length (In.) 28-3/4, Width (In.) 30-1/2, Max. Height (In.) 30-1/2, Min. Height (In.) 24, Closed Width (In.) 29 In., Closed Depth (In.) 13-3/16 In., 29 In.W X 13-3/16 In.D Work Surface, Hold Capacity (Lb.) 550, Steel, 4 Swivel Pegs And Rubber Feet, Clamping System 2 In. Diagonal, 19 In. Max. Parallel Peg Clamping, 30 In. Max. Diagonal Peg Clamping, For Use As Workbench, Tool Stand, Sawhorse And Woodworking Vise, Includes 4 Swivel Pegs And Rubber Feet.",
+    "price": 116.85,
+    "condition": "Good",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/98414ec5-dcf3-4e09-8455-48cb29613eb9_1.f5826c18875645bac794c69177bcf206.jpeg",
+      "https://i5.walmartimages.com/asr/fa123ac5-5a09-4e97-981f-a775b936cb00_1.46d0e0042d52a04a7211144188377e12.jpeg",
+      "https://i5.walmartimages.com/asr/d7c6d879-a58c-4fa0-a304-5e4b28424c02_1.c2a320e0597b0def0b65221293d7ef05.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "tools"
+  },
+  {
+    "name": "Dremel 7300-N/8 4.8V Cordless Two-Speed Rotary Tool Kit",
+    "description": "Designed for drilling, sanding, shaping, detailing and other light-duty jobs. This compact, go-anywhere, use-anytime tool comes in extremely handy in and around the house.",
+    "price": 24.99,
+    "condition": "Good",
+    "sale": false,
+    "images": [
+      "https://i5.walmartimages.com/asr/0d6fb4a9-0586-464e-88e3-02a006b1ef5f_1.b8e307ad4c46d4bfaa5a91795c9a28e1.jpeg",
+      "https://i5.walmartimages.com/asr/c972c32a-5645-48ec-ac14-5773fe428883_2.408476d8e5cdf70332fdeb27a65f34f8.jpeg",
+      "https://i5.walmartimages.com/asr/5ff9138f-3d41-459a-8d63-1a1ff0740d4a_3.06ff95f5acda2d76706141178ce8cc70.jpeg"
+    ],
+    "sellerId": "5aa311e7d46de5ee2046a1b1",
+    "categoryId": "tools"
+  }
+]

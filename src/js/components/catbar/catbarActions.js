@@ -1,25 +1,9 @@
 import axios from "axios";
 
-export function catbar(input) {
+export function catbar(category) {
     
     return {
         type: "CATBAR",
-        payload: {input}
-    }
-}
-
-export const catbarBtn = (input) => {
-
-    return {
-        type: "CATBAR_BTN",
-        payload: {input}
-    }
-}
-
-export const catbarCache = (obj) => {
-
-    return {
-        type: "CATBAR_CACHE",
-        payload: obj
+        payload: {category}
     }
 }

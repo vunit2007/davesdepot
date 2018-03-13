@@ -26,12 +26,12 @@ class Seller extends React.Component {
             <div className="dTopMargin">
                 {this.props.user != null && this.props.user.userType === "seller" &&
                     <div>
-                    <h3 className="dTextCenter">Your Listings</h3>
-                            <History />
-                      </div>
+                        <h3 className="dTextCenter">Your Listings</h3>
+                        <History purchaseOrListing={true}/>
+                    </div>  
                 }
                 <h3 className="dTextCenter">Your Purchase History</h3>
-                <History />
+                <History purchaseOrListing={false}/>
             </div>
         )
     }

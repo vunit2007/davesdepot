@@ -1,6 +1,7 @@
 const defaultState = {
-    listings: {},
-    category: "sports",
+    listings: [],
+    category: null,
+    redirect: false
 };
 
 export default function listingsReducer (state = defaultState, action) {
@@ -12,17 +13,31 @@ export default function listingsReducer (state = defaultState, action) {
 
             return {
                 ...state,
-                listings: payload.data
+                listings: payload
             }
         }
-
-
 
         case "CATEGORY_UPDATE": {
 
             return {
              ...state,
              category: payload
+            }
+        }
+
+        case "LISTING_REDIRECT_TRUE": {
+
+            return {
+                ...state,
+                redirect: payload
+            }
+        }
+
+        case "LISTING_REDIRECT_FALSE": {
+
+            return {
+                ...state,
+                redirect: payload
             }
         }
 

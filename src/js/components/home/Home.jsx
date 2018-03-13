@@ -1,115 +1,63 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { Button, Jumbotron } from 'reactstrap';
 
 import {
-    home,
-    homeBtn,
-    homeCache
-} from "./homeActions"
+    homeGetFeatured,
+    homeRedirectTrue,
+    homeRedirectFalse,
+} from "./homeActions";
+
+import {
+    setListingId
+} from "../details/detailsActions";
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleHomeBtn = this.handleHomeBtn.bind(this);
+        this.handleClickSetListingId = this.handleClickSetListingId.bind(this);
     }
 
-    handleChange(e) {
-        let input = e.target.value;
+    componentWillMount(){
         const { dispatch } = this.props;
-        dispatch(home(input));
+        dispatch(homeGetFeatured());
     }
 
-    handleHomeBtn(e) {
-        const { dispatch } = this.props;
-        dispatch(homeBtn());
+    handleClickSetListingId(e){
+        let {index} = e.target.dataset;
+        const {dispatch} = this.props;
+        dispatch(setListingId(index));
+        dispatch(homeRedirectTrue());
     }
 
     render() {
+        let { index, redirect } = this.props;
+        if(!!index && redirect){
+            return <Redirect push to={`/details`} />
+        }
 
         return (
             <div>
-
-                <div className="Eresponsive">
-                    <div className="Egallery">
-                        < Link to='/details'>
-                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
-                        </Link>
-                        <div className="EimgDesc">You on EASY STREET!!!!</div>
-                    </div>
-                </div>
-
-
-                <div className="Eresponsive">
-                    <div className="Egallery">
-                        < Link to='/details'>
-                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
-                        </Link>
-                        <div className="EimgDesc">You on EASY STREET!!!!</div>
-                    </div>
-                </div>
-
-                <div className="Eresponsive">
-                    <div className="Egallery">
-                        < Link to='/details'>
-                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
-                        </Link>
-                        <div className="EimgDesc">You on EASY STREET!!!!</div>
-                    </div>
-                </div>
-
-                <div className="Eresponsive">
-                    <div className="Egallery">
-                        < Link to='/details'>
-                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
-                        </Link>
-                        <div className="EimgDesc">You on EASY STREET!!!!</div>
-                    </div>
-                </div>
-
-                <div className="Eresponsive">
-                    <div className="Egallery">
-                        < Link to='/details'>
-                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
-                        </Link>
-                        <div className="EimgDesc">You on EASY STREET!!!!</div>
-                    </div>
-                </div>
-
-
-                <div className="Eresponsive">
-                    <div className="Egallery">
-                        < Link to='/details'>
-                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
-                        </Link>
-                        <div className="EimgDesc">You on EASY STREET!!!!</div>
-                    </div>
-                </div>
-
-                <div className="Eresponsive">
-                    <div className="Egallery">
-                        < Link to='/details'>
-                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
-                        </Link>
-                        <div className="EimgDesc">You on EASY STREET!!!!</div>
-                    </div>
-                </div>
-
-                <div className="Eresponsive">
-                    <div className="Egallery">
-                        < Link to='/details'>
-                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
-                        </Link>
-                        <div className="EimgDesc">You on EASY STREET!!!!</div>
-                    </div>
-                </div>
-
-
-<Link to="/AddListing" className="btn btn-primary">Add Products</Link>
-<Link to="/Listings" className="btn btn-primary">Listings Page</Link>
-
+                {this.props.listings.length > 0 && this.props.listings.map((listing, index) => {
+                    if(listing.sale){
+                        return (
+                            <div key={listing.id} className="Eresponsive">
+                                <div className="Egallery">
+                                    <img className='EhomeImg dClickable'
+                                        src={`${listing.images[0]}`}
+                                        onClick={this.handleClickSetListingId}
+                                        data-index={index}
+                                        width="300" height="200"
+                                    />
+                                    <div className="EimgDesc">{listing.name}</div>
+                                </div>
+                            </div>
+                        )
+                    }
+                    })
+                }
+                <Link to="/AddListing" className="btn btn-primary">Add Products</Link>
             </div>
 
         )

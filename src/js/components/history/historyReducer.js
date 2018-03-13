@@ -18,9 +18,13 @@ export default function historyReducer (state = defaultState, action) {
         }
         
         case "GET_ORDER_HISTORY_FULFILLED": {
+            let orders = null;
+            if (payload.length > 0){
+                orders = payload;
+            }
             return {
                 ...state,
-                orders: payload,
+                orders,
                 statusPurchase: null
             }
         }
@@ -33,6 +37,7 @@ export default function historyReducer (state = defaultState, action) {
         }
 
         case "GET_SELLER_ITEMS_FULFILLED": {
+
             return {
                 ...state,
                 sellerItems: payload,

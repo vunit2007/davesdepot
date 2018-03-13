@@ -4,7 +4,8 @@ import Home from "./Home";
 function mapStoreToProps(store) {
     return {
         listings: store.home.listings,
-        input: store.home.input
+        index: store.details.index,
+        redirect: store.home.redirect
     };
 }
 
