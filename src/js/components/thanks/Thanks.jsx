@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import {
     thanks,
@@ -10,29 +10,32 @@ import {
 class Thanks extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.handleChangeThanks = this.handleChangeThanks.bind(this);
         this.handleThanksBtn = this.handleThanksBtn.bind(this);
     }
 
-    handleChangeThanks(e){
+    handleChangeThanks(e) {
         let input = this.state.input;
-        const {dispatch} = this.props;
+        const { dispatch } = this.props;
         dispatch(thanksBtn(input));
     }
 
-    handleThanksBtn(e){
-        const {dispatch} = this.props;
+    handleThanksBtn(e) {
+        const { dispatch } = this.props;
         dispatch(thanksBtn());
     }
-    
+
     render() {
 
         return (
             <div>
-                <h1>Hello Thanks (home) {this.props.input}</h1>
-                <input type="text" onChange={this.handleChangeThanks}/>
-                <button type="button" onClick={this.handleThanksBtn}>Change</button>
+                <div className='container'>
+                    <div className='card' id='thanksCard'>
+                        <h1 id='thanksText'> Thank you for your order!</h1> <br/> <h3>A confirmation has been sent to your email.</h3>
+                    </div>
+                </div>
+                <Link to="/" className='btn btn-warning' id='EdetailsBackBtn'>Back Home</Link>
             </div>
         )
     }

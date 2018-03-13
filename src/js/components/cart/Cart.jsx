@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import {
     cart,
@@ -15,14 +15,14 @@ class Cart extends React.Component {
         this.handleCartBtn = this.handleCartBtn.bind(this);
     }
 
-    handleChangeCart(e){
+    handleChangeCart(e) {
         let input = e.target.value;
-        const {dispatch} = this.props;
+        const { dispatch } = this.props;
         dispatch(cart(input));
     }
 
-    handleCartBtn(e){
-        const {dispatch} = this.props;
+    handleCartBtn(e) {
+        const { dispatch } = this.props;
         dispatch(cartBtn());
     }
 
@@ -31,45 +31,39 @@ class Cart extends React.Component {
         return (
             <div>
                 <h1>Hello Cart {this.props.input}</h1>
-                <input type="text" onChange={this.handleChangeCart}/>
+                <input type="text" onChange={this.handleChangeCart} />
                 <button type="button" onClick={this.handleCartBtn}>Change</button>
                 <Link to="/"><button type="button">Login</button></Link>
                 <center>
-<div className="jumbotron jumbotron-fluid">
-<div className="container">
-  <h1 className="display-4">Cart</h1>
-</div>
-</div>
+                    <div className="jumbotron jumbotron-fluid alert-primary" id='VcartJumbo'>
+                        <div className="container">
+                            <h1 className="display-3">Cart</h1>
+                        </div>
+                    </div>
 
-<div className="Vcart">
-      <div className="card">
-  <h5 className="card-header">Your Items</h5>
-  <div className="card-body" id="VcartBox">
-  <div className="VitemImage"><img src="https://i5.walmartimages.com/asr/b4f8222c-1fd4-4b76-8030-d93ab377719d_1.97ab13fc56f609ffbfbfc53db8bd69f0.jpeg" height="300px"/></div>
-   <div className="VitemInfo">
-    <p className="VproductName">Product Name</p><br/>
-    <p className="VproducePrice">Produce Price</p><br/>
-      <button className="Vhey" type="button" name="button">
-        <img src="https://www.clker.com/cliparts/5/p/c/l/l/U/up-arrow-black-md.png" alt="" height="20px" />
-      </button>
-      <input type="text" name="name" value="1" size="1" />
-      <button className="Vhey" type="button" name="button">
-        <img src="http://www.clker.com/cliparts/v/R/s/T/J/t/down-grey-arrow-md.png" alt="" height="20px"/>
-      </button>
-      <br /><br /><br/><br/>
+                    <div className="Vcart">
+                        <div className="card" id='VcartCard'>
+                            <h5 className="card-header alert-primary" id='VcartHeader'>Your Items</h5>
+                            <div className="card-body" id="VcartBox">
+                                <div className="VitemImage"><img src="https://i5.walmartimages.com/asr/b4f8222c-1fd4-4b76-8030-d93ab377719d_1.97ab13fc56f609ffbfbfc53db8bd69f0.jpeg" height="300px" /></div>
+                                <div className="VitemInfo">
+                                    <p className="VproductName">Product Name: </p><br />
+                                    <p className="VproductPrice">Product Price: </p><br />
 
-    <a href="#" className="btn btn-primary">Remove Item</a>
-</div>
-  </div>
+                                    Qty: <input type="number" id='VcartInput' />
 
-</div>
-<br /> <br />
-<Link to="/Checkout" className="btn btn-primary">Check Out</Link>
-<br/><br/><br />
-</div>
+                                    <br /><br /><br /><br />
+
+                                    <a href="#" className="btn btn-warning" id='VcartRemoveBtn'>Remove Item</a>
+
+                                    <Link to="/Checkout" className="btn btn-primary" id='VcartAddBtn'>Check Out</Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
-</center>
+                </center>
 
 
             </div>
