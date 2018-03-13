@@ -1,8 +1,7 @@
 const defaultState = {
-    input: "",
-    cache: {},
-    listings: {},
-    history: []
+   
+    listings: {}
+    
 };
 
 export default function cartReducer (state = defaultState, action) {
@@ -10,27 +9,17 @@ export default function cartReducer (state = defaultState, action) {
 
     switch (type) {
         
-        case "CART": {
-            let input = payload.input;
+        case "REMOVE_BUTTON": {
+            const {index} = actions.payload;
+            console.log(index)
+            const lineItems = [...state.lineItems];
+            lineItems.splice(index,1);
             return {
                 ...state,
-                input
+                lineItems
             }
         }
 
-        case "CART_CACHE": {
-            
-            return {
-                
-            }
-        }
-        
-        case "CART_BTN": {
-            
-            return {
-                
-            }
-        }
 
         default: {
             return state;
