@@ -4,7 +4,9 @@ import Listings from "./Listings";
 function mapStoreToProps(store) {
     return {
         listings: store.listings.listings,
-        category: store.listings.category
+        category: store.listings.category,
+        index: store.details.index,
+        redirect: store.listings.redirect
     }
 }
 

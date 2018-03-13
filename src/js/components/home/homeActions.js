@@ -1,25 +1,25 @@
 import axios from "axios";
 
-export function home(input) {
+export function homeGetFeatured(input) {
 
     return {
-        type: "HOME",
-        payload: {input}
+        type: "HOME_GET_FEATURED",
+        payload: axios.get("/api/listings").then(res => res.data)
     }
 }
 
-export const homeBtn = (input) => {
+export function homeRedirectTrue(input) {
 
     return {
-        type: "HOME_BTN",
-        payload: {input}
+        type: "HOME_REDIRECT_TRUE",
+        payload: true
     }
 }
 
-export const homeCache = (obj) => {
-    
+export function homeRedirectFalse(input) {
+
     return {
-        type: "HOME_CACHE",
-        payload: obj
+        type: "HOME_REDIRECT_FALSE",
+        payload: false
     }
 }

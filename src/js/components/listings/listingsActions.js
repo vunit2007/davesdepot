@@ -1,20 +1,33 @@
 import axios from "axios";
 
 export function updateListing(listingsitem) {
-    console.log("food", )
-    const payload = axios.get(`http://localhost:3000/api/listings`)
+    const payload = axios.get(`/api/listings`).then(res => res.data);
     return {
         type: 'UPDATE_LISTINGS',
         payload
     };
 }
 
-
-export const categoryUpdate = (categorything) => {
+export const categoryUpdate = (category) => {
 
     return {
         type: "CATEGORY_UPDATE",
-        payload: categorything
+        payload: category
     }
 }
 
+export function listingRedirectTrue(input) {
+
+    return {
+        type: "LISTING_REDIRECT_TRUE",
+        payload: true
+    }
+}
+
+export function listingRedirectFalse(input) {
+
+    return {
+        type: "LISTING_REDIRECT_FALSE",
+        payload: false
+    }
+}

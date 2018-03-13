@@ -1,25 +1,17 @@
 import axios from "axios";
 
-export function details(input) {
+export function getDetails(id) {
     
     return {
-        type: "DETAILS",
-        payload: {input}
+        type: "GET_DETAILS",
+        payload: axios.get(`api/listings/${id}`).then(res => res.data)
     }
 }
 
-export const detailsBtn = (input) => {
-
+export function setListingId(index) {
+    
     return {
-        type: "DETAILS_BTN",
-        payload: {input}
-    }
-}
-
-export const detailsCache = (obj) => {
-
-    return {
-        type: "DETAILS_CACHE",
-        payload: obj
+        type: "SET_LISTING_ID",
+        payload: index
     }
 }

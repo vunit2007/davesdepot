@@ -1,33 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 import {
-    details,
-    detailsBtn,
-    detailsCache
-} from "./detailsActions"
+    getDetails,
+} from "./detailsActions";
+
+import {
+    homeRedirectFalse
+} from "../home/homeActions";
+
+import {
+    listingsRedirectFalse
+} from "../listings/listingsActions";
 
 class Details extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleChangeDetails = this.handleChangeDetails.bind(this);
-        this.handleDetailsBtn = this.handleDetailsBtn.bind(this);
+        this.handleHomeRedirectFalse = this.handleHomeRedirectFalse.bind(this);
     }
 
-    handleChangeDetails(e) {
-        let input = e.target.value;
-        const { dispatch } = this.props;
-        dispatch(details(input));
-    }
-
-    handleDetailsBtn(e) {
-        const { dispatch } = this.props;
-        dispatch(detailsBtn());
+    handleHomeRedirectFalse(){
+        const {dispatch} = this.props;
+        dispatch(homeRedirectFalse());
+        dispatch(listingsRedirectFalse());
     }
 
     render() {
-
+        let { listings, index } = this.props;
+        console.log("index: ", index);
+        const listing = listings[index];
         return (
             <div>
 
@@ -90,6 +93,53 @@ class Details extends React.Component {
                                 <Link to="Cart" className='btn btn-primary' id='EdetailsBtn'>Add to cart </Link>
                             </div>
 
+                {/* <div className='container' id='EdetailsContainer'>
+
+                    <div className='row' id='EdetailsRow'>
+
+                        <div className='col-md-4' id='EdetailsCol4'>
+
+                                {listing.images.map(image => {
+                                    return (
+                                        <div key={image} className='card' id='col4Card'>
+                                            <img className='EdetailsImg' src={image} />
+                                        </div>
+                                    )
+                                })}
+
+                            <div className="card-header alert-primary" id='EdetailsHeader'>
+                                <h2 >{listing.name}</h2>
+                            </div>
+                        </div>
+
+                        <div className='col-md-8' id='EdetailsCol8'>
+
+                            <div className='card' id='EdetailsSpan'>
+                                <span >Price: ${listing.price}</span>
+                            </div>
+
+                            <div className='card' id='EdetailsSpan'>
+                                <span>Qty: <input className='EdetailsInput' type='number'></input>  </span>
+                            </div>
+
+                            <div className='condition' id='EdetailsSpan'>
+                                <span>Condition: {listing.condition}</span>
+                            </div>
+                            {listing.sale &&
+                            <div className='sale' id='EdetailsSpan'>
+                                <span>On SALE NOW!</span>
+                            </div>
+                            }
+                            <div className='card' id='col8Card'>
+                                <p>Description: {listing.description} </p>
+                            </div>
+
+                            {/* <div className='card' id='col8Card'>
+                                <p>Details: {listing.details}</p>
+                            </div> 
+
+                            <Link to="/" className='btn btn-warning' onClick={this.handleHomeRedirectFalse} id='EdetailsBackBtn'>Back </Link>
+                            <Link to="Cart" className='btn btn-primary' id='EdetailsBtn'>Add to cart </Link> */}
                         </div>
                     </div>
     </div>

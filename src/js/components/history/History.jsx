@@ -10,19 +10,21 @@ export default class History extends React.Component{
     //When component mounts, go get order history
     componentWillMount() {
         const { dispatch, user } = this.props;
-        if(this.props.userType === "seller"){
+        if(this.props.user !== null && this.props.user.userType === "seller"){
             dispatch(getSellerItems(user));
-        } else{
+        } 
         dispatch(getOrderHistory(user));
-        }
+        
     }
 
     render(){
         //get orders from props
-        const { orders, status, sellerItems } = this.props;
-        let listItems = orders;
-        if(orders === null){
+        const { orders, status, sellerItems, purchaseOrListing } = this.props;
+        let listItems;
+        if(purchaseOrListing === true){
             listItems = sellerItems;
+        } else {
+            listItems = orders;
         }
         
         return (
@@ -30,20 +32,25 @@ export default class History extends React.Component{
             { status === ('loading...' || "Failed") ? <div>{status}</div>
             : !!listItems && listItems.length > 0 ? 
                 
-                    <Table striped dark bordered>
+                    <Table striped bordered id="dAliceBlue" className="dTextCenter">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Item</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Condition</th>
                             </tr>
                         </thead>
                         <tbody>
 
                             {listItems.map((item,index) => {
+                                // console.log("tableItem: ", item)
                                 return (
                                     <tr key={index}>
                                         <th>{index + 1}</th>
-                                        <td>{item.id}</td>
+                                        <td>{item.name}</td>
+                                        <td>{item.price}</td>
+                                        <td>{item.condition}</td>
                                     </tr>
                                 )
                             })}

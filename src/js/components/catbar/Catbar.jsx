@@ -3,27 +3,24 @@ import {Link} from "react-router-dom";
 
 import {
     catbar,
-    catbarBtn,
-    catbarCache
-} from "./catbarActions"
+} from "./catbarActions";
+
+import {
+    categoryUpdate,
+} from "../listings/listingsActions";
 
 class Catbar extends React.Component {
     constructor(props) {
         super(props);
         
-        this.handleChangeCatbar = this.handleChangeCatbar.bind(this);
-        this.handleCatbarBtn = this.handleCatbarBtn.bind(this);
+        this.handleCategoryUpdate = this.handleCategoryUpdate.bind(this);
     }
 
-    handleChangeCatbar(e){
-        let input = e.target.value;
-        const {dispatch} = this.props;
-        dispatch(catbar(input));
-    }
+    handleCategoryUpdate(e){
+        const { dispatch } = this.props;
+        const { category } = e.target.dataset;
+        dispatch(categoryUpdate(category));
 
-    handleCatbarBtn(e){
-        const {dispatch} = this.props;
-        dispatch(catbarBtn());
     }
     
     render() {
@@ -31,15 +28,14 @@ class Catbar extends React.Component {
         return (
             <nav className = 'EcatBar' id='EcatBar'>
      
-           
                 <ul  className ='EcatUl' id = 'EcatUl'>
-                 <li className='EcatList' id='EcatList'> <Link to="/Listings" id='EcatButton'> Electronics</Link></li> 
-                 <li className='EcatList' id='EcatList'> <Link to="/Listings" id='EcatButton'> Clothing</Link></li> 
-                 <li className='EcatList' id='EcatList'> <Link to="/Listings" id='EcatButton'> Art</Link></li> 
-                 <li className='EcatList' id='EcatList'> <Link to="/Listings" id='EcatButton'> Sports</Link></li> 
-                 <li className='EcatList' id='EcatList'> <Link to="/Listings" id='EcatButton'> Tools</Link></li> 
+                    <li className='EcatList' id='EcatList'>  <Link to="/listings" className='EcatButton' id='EcatButton' onClick={this.handleCategoryUpdate} data-category={undefined}  > Show All   </Link></li> 
+                    <li className='EcatList' id='EcatList'>  <Link to="/listings" className='EcatButton' id='EcatButton' onClick={this.handleCategoryUpdate} data-category="electronics"> Electronics</Link></li> 
+                    <li className='EcatList' id='EcatList'>  <Link to="/listings" className='EcatButton' id='EcatButton' onClick={this.handleCategoryUpdate} data-category="clothing"   > Clothing   </Link></li> 
+                    <li className='EcatList' id='EcatList'>  <Link to="/listings" className='EcatButton' id='EcatButton' onClick={this.handleCategoryUpdate} data-category="art"        > Art        </Link></li> 
+                    <li className='EcatList' id='EcatList'>  <Link to="/listings" className='EcatButton' id='EcatButton' onClick={this.handleCategoryUpdate} data-category="sports"     > Sports     </Link></li> 
+                    <li className='EcatList' id='EcatList'>  <Link to="/listings" className='EcatButton' id='EcatButton' onClick={this.handleCategoryUpdate} data-category="tools"      > Tools      </Link></li> 
                 </ul>
-          
       
         </nav>
         )

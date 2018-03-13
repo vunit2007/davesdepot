@@ -3,7 +3,7 @@ import Dashboard from "./Dashboard";
 
 function mapStoreToProps(store) {
     return {
-        user: store.login.user,
+        user: store.login.user
     }
 }
 

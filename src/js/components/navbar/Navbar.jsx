@@ -11,6 +11,10 @@ import {
     setNull
 } from "../login/loginActions";
 
+import {
+    homeRedirectFalse
+} from "../home/homeActions";
+
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
@@ -18,6 +22,7 @@ class Navbar extends React.Component {
         this.handleChangeNavbar = this.handleChangeNavbar.bind(this);
         this.handleNavbarBtn = this.handleNavbarBtn.bind(this);
         this.handleSetNull = this.handleSetNull.bind(this);
+        this.handleHomeRedirectFalse = this.handleHomeRedirectFalse.bind(this);
     }
 
     handleChangeNavbar(e) {
@@ -36,6 +41,11 @@ class Navbar extends React.Component {
         dispatch(setNull());
     }
 
+    handleHomeRedirectFalse(){
+        const {dispatch} = this.props;
+        dispatch(homeRedirectFalse())
+    }
+
     render() {
 
         return (
@@ -45,8 +55,8 @@ class Navbar extends React.Component {
 
                 <div>
                     <ul className='EnavUl' id='EnavUl'>
-                        <li className='Enavli' id='EnavLi'> <Link to="/" id='EnavButton'>Home  </Link> </li>
-                        <li className='Enavli' id='EnavLi'> <Link to="/dashboard" id='EnavButton'>Dashboard  </Link></li>
+                        <li className='Enavli' id='EnavLi'> <Link to="/" onClick={this.handleHomeRedirectFalse} id='EnavButton'>Home  </Link> </li>
+                        <li className='Enavli' id='EnavLi'> <Link to="/dashboard" id='EnavButton'>Dashboard  </Link> </li>
                         <li className='Enavli' id='EnavLi'> <Link to="/cart" id='EnavButton'>Cart  </Link> </li>
                         <li className='Enavli' id='EnavLi'>
                             {this.props.user !== null ?
