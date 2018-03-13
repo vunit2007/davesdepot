@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
-import buyerReducer from "./components/buyer/buyerReducer";
 import homeReducer from "./components/home/homeReducer";
-import sellerReducer from './components/seller/sellerReducer';
+import dashboardReducer from './components/dashboard/dashboardReducer';
 import catbarReducer from './components/catbar/catbarReducer';
 import navbarReducer from './components/navbar/navbarReducer';
 import loginReducer from './components/login/loginReducer';
-import signupReducer from "./components/signup/signupReducer";
 import listingsReducer from "./components/listings/listingsReducer";
 import detailsReducer from "./components/details/detailsReducer";
 import cartReducer from "./components/cart/cartReducer";
@@ -15,14 +13,13 @@ import thanksReducer from "./components/thanks/thanksReducer";
 import historyReducer from './components/history/historyReducer';
 
 const rootReducer = combineReducers({
-    buyer: buyerReducer,
-    seller: sellerReducer,
+
+    dashboard: dashboardReducer,
     history: historyReducer,
     catbar: catbarReducer,
     navbar: navbarReducer,
     home: homeReducer,
     login: loginReducer,
-    signup: signupReducer,
     listings: listingsReducer,
     details: detailsReducer,
     cart: cartReducer,

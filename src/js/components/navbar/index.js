@@ -3,7 +3,8 @@ import Navbar from "./Navbar";
 
 function mapStoreToProps(store) {
     return {
-        input: store.navbar.input
+        input: store.navbar.input,
+        user: store.login.user
     }
 }
 

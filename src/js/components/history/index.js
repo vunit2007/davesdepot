@@ -4,10 +4,11 @@ import History from "./History";
 function mapStoreToProps(store) {
     return {
         orders: store.history.orders,
-        status: store.history.status,
-        userSignUp: store.signup.user,
-        userLogin: store.login.user,
-        email: store.login.email
+        statusPurchase: store.history.statusPurchase,
+        statusListings: store.history.statusListings,
+        user: store.login.user,
+        userType: store.login.userType,
+        sellerItems: store.history.sellerItems
     };
 }
 

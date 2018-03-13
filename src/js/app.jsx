@@ -3,10 +3,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Catbar from "./components/catbar";
 import Navbar from "./components/navbar";
 import Home from "./components/home";
-import Buyer from "./components/buyer";
-import Seller from "./components/seller";
+import Dashboard from "./components/dashboard";
 import Login from "./components/login";
-import Signup from "./components/signup";
 import Listings from "./components/listings";
 import Details from "./components/details";
 import Cart from "./components/cart";
@@ -27,10 +25,8 @@ export default class App extends React.Component {
             <Route exact path="/" component={Catbar} />
             <Route path="/listings" component={Catbar} />
             <Route exact path="/" component={Home} />
-            <Route path="/seller" component={Seller} />
-            <Route path="/buyer" component={Buyer} />
+            <Route path="/dashboard" component={Dashboard} />
             <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
             <Route path="/listings" component={Listings} />
             <Route path="/details" component={Details} />
             <Route path="/cart" component={Cart} />

@@ -5,7 +5,11 @@ import {
     navbar,
     navbarBtn,
     navbarCache
-} from "./navbarActions"
+} from "./navbarActions";
+
+import {
+    setNull
+} from "../login/loginActions";
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -13,6 +17,7 @@ class Navbar extends React.Component {
 
         this.handleChangeNavbar = this.handleChangeNavbar.bind(this);
         this.handleNavbarBtn = this.handleNavbarBtn.bind(this);
+        this.handleSetNull = this.handleSetNull.bind(this);
     }
 
     handleChangeNavbar(e) {
@@ -26,6 +31,11 @@ class Navbar extends React.Component {
         dispatch(navbarBtn());
     }
 
+    handleSetNull(e){
+        const { dispatch } = this.props;
+        dispatch(setNull());
+    }
+
     render() {
 
         return (
@@ -36,10 +46,23 @@ class Navbar extends React.Component {
                 <div>
                     <ul className='EnavUl' id='EnavUl'>
                         <li className='Enavli' id='EnavLi'> <Link to="/" id='EnavButton'>Home  </Link> </li>
-                        <li className='Enavli' id='EnavLi'> <Link to="/Dashboard" id='EnavButton'>Dashboard  </Link> </li>
-                        <li className='Enavli' id='EnavLi'> <Link to="Cart" id='EnavButton'>Cart  </Link> </li>
-                        <li className='Enavli' id='EnavLi'> <Link to='/Signup' id='EnavButton'>Sign Up  </Link> </li>
-                        <li className='Enavli' id='EnavLi'> <Link to='Login' id='EnavButton'>Login  </Link> </li>
+                        <li className='Enavli' id='EnavLi'> 
+                            <Link to="/dashboard" id='EnavButton'>Dashboard  </Link>
+                            {/* !this.props.user === null ? 
+                                <Link to="/dashboard" id='EnavButton'>Dashboard  </Link>
+                                :
+                                <Link to="/login" id='EnavButton'>Dashboard  </Link>
+                             */}
+                        </li>
+                        <li className='Enavli' id='EnavLi'> <Link to="/cart" id='EnavButton'>Cart  </Link> </li>
+                        <li className='Enavli' id='EnavLi'> <Link to='/signup' id='EnavButton'>Sign Up  </Link> </li>
+                        <li className='Enavli' id='EnavLi'>
+                            {this.props.user !== null ? 
+                                <Link to='/login' id='EnavButton' onClick={this.handleSetNull}>Logout</Link>
+                                :    
+                                <Link to='/login' id='EnavButton' >Login</Link>
+                            }
+                        </li>
                     </ul>
                 </div>
             </nav>
