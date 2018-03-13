@@ -4,111 +4,153 @@
 .VaddListingsInfo {
     margin-left: 300px;
     margin-right: 300px;
-  }
+}
 
-  #VregPrice {
-      margin-right: 10px;
-  }
+#VregPrice {
+    margin-right: 10px;
+}
 
 //Listings
 
-.VfirstRow {
+.VfirstRow, .VsecondRow {
     display: inline-block;
     margin-bottom: 60px;
 }
 
-.VsecondRow {
-    display: inline-block;
-    margin-bottom: 60px;
-}
-.Vitem1 {
+.Vitem1, .Vitem2, .Vitem3, .Vitem4 {
     display: inline-block;
     margin-right: 40px;
 }
 
-.Vitem2 {
-    display: inline-block;
-    margin-left: 40px;
-}
-
-.Vitem3 {
-    display: inline-block;
-    margin-right: 40px;
-}
-
-.Vitem4 {
-    display: inline-block;
-    margin-left: 40px;
-}
 
 //Cart
 
 .Vcart {
-  margin-left: 150px;
-  margin-right: 150px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+#VcartCard {
+    max-width: 800px;
 }
 
 #VcartBox {
-  display: inline-block;
+    display: inline-block;
+    background: aliceblue;
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+
+}
+
+#VcartHeader {
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
 }
 
 .VitemImage {
-  float: left;
-  margin-left: 30px;
-  margin-right: 20px;
+    float: left;
+    margin-left: 30px;
+    margin-right: 20px;
+    border-style: solid;
+    border-color: white;
+}
 
+#VcartInput {
+    width: 40px;
 }
 
 .VitemInfo {
-  display: inline-block;
-  margin: auto 0;
+    display: inline-block;
+    margin: auto 0;
 
+}
+
+#VcartRemoveBtn {
+    box-shadow: 1px 2px #8c8c8c;
+    margin-right: 10px;
+    color: white;
+}
+
+#VcartAddBtn {
+    box-shadow: 1px 2px #8c8c8c;
+    color: white;
+}
+
+#VcartJumbo {
+    margin-top: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px black;
 }
 
 //CheckOut
 .VcheckOut {
-  margin-left: 150px;
-  margin-right: 150px;
+    margin-left: 150px;
+    margin-right: 150px;
+    max-width: 1000px;
+ 
 }
 
-  .Vexpiration {
+#VcheckoutInput {
+    border: inset;
+}
+
+#VcheckoutBtn {
+    box-shadow: 1px 2px #8c8c8c;  
+}
+
+#VcheckOutBox, #VcheckoutBody {
+    background: aliceblue;
+    box-shadow: 0 0 5px black;
+}
+
+#VcheckoutHeader {
+    box-shadow: 0 0 5px black;
+}
+
+.Vexpiration {
     border: 1px solid #bbbbbb;
-  }
-  .Vexpiration input {
+}
+
+.Vexpiration input {
     border: 1px ;
-  }
+}
 
-  .VexpirationDiv {
+.VexpirationDiv {
     display: inline-block;
     margin-right: 40px;
     color: #9E9898;
+}
 
-  }
-
-  .VpostalCodeDiv {
+.VpostalCodeDiv {
     display: inline-block;
     margin-right: 40px;
     color: #9E9898;
-  }
+}
 
-  .VsecurityCodeDiv {
+.VsecurityCodeDiv {
     display: inline-block;
     color: #9E9898;
-  }
+}
 
-  .VstateDiv {
+.VstateDiv {
     display: inline-block;
     margin-right: 40px;
     color: #9E9898;
-  }
+}
 
-  #VsubTotal {
+#VsubTotal {
     font-size: 50px;
-  }
-  
+}
 
+#VcheckoutJumbo {
+    margin-top: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px black;
+}
+
+  //Nav Bar
 #EnavBar {
-    background: gray;
+    background: #86b7e0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -135,83 +177,89 @@
     margin: 0;
     list-style: none;
     float: right;
-  }
+}
 
-  #EnavLi {
+#EnavLi {
     display: inline-block;
     padding: 10px;
     color: white;
     transition: .8s;
-  }
+}
 
-  #EnavLi:hover {
-    color:white;
-    background-color: rgb(70, 70, 70);
-    border-radius: 20px;
-    transition: .8s;
-  }
 
-  #EnavButton {
-    background: rgb(19, 19, 19);
+#EnavButton {
+    background: rgb(41, 41, 41);
     color: white;
     font-size: 15px;
     padding: 20px;
     border-radius: 20px;
     box-shadow:  3px 3px rgba(0, 0, 0, 0.3), 0 0 3px;
+    transition: all .5s ease-in-out;
 }
+
+#EnavButton:hover {
+    color:white;
+    background-color: rgb(0, 0, 0);
+    border-radius: 35px;
+    transition: all .5s ease-in-out;
+}
+
 
 #EnavButton:focus {
   outline: none;
 }
 
-  #EcatBar {
-    background: lightslategray;
+//Categories Bar
+#EcatBar {
+    background: aliceblue;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80px;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: 0 0 10px 10px;
-    margin-top: 150px;
-    box-shadow:0 3px 14px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    border-radius: 25px;
+    margin-top: 130px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     width: 100%;
     border-color: white;
-    border-style: outset;
-  }
+    border-style: solid;
+}
   
-  #EcatList {
-      margin-left: 50px;
-      margin-right: 50px;
-      align-items: center;
-      padding: 10px;
-      color: white;
-      transition: .8s;
-  }
+#EcatList {
+    margin-left: 50px;
+    margin-right: 50px;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    transition: .8s;
+}
 
-  #EcatList:hover {
+#EcatList:hover {
     color:white;
     background-color: rgb(70, 70, 70);
     border-radius: 20px;
     transition: .8s;
     padding: 5px;
-  }
+}
 
-  #EcatButton {
-    background: rgb(88, 88, 88);
+#EcatButton {
+    background: #01015f;
     color: white;
     font-size: 20px;
     padding: 5px;
     border-radius: 10px;
-    box-shadow:  3px 3px rgba(0, 0, 0, 0.3), 0 0 3px;
+    box-shadow:  2px 3px rgba(0, 0, 0, 0.3), 0 0 3px;
     height: 40px;
     width: 120px;
     margin-top: 10px;
     margin-bottom: 10px;
+    opacity: .8;
 }
 
 #EcatButton:focus {
     outline: none;
+    opacity: 1.0;
 }
 
 #EcatUl {
@@ -221,12 +269,13 @@
     align-items: center;
     height: 80px;
     width: auto;
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
+//Home Page
 #EhomeImg {
-   height: auto;
+    height: auto;
     width: 100%;
 }
 
@@ -264,6 +313,14 @@ div.EimgDesc {
     float: left;
     width: 24.99999%;
     box-shadow:  0  0 10px;
+    margin-top: 30px;
+    opacity: .85 ;
+    transition: all .5s ease-in-out;
+}
+
+.Eresponsive:hover {
+    opacity: 1.0;
+    transition: all .5s ease-in-out;
 }
 
 
@@ -273,38 +330,121 @@ div.EimgDesc {
     clear: both;
 }
 
+//Login
 .Ashortbg{
-  color:blue;
-
+    color: navy;
+  
 }
 
 #Amb-1{
-  margin-top: 102px;
-  padding: 20px;
+    margin-top: 102px;
+    margin-bottom: 0px;
+    padding: 20px;
+    box-shadow: 0 0 10px black;
+}
+
+
+#AloginHeader {
+    box-shadow: 0 0 5px black;
+    z-index: 1
+}
+
+#Alogin-form {
+    background: aliceblue;
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+}
+
+#AloginFooter {
+    box-shadow: 0px black;
+}
+
+#AloginBtn {
+    box-shadow: 1px 2px #8c8c8c;
+}
+
+#AloginEmail, #AloginPassword {
+    border: inset;
+}
+
+//Sign up
+#Asignup-form {
+    background: aliceblue;
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+}
+  
+#AsignupHeader {
+    box-shadow: 0 0 5px black;
+    z-index: 1
+}
+
+#AsignupCard {
+    margin-top:0px;
+}
+
+#AsignupBtn {
+    box-shadow: 1px 2px #8c8c8c;
+}
+
+#AusernameSignup, #AemailSignup, 
+#ApasswordSignup, #AnameSignup, 
+#AphoneNumberSignup,
+#AaddressSignup {
+    border: inset;
 }
 
 .dtable {
-  background-color: aliceblue;
+    background-color: aliceblue;
 }
 
+//Details Page
 #EdetailsContainer {
     margin-top: 150px;
-    box-shadow: 0 0 5px;
+    border-radius: 10px;
+     display: flex;
+   justify-content: center;
+    align-items: center;
     background: aliceblue;
-    border-style: inset;
-    border-color: white;
-}
-
-#EdetailsRow {
+    padding-bottom: 20px;
+    box-shadow: 0 0 5px;
+    }
+  
+  
+  #EdetailsRow {
     margin-top: 20px;
+    }
+    
+  #EdetailsCol8 {
+    background: #99aed270;
+    border-radius: 10px;
+    padding: 5px 20px;
+    max-width: 500px;
+    box-shadow: 0 0 5px;
+  }
+
+#EdetailsSpan {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 2px;
+    background: aliceblue;
+    width: 120px;
+    border-radius: 5px;
+}
+  
+#EdetailsCol4 {
+    border-radius: 10px;
+    padding: 15px 20px;
 }
 
-#EdetailsCol8 {
-    background: #a7a7a7;
-}
-
-hr {
-    color: black;
+#EdetailsHeader {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 #col8Card {
@@ -313,14 +453,14 @@ hr {
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    box-shadow: 0 0 15px;
+    box-shadow: 0 0 2px;
+    background: aliceblue;
 }
 
-.EdetailsBtn {
-    height: 40px;
-    width: 100px;
-    background: rgb(117, 240, 182);
-    box-shadow: 0 0 5px;
+#EdetailsBtn {
+    background: #3b87f8;
+    color: white;
+    box-shadow: 1px 2px #8c8c8c;
     position: absolute;
     right:    0;
     bottom:   0;
@@ -329,7 +469,22 @@ hr {
     border-radius: 10px;
 }
 
-.EdetailsBtn:focus {
+#EdetailsBtn:focus {
+    outline: none;
+}
+
+#EdetailsBackBtn {
+    color: white;
+    box-shadow: 1px 2px #8c8c8c;
+    position: absolute;
+    border-radius: 10px;
+    left: 0;
+    bottom: 0;
+    margin-left: 4px;
+    margin-bottom: 4px;
+}
+
+#EdetailsBackBtn:focus {
     outline: none;
 }
 
@@ -341,4 +496,20 @@ hr {
     border-style: solid;
     border-color: white;
     box-shadow: 0 0 5px;
+}
+
+  //Thankyou Page
+  #thanksText {
+    color: black;
   }
+  #thanksCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: aliceblue;
+    text-align: center;
+    margin-top: 300px;
+    box-shadow: 0 0 8px;
+    border-radius: 20px;
+  }
+  

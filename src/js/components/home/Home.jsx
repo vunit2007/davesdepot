@@ -69,9 +69,42 @@ class Home extends React.Component {
                     </div>
                 </div>
 
+                <div className="Eresponsive">
+                    <div className="Egallery">
+                        < Link to='/details'>
+                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
+                        </Link>
+                        <div className="EimgDesc">You on EASY STREET!!!!</div>
+                    </div>
+                </div>
 
 
+                <div className="Eresponsive">
+                    <div className="Egallery">
+                        < Link to='/details'>
+                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
+                        </Link>
+                        <div className="EimgDesc">You on EASY STREET!!!!</div>
+                    </div>
+                </div>
 
+                <div className="Eresponsive">
+                    <div className="Egallery">
+                        < Link to='/details'>
+                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
+                        </Link>
+                        <div className="EimgDesc">You on EASY STREET!!!!</div>
+                    </div>
+                </div>
+
+                <div className="Eresponsive">
+                    <div className="Egallery">
+                        < Link to='/details'>
+                            <img className='EhomeImg' src="http://ronedmondson.com/wp-content/uploads/2012/01/easy-street.jpg" width="300" height="200" />
+                        </Link>
+                        <div className="EimgDesc">You on EASY STREET!!!!</div>
+                    </div>
+                </div>
 
 
 

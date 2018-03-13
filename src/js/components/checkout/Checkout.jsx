@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import {
     checkout,
@@ -15,14 +15,14 @@ class Checkout extends React.Component {
         this.handleCheckoutBtn = this.handleCheckoutBtn.bind(this);
     }
 
-    handleChangeCheckout(e){
+    handleChangeCheckout(e) {
         let input = e.target.value;
-        const {dispatch} = this.props;
+        const { dispatch } = this.props;
         dispatch(checkout(input));
     }
 
-    handleCheckoutBtn(e){
-        const {dispatch} = this.props;
+    handleCheckoutBtn(e) {
+        const { dispatch } = this.props;
         dispatch(checkoutBtn());
     }
 
@@ -32,93 +32,93 @@ class Checkout extends React.Component {
             <div>
                 <center>
 
-                <h1>Hello {this.props.input}</h1>
-                <input type="text" onChange={this.handleChangeCheckout}/>
-                <button type="button" onClick={this.handleCheckoutBtn}>Change</button>
-                <Link to="/"><button type="button">Login</button></Link>
-                <div className="jumbotron jumbotron-fluid">
-                <div className="container">
-                <h1 className="display-4">Checkout</h1>
-                </div>
+                    <h1>Hello {this.props.input}</h1>
+                    <input type="text" onChange={this.handleChangeCheckout} />
+                    <button type="button" onClick={this.handleCheckoutBtn}>Change</button>
+                    <Link to="/"><button type="button">Login</button></Link>
+                    <div className="jumbotron jumbotron-fluid alert-primary" id='VcheckoutJumbo'>
+                        <div className="container">
+                            <h1 className="display-3 alert-primary">Checkout</h1>
+                        </div>
                     </div>
-                <div className="VcheckOut">
-      <div className="card">
-  <h5 className="card-header">Card Information</h5>
-  <div className="card-body" id="VcheckOutBox">
-  <form>
-  <div className="row">
-    <div className="col">
-      <input type="text" className="form-control" placeholder="Cardholder Name"/>
-    </div>
-    <div className="col">
-      <input type="text" className="form-control" placeholder="Card Number"/>
-    </div>
-  </div><br/>
-  <div className="row">
-    <div className="col">
-      <input type="text" className="form-control" placeholder="Billing Address"/>
-    </div>
-    <div className="col">
-      <input type="text" className="form-control" placeholder="City"/>
-    </div>
-  </div>
-</form><br/>
+                    <div className="VcheckOut">
+                        <div className="card">
+                            <h5 className="card-header alert-primary" id='VcheckoutHeader'>Card Information</h5>
+                            <div className="card-body" id="VcheckOutBox">
+                                <form>
+                                    <div className="row">
+                                        <div className="col">
+                                            <input id='VcheckoutInput' type="text" className="form-control" placeholder="Cardholder Name" />
+                                        </div>
+                                        <div className="col">
+                                            <input id='VcheckoutInput' type="text" className="form-control" placeholder="Card Number" />
+                                        </div>
+                                    </div><br />
+                                    <div className="row">
+                                        <div className="col">
+                                            <input id='VcheckoutInput' type="text" className="form-control" placeholder="Billing Address" />
+                                        </div>
+                                        <div className="col">
+                                            <input id='VcheckoutInput' type="text" className="form-control" placeholder="City" />
+                                        </div>
+                                    </div>
+                                </form><br />
 
-<div className="VpostalCodeDiv">
-<p>Postal Code</p>
-<span className="VpostalCode">
-    <input type="text" name="zipcode" maxLength="5" size="7" />
+                                <div className="VpostalCodeDiv">
+                                    <p>Postal Code</p>
+                                    <span className="VpostalCode">
+                                        <input id='VcheckoutInput' type="text" name="zipcode" maxLength="5" size="7" />
 
-</span>
-</div>
+                                    </span>
+                                </div>
 
-<div className="VstateDiv">
-<p>State</p>
-<span className="VstateS">
-    <input type="text" name="zipcode" maxLength="2" size="2" />
+                                <div className="VstateDiv">
+                                    <p>State</p>
+                                    <span className="VstateS">
+                                        <input id='VcheckoutInput' type="text" name="zipcode" maxLength="2" size="2" />
 
-</span>
-</div>
+                                    </span>
+                                </div>
 
-<div className="VexpirationDiv">
-<p>Exp Date</p>
-<span className="VexpirationS">
-    <input type="text" name="month" placeholder="MM" maxLength="2" size="2" />
-    <span>/</span>
-    <input type="text" name="year" placeholder="YY" maxLength="2" size="2" />
-</span>
-</div>
+                                <div className="VexpirationDiv">
+                                    <p>Exp Date</p>
+                                    <span className="VexpirationS">
+                                        <input id='VcheckoutInput' type="text" name="month" placeholder="MM" maxLength="2" size="3" />
+                                        <span> / </span>
+                                        <input id='VcheckoutInput' type="text" name="year" placeholder="YYYY" maxLength="4" size="5" />
+                                    </span>
+                                </div>
 
-<div className="VsecurityCodeDiv">
-<p>Security Code</p>
-<span className="VsecurityCode">
-    <input type="text" name="month"  maxLength="4" size="5" />
-</span>
-</div>
-
-
-  </div>
-</div>
-
-<br/><br/>
+                                <div className="VsecurityCodeDiv">
+                                    <p>Security Code</p>
+                                    <span className="VsecurityCode">
+                                        <input id='VcheckoutInput' type="text" name="month" maxLength="4" size="5" />
+                                    </span>
+                                </div>
 
 
-<div className="card">
-  <h5 className="card-header">Order Summary</h5>
-  <div className="card-body">
-    <h5 className="card-title">Subtotal</h5>
-    <p className="card-text" id="VsubTotal">$250</p>
-  </div>
-</div>
+                            </div>
+                        </div>
+
+                        <br /><br />
 
 
-</div>
+                        <div className="card">
+                            <h5 className="card-header alert-primary" id='VcheckoutHeader'>Order Summary</h5>
+                            <div className="card-body" id='VcheckoutBody'>
+                                <h5 className="card-title">Subtotal</h5>
+                                <p className="card-text" id="VsubTotal">$250</p>
+                            </div>
+                        </div>
 
-<br/><br/>
-<Link to="/Thanks" className="btn btn-primary">Place Order</Link><br/><br/><br/>
+
+                    </div>
+
+                    <br /><br />
+                    <Link to="/Thanks" className="btn btn-primary" id='VcheckoutBtn'>Place Order</Link><br /><br /><br />
 
 
-</center>
+                </center>
 
 
             </div>
