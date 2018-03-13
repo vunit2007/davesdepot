@@ -46,20 +46,16 @@ class Navbar extends React.Component {
                 <div>
                     <ul className='EnavUl' id='EnavUl'>
                         <li className='Enavli' id='EnavLi'> <Link to="/" id='EnavButton'>Home  </Link> </li>
-                        <li className='Enavli' id='EnavLi'> 
+                        <li className='Enavli' id='EnavLi'>
                             <Link to="/dashboard" id='EnavButton'>Dashboard  </Link>
-                            {/* !this.props.user === null ? 
-                                <Link to="/dashboard" id='EnavButton'>Dashboard  </Link>
-                                :
-                                <Link to="/login" id='EnavButton'>Dashboard  </Link>
-                             */}
+
                         </li>
                         <li className='Enavli' id='EnavLi'> <Link to="/cart" id='EnavButton'>Cart  </Link> </li>
-                        <li className='Enavli' id='EnavLi'> <Link to='/signup' id='EnavButton'>Sign Up  </Link> </li>
+
                         <li className='Enavli' id='EnavLi'>
-                            {this.props.user !== null ? 
+                            {this.props.user !== null ?
                                 <Link to='/login' id='EnavButton' onClick={this.handleSetNull}>Logout</Link>
-                                :    
+                                :
                                 <Link to='/login' id='EnavButton' >Login</Link>
                             }
                         </li>

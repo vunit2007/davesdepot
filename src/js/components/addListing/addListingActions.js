@@ -30,6 +30,18 @@ export const toggleDropdown = () => {
     }
 }
 
+export const toggleDropdownTwo = () => {
+    return {
+        type: 'TOGGLE_DROPDOWN_TWO'
+    }
+}
+
+export const toggleDropdownThree = () => {
+    return {
+        type: 'TOGGLE_DROPDOWN_THREE'
+    }
+}
+
 export const radioSale = () => {
     return {
         type: 'RADIO_SALE'
@@ -64,6 +76,13 @@ export function updateCondition(condition) {
     };
 }
 
+export function updateSpecials(specials) {
+    return {
+        type: 'UPDATE_SPECIALS',
+        payload: { specials }
+    };
+}
+
 export function updateUrl(url) {
     return {
         type: 'UPDATE_URL',
@@ -71,12 +90,33 @@ export function updateUrl(url) {
     }
 }
 
-export function updatePost(userId, obj) {
+export function updateCategories(categories) {
+    return {
+        type: 'UPDATE_CATEGORIES',
+        payload: {categories}
+    }
+}
+
+export function updatePost(user, obj) {
   return {
     type: 'UPDATE_POST',
-    payload: axios.post(`/api/users/${userId}/listing`, obj)
+    payload: axios.post(`/api/users/${user.id}/listing`, obj)
     .then(response => response.data)
 
   };
+}
+
+export function updatePostedFalse(posted) {
+    return {
+        type: 'UPDATE_POST_FALSE',
+        payload: false
+    }
+}
+
+export function updatePostedTrue(posted) {
+    return {
+        type: 'UPDATE_POST_TRUE',
+        payload: true
+    }
 }
 

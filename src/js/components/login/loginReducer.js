@@ -8,7 +8,7 @@ const defaultState = {
     address: null,
     redirect: false,
     error: false,
-    user: null,
+    user: {id: "5aa311e7d46de5ee2046a1b1"},
     loginSignUpBoolean: true,
     completeFirstAxios: false
 
@@ -89,7 +89,7 @@ export default function loginReducer (state = defaultState, action) {
                 status: 'loading...'
             }
         }
-        
+
         case "SET_USER_TYPE_FULFILLED": {
 
             return {
@@ -107,7 +107,7 @@ export default function loginReducer (state = defaultState, action) {
                 status: 'Failed'
             }
         }
-        
+
         default: {
             return state;
         }

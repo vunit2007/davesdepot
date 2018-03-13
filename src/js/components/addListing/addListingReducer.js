@@ -1,15 +1,21 @@
 const defaultState = {
     input: "",
     dropdownOpen: false,
+    dropdownOpenTwo: false,
+    dropdownOpenThree: false,
     cache: {},
     listings: {},
     history: [],
     rSelected: false,
     productname: '',
     description: '',
-    price: '',
+    price: 0,
     condition: '',
+    categories: '',
+    specials: '',
     url: '',
+    posted: false,
+    postedItem: null,
 };
 
 export default function addListingReducer (state = defaultState, action) {
@@ -43,6 +49,20 @@ export default function addListingReducer (state = defaultState, action) {
             return {
                 ...state,
                 dropdownOpen: !state.dropdownOpen
+            }
+        }
+
+        case 'TOGGLE_DROPDOWN_TWO': {
+            return {
+                ...state,
+                dropdownOpenTwo: !state.dropdownOpenTwo
+            }
+        }
+
+        case 'TOGGLE_DROPDOWN_THREE': {
+            return {
+                ...state,
+                dropdownOpenThree: !state.dropdownOpenThree
             }
         }
 
@@ -88,6 +108,20 @@ export default function addListingReducer (state = defaultState, action) {
         };
     }
 
+    case 'UPDATE_CATEGORIES': {
+        return {
+            ...state,
+            categories: payload.categories
+        };
+    }
+
+    case 'UPDATE_SPECIALS': {
+        return {
+            ...state,
+            specials: payload.specials
+        };
+    }
+
     case 'UPDATE_URL': {
         return {
             ...state,
@@ -95,11 +129,28 @@ export default function addListingReducer (state = defaultState, action) {
         };
     }
 
+    case 'UPDATE_POST_TRUE': {
+        return {
+            ...state,
+            posted: payload
+        }
+    }
+
+    case 'UPDATE_POST_FALSE': {
+        return {
+            ...state,
+            posted: payload
+        }
+    }
+
     case 'UPDATE_POST_FULFILLED': {
-      const { productname, description, price, url } = action.payload;
+    console.log( 'PAYLOADDD', payload)
+
       return {
         ...state,
 
+          postedItem: payload,
+          posted: true
 
       };
     }
