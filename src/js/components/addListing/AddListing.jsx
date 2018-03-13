@@ -96,8 +96,7 @@ class AddListing extends React.Component {
     handlePost() {
       const { dispatch, productname, description,  price, url } = this.props;
       let obj = {
-//put in name: productname
-description: description
+        description: description
       };
       dispatch(updatePost(userId, obj));
 
@@ -140,22 +139,16 @@ description: description
 
     <div className="form-group">
       <label htmlFor="formGroupExampleInput">Price</label>
-      <input type="text" size="4" className="form-control" id="formGroupExampleInput" placeholder="$0.00" onChange={ this.handlePriceInput}/>
+      <input type="text" size="4" className="form-control" id="formGroupExampleInput" placeholder="$0.00" onChange={ this.handlePriceInput} />
     </div>
-
-
-
       <ButtonDropdown isOpen={this.props.dropdownOpen} toggle={this.handleToggle}>
       <DropdownToggle caret size="md">
-        Condition
+        {this.props.condition ? this.props.condition : 'Condition' }
       </DropdownToggle>
       <DropdownMenu>
-        <DropdownItem value="fair" onClick={this.handleSelect} defaultSelected={
-          (this.props.condition === 'fair' ? 'selected' : '') > Fair</DropdownItem>
-          <DropdownItem value="good" onClick={this.handleSelect} defaultChecked={
-          (this.props.condition === 'good' ? 'selected' : '') > Good</DropdownItem>
-          <DropdownItem value="excellent" onClick={this.handleSelect} defaultChecked={
-          (this.props.condition === 'excellent' ? 'selected' : '') > Excellent</DropdownItem>
+        <DropdownItem value="fair" onClick={this.handleSelect}>Fair</DropdownItem>
+        <DropdownItem value="good" onClick={this.handleSelect}>Good</DropdownItem>
+        <DropdownItem value="excellent" onClick={this.handleSelect}>Excellent</DropdownItem>
       </DropdownMenu>
     </ButtonDropdown>
 
