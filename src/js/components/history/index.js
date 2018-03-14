@@ -8,7 +8,8 @@ function mapStoreToProps(store) {
         statusListings: store.history.statusListings,
         user: store.login.user,
         userType: store.login.userType,
-        sellerItems: store.history.sellerItems
+        sellerItems: store.history.sellerItems,
+        remove: store.history.remove
     };
 }
 

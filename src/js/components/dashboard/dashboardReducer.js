@@ -13,7 +13,7 @@ export default function sellerReducer (state = defaultState, action) {
             console.log("dashboardReducer RemoveFulfilled: ", payload);
             return {
                 ...state,
-                remove: "fulfilled"
+                remove: "succeeded"
             }
         }
 
@@ -22,6 +22,14 @@ export default function sellerReducer (state = defaultState, action) {
             return {
                 ...state,
                 remove: "pending"
+            }
+        }
+
+        case "REMOVE_LISTING_REJECTED": {
+            console.log("dashboardReducer RemoveRejected: ", payload);
+            return {
+                ...state,
+                remove: "failed"
             }
         }
 

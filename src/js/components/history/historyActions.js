@@ -14,3 +14,16 @@ export function getSellerItems(user) {
     }
 }
 
+export function removeFromHistory(index){
+    return {
+        type: "REMOVE_FROM_HISTORY",
+        payload: index
+    }
+}
+
+export function removeSetNull(){
+    return {
+        type: "REMOVE_SET_NULL",
+        payload: null
+    }
+}
