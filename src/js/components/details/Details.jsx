@@ -103,8 +103,8 @@ class Details extends React.Component {
                             </div>
 
 
-                            <Link to="/" className='btn btn-warning' onClick={this.handleHomeRedirectFalse} id='EdetailsBackBtn'>Back </Link>
-                            <Link to="cart" className='btn btn-primary' onClick={this.handleAddToCart} id='EdetailsBtn'>Add to cart </Link>
+                            <Link to="/" className='btn' onClick={this.handleHomeRedirectFalse} id='EdetailsBackBtn'>Back </Link>
+                            <Link to="cart" className='btn' onClick={this.handleAddToCart} id='EdetailsBtn'>Add to cart </Link>
                         </div>
                     </div>
                 </div>
