@@ -25,6 +25,7 @@ class Checkout extends React.Component {
     render() {
         const { cart } = this.props;
         let subtotal = 0;
+        let numberItems = 0;
         return (
             <div>
                 <center>
@@ -117,6 +118,7 @@ class Checkout extends React.Component {
                                     {cart.map((item,index) => {
                                         // console.log("checkoutItem: ", item)
                                         subtotal += (item.price * item.quantity);
+                                        numberItems += item.quantity;
                                         return (
                                             <tr key={index}>
                                                 <th>#{index + 1}</th>
@@ -130,7 +132,7 @@ class Checkout extends React.Component {
                                 </tbody>
                             </Table>
                                         <h3 className="card-title">Subtotal</h3>
-                                <p className="card-text" id="VsubTotal">${subtotal.toFixed(2)}</p>
+                                <p className="card-text" id="VsubTotal">{numberItems} items for ${subtotal.toFixed(2)}</p>
                             </div>
                         </div>
 
