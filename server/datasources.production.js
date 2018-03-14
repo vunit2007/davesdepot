@@ -10,5 +10,3 @@ module.exports = {
         "connector": "mongodb"
     }      
 }
-
-//mongodb://heroku_jx8q9hmz:f012dghmgtqp230gobb362epcm@ds113749.mlab.com:13749/heroku_jx8q9hmz
