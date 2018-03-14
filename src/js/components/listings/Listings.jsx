@@ -26,7 +26,6 @@ class Listings extends React.Component {
     handleSetListingId(e){
         const {dispatch} = this.props;
         const {index} = e.target.dataset;
-        console.log("listings: ", e.target.dataset)
         dispatch(setListingId(index));
         dispatch(listingRedirectTrue())
     }
