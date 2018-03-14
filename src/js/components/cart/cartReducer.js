@@ -25,6 +25,13 @@ export default function cartReducer (state = defaultState, action) {
             }
         }
 
+        case "RESET_CART": {
+            return {
+                ...state,
+                cart: []
+            }
+        }
+
         default: {
             return state;
         }

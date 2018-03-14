@@ -13,3 +13,11 @@ export function addToCart(obj){
         payload: obj
     }
 }
+
+export function resetCart(){
+    return {
+        type: "RESET_CART",
+        payload: []
+    }
+}
+

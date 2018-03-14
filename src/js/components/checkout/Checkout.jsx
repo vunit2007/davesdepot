@@ -6,6 +6,10 @@ import {
     checkout,
 } from "./checkoutActions";
 
+import {
+    resetCart
+} from "../cart/cartActions";
+
 class Checkout extends React.Component {
     constructor(props) {
         super(props);
@@ -13,19 +17,27 @@ class Checkout extends React.Component {
         this.handleCheckout = this.handleCheckout.bind(this);
     }
 
-    handleCheckout(){
+    handleCheckout(e){
         const { dispatch, user, cart } = this.props;
+        const { subtotal, numberitems } = e.target.dataset;
         let orderObj = {
-            ...user,
+            total_quantity: numberitems,
+            total_price: subtotal,
+            shipping_address: user.address,
+            userId: user.id,
             _listings: cart
         }
+        if (user === null){
+            return alert("Please sign in first");
+        }
         dispatch(checkout(user, orderObj));
+        dispatch(resetCart());
     }
 
     render() {
         const { cart } = this.props;
         let subtotal = 0;
-        let numberItems = 0;
+        let numberitems = 0;
         return (
             <div>
                 <center>
@@ -118,7 +130,7 @@ class Checkout extends React.Component {
                                     {cart.map((item,index) => {
                                         // console.log("checkoutItem: ", item)
                                         subtotal += (item.price * item.quantity);
-                                        numberItems += item.quantity;
+                                        numberitems += (item.quantity - 0);
                                         return (
                                             <tr key={index}>
                                                 <th>#{index + 1}</th>
@@ -132,7 +144,7 @@ class Checkout extends React.Component {
                                 </tbody>
                             </Table>
                                         <h3 className="card-title">Subtotal</h3>
-                                <p className="card-text" id="VsubTotal">{numberItems} items for ${subtotal.toFixed(2)}</p>
+                                <p className="card-text" id="VsubTotal">{numberitems} items for ${subtotal.toFixed(2)}</p>
                             </div>
                         </div>
 
@@ -140,7 +152,7 @@ class Checkout extends React.Component {
                     </div>
 
                     <br /><br />
-                    <Link to="/Thanks" className="btn" id='VcheckoutBtn'>Place Order</Link><br /><br /><br />
+                    <Link to="/thanks" onClick={this.handleCheckout} data-subtotal={subtotal} data-numberitems={numberitems} className="btn" id='VcheckoutBtn'>Place Order</Link><br /><br /><br />
 
 
                 </center>
