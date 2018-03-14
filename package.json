@@ -1,6 +1,6 @@
 {
   "name": "davesdepot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "server/server.js",
   "engines": {
     "node": ">=4"
@@ -9,7 +9,7 @@
     "watch": "npm run less && webpack -w",
     "build": "npm run less && webpack",
     "less": "lessc src/css/style.less client/style.css",
-    "start": "nodemon ."
+    "start": "node ."
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -64,6 +64,6 @@
     "type": "",
     "url": ""
   },
-  "license": "UNLICENSED",
+  "license": "UNLICENSED by davesdepot",
   "description": "davesdepot"
 }
