@@ -1,8 +1,5 @@
 const defaultState = {
-    input: "",
-    cache: {},
-    listings: {},
-    history: []
+    
 };
 
 export default function checkoutReducer (state = defaultState, action) {
@@ -10,25 +7,10 @@ export default function checkoutReducer (state = defaultState, action) {
 
     switch (type) {
         
-        case "CHECKOUT": {
+        case "CHECKOUT_FULFILLED": {
             let input = payload.input;
             return {
-                ...state,
-                input
-            }
-        }
-
-        case "CHECKOUT_CACHE": {
-            
-            return {
-                
-            }
-        }
-        
-        case "CHECKOUT_BTN": {
-            
-            return {
-                
+                ...state   
             }
         }
 

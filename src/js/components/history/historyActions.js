@@ -13,3 +13,4 @@ export function getSellerItems(user) {
         payload: axios.get(`/api/users/${user.id}/listing`).then(res => res.data)
     }
 }
+

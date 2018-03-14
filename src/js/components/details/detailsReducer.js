@@ -1,6 +1,7 @@
 const defaultState = {
     itemDetails: {},
-    index: null
+    index: null,
+    quantity: 1
 };
 
 export default function detailsReducer (state = defaultState, action) {
@@ -17,10 +18,18 @@ export default function detailsReducer (state = defaultState, action) {
         }
 
         case "SET_LISTING_ID": {
-            console.log("first details: ", payload)
+
             return {
                 ...state,
                 index: payload,
+            }
+        }
+
+        case "UPDATE_QUANTITY": {
+
+            return {
+                ...state,
+                quantity: payload,
             }
         }
 

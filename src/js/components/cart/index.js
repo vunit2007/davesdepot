@@ -3,7 +3,8 @@ import Cart from "./Cart";
 
 function mapStoreToProps(store) {
     return {
-        input: store.cart.input
+        cart: store.cart.cart,
+        listings: store.home.listings
     }
 }
 
