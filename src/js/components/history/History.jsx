@@ -64,8 +64,6 @@ export default class History extends React.Component{
                                 </tr>
                             </thead>
                             <tbody>
-
-                                {console.log("remove: ", remove)}
                                 {listItems.map((item,index) => {
                                     return (
                                         <tr key={index}>
