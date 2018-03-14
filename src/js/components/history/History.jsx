@@ -42,14 +42,58 @@ export default class History extends React.Component{
         if(purchaseOrListing){
             listItems = sellerItems;
         } else {
-
-            orders && orders.map(order => {
-                listItems.push(order._listings[0]);
-            });
+            listItems = orders;
         }
         if (purchaseOrListing && remove){
             listItems.splice(remove);
         }
+
+        if (!purchaseOrListing){
+            return(
+                <div>
+                    { status === ('loading...' || "Failed") ? <div>{status}</div>
+                    : !!listItems && listItems.length > 0 ? 
+                            <div>
+                                <Table striped bordered id="dAliceBlue" className="dTextCenter">
+                                    <thead>
+                                        <tr>
+                                            <th>Order #</th>
+                                            <th>Total Number of Items</th>
+                                            <th>Total Price</th>
+                                            {/* <td>Items</td> */}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {listItems.map((item,index) => {
+                                            return (
+                                                <tr key={index}>
+                                                    <th>{item.id}</th>
+                                                    <td>{item.total_quantity}</td>
+                                                    <td>{item.total_price}</td>
+                                                        {/* <td>
+                                                            <select name="items" id="items">
+                                                                {item._listings.map(itemInOrder =>{
+                                                                    return (
+                                                                        <li>{itemInOrder}</li>
+                                                                    )
+                                                                })}
+                                                            </select>
+                                                        </td> */}
+                                                </tr>
+                                            )
+                                        })}
+
+                                    </tbody>
+                                </Table>
+                            </div>
+                    :   <UncontrolledAlert color="info" className="h1 dTextCenter">
+                            You have no history
+                        </UncontrolledAlert>
+                    }
+                </div>
+            )
+        }
+
         return (
             <div>
             { status === ('loading...' || "Failed") ? <div>{status}</div>
