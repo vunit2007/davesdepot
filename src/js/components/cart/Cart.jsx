@@ -23,10 +23,10 @@ class Cart extends React.Component {
 
 
         return (
-            <div>
+            <div >
                 <center>
                     <div className="jumbotron jumbotron-fluid" id='VcartJumbo'>
-                        <div className="container">
+                        <div className="container ">
                             <h1 className="display-3">Cart</h1>
                         </div>
                     </div>
@@ -38,7 +38,7 @@ class Cart extends React.Component {
                                 {cart.map((item, index) => {
                                     return (
                                         <div key={index}>
-                                            <div className="VitemImage"><img src={item.images[0]} height="300px" /></div>
+                                            <div className="VitemImage"><img src={item.images[0]} height="300px" /></div><br/>
                                             <div className="VitemInfo">
                                                 <p className="VproductName">Product Name: {item.name}</p><br />
                                                 <p className="VproductPrice">Product Price: {item.price}</p><br />
@@ -49,6 +49,8 @@ class Cart extends React.Component {
                                                 <br /><br />
                                                 
                                             </div>
+
+                                            <br/> <br/>
                                         </div>
                                     )
                                 })}
@@ -62,8 +64,8 @@ class Cart extends React.Component {
                         </div>
 
 
-                </center>
-
+            
+</center>
 
             </div>
         )
