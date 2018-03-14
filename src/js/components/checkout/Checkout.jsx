@@ -116,7 +116,7 @@ class Checkout extends React.Component {
 
                                     {cart.map((item,index) => {
                                         // console.log("checkoutItem: ", item)
-                                        subtotal += item.price;
+                                        subtotal += (item.price * item.quantity);
                                         return (
                                             <tr key={index}>
                                                 <th>#{index + 1}</th>
