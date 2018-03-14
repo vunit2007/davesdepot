@@ -12,5 +12,9 @@
     "name": "localmongodb",
     "user": "",
     "connector": "mongodb"
+  },
+  "mongodb": {
+    "connector": "loopback-connector-mongodb",
+    "url": "mongodb://heroku_0jq15lhb:7v8l7c3d6g2cirpo6pfe47gvvr@ds263408.mlab.com:63408/heroku_0jq15lhb"
   }
 }
