@@ -66,7 +66,7 @@ class Details extends React.Component {
                             </li>
                         )
                     })}
-                    
+
                 </ul>
                 <br />
 

@@ -35,7 +35,7 @@ class Thanks extends React.Component {
                         <h1 id='thanksText'> Thank you for your order!</h1> <br/> <h3>A confirmation has been sent to your email.</h3>
                     </div>
                 </div>
-                <Link to="/" className='btn btn-warning' id='EdetailsBackBtn'>Back Home</Link>
+                <Link to="/" className='btn' id='EdetailsBackBtn'>Back Home</Link>
             </div>
         )
     }

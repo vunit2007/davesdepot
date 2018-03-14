@@ -25,7 +25,7 @@ class Cart extends React.Component {
         return (
             <div>
                 <center>
-                    <div className="jumbotron jumbotron-fluid alert-primary" id='VcartJumbo'>
+                    <div className="jumbotron jumbotron-fluid" id='VcartJumbo'>
                         <div className="container">
                             <h1 className="display-3">Cart</h1>
                         </div>
@@ -52,11 +52,13 @@ class Cart extends React.Component {
                                     )
                                 })}
 
-                                <Link to="/Checkout" className="btn btn-primary" id='VcartAddBtn'>Check Out</Link>
+                                    <a href="#" className="btn" id='VcartRemoveBtn'>Remove Item</a>
 
+                                    <Link to="/Checkout" className="btn" id='VcartAddBtn'>Check Out</Link>
+                                </div>
                             </div>
                         </div>
-                    </div>
+
 
                 </center>
 
