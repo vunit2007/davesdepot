@@ -10,7 +10,7 @@ class Checkout extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleCheckout = this.handleCheckout.bind(this);        
+        this.handleCheckout = this.handleCheckout.bind(this);
     }
 
     handleCheckout(){
@@ -28,9 +28,14 @@ class Checkout extends React.Component {
         return (
             <div>
                 <center>
-                    <div className="jumbotron jumbotron-fluid alert-primary" id='VcheckoutJumbo'>
+
+                    <h1>Hello {this.props.input}</h1>
+                    <input type="text" onChange={this.handleChangeCheckout} />
+                    <button type="button" onClick={this.handleCheckoutBtn}>Change</button>
+                    <Link to="/"><button type="button">Login</button></Link>
+                    <div className="jumbotron jumbotron-fluid" id='VcheckoutJumbo'>
                         <div className="container">
-                            <h1 className="display-3 alert-primary">Checkout</h1>
+                            <h1 className="display-3">Checkout</h1>
                         </div>
                     </div>
                     <div className="VcheckOut">
@@ -133,7 +138,7 @@ class Checkout extends React.Component {
                     </div>
 
                     <br /><br />
-                    <Link to="/thanks" className="btn btn-primary" id='VcheckoutBtn' onClick={this.handleCheckout}>Place Order</Link><br /><br /><br />
+                    <Link to="/Thanks" className="btn" id='VcheckoutBtn'>Place Order</Link><br /><br /><br />
 
 
                 </center>

@@ -30,7 +30,7 @@ class Listings extends React.Component {
         dispatch(setListingId(index));
         dispatch(listingRedirectTrue())
     }
-    
+
     render() {
         let {listings, category, index, redirect} = this.props;
         let catlist = [];
@@ -61,9 +61,9 @@ class Listings extends React.Component {
 
         return (
             <div>
-                
+
                 <center>
-                    <div className="jumbotron jumbotron-fluid alert-primary" id='catJumbo'>
+                    <div className="jumbotron jumbotron-fluid" id="VjumboTron">
                         <div className="container">
                             <h1 className="display-4" id="VcatTitle">{category === undefined ? "All Categories": (this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1))}</h1>
                         </div>

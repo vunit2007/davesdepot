@@ -81,7 +81,7 @@ class Signup extends React.Component {
                                         <input type="text" name='address' id='AaddressSignup' placeholder='Please enter your Address' className='form-control' onChange={this.handleInputChange} />
                                     </div>
                                     <div className="card-footer text-muted" id='AsignupFooter'>
-                                        <button className="btn btn-primary" id='AsignupBtn' onClick={this.handleClick} >Sign Up</button>
+                                        <button className="btn" id='AsignupBtn' onClick={this.handleClick} >Sign Up</button>
                                     </div>
                                 </form>
                             </div>

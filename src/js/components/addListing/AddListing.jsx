@@ -184,8 +184,6 @@ class AddListing extends React.Component {
     if (this.props.posted) {
       return (
         <div className="Vposted">
-
-          <img src="http://clipart-library.com/images/kT8okoaxc.jpg" height="200px" /><br /><br />
           <h1> Your {this.props.postedItem.name} has been posted for ${this.props.postedItem.price}.
             </h1>
           <button className="btn btn-primary" onClick={this.handlePostedFalse}>Add New Posting</button>
@@ -268,6 +266,7 @@ class AddListing extends React.Component {
               </div>
             </div>
 
+
             {/*
       <Button color="secondary" id="VregPrice" onClick={() => this.onRadioBtnClick(1)} active={this.props.rSelected === 1}>Regular Price</Button>
       <Button color="secondary" onClick={() => this.onRadioBtnClick(2)} active={this.props.rSelected === 2}>Sale Price</Button> */}
@@ -286,6 +285,8 @@ class AddListing extends React.Component {
 
             <button className="btn btn-primary" onClick={this.handlePost}>Post</button><br /><br />
             {/*   Erik's code
+      <button className="btn" onClick={this.handlePost}>Post</button><br/><br/>
+ {/*   Erik's code
     <button
               type='button'
               className='btn btn-danger col-12 mb-5' id='VtestingBtn'

@@ -15,7 +15,7 @@ export default class Login extends Component {
     constructor(props) {
         super(props);
 
-        this.handleInputChange = this.handleInputChange.bind(this);   
+        this.handleInputChange = this.handleInputChange.bind(this);
         this.handleClickLogin = this.handleClickLogin.bind(this);
         this.handleLoginSignUp = this.handleLoginSignUp.bind(this);
         this.handleClickSignUp = this.handleClickSignUp.bind(this);
@@ -53,15 +53,15 @@ export default class Login extends Component {
         if (redirect) {
             return <Redirect push to={`/dashboard`} />
         }
-        
+
         return (
             <div>
-                <div className="jumbotron jumbotron-fluid alert-primary" id="Amb-1">
+                <div className="jumbotron jumbotron-fluid" id="Amb-1">
                     <div className="container text-center">
                         <h1 className="display-3">{this.props.loginSignUpBoolean ? "Login" : "SignUp"}</h1>
                     </div>
-                </div>                       
-                <div className="container-fluid Ashortbg">    
+                </div>
+                <div className="container-fluid Ashortbg">
                     <div className="row mb-5 justify-content-center">
                         <div className="col-4 mb-5" id='AloginCard'>
                             <div className="card text-center mt-5">
@@ -71,7 +71,7 @@ export default class Login extends Component {
                                 <form id='Alogin-form' onSubmit={this.handleClick}>
                                     <div className="card-body form-group" id='AloginBody'>
                                     {/* if loginSignUpBoolean is false show userType selection */
-                                        
+
                                         !this.props.loginSignUpBoolean &&
                                         <div>
                                         <select name="userType" id="userType" defaultValue="buyer" onChange={this.handleInputChange}>
@@ -79,10 +79,10 @@ export default class Login extends Component {
                                             <option value="seller">Seller</option>
                                         </select>
                                         <br/>
-                                        <br/>                  
+                                        <br/>
                                         </div>
                                     }
-                                        
+
                                         <label htmlFor="email"><strong>Email:</strong></label><br/>
                                         <input type="email" name='email' placeholder='Enter your email..' id='AloginEmail' className="form-control" onChange={this.handleInputChange}/>
                                         <br/>
@@ -90,7 +90,7 @@ export default class Login extends Component {
 
                                         <input type="password" name='password' placeholder='Enter your password...' id='AloginPassword' className="form-control" onChange={this.handleInputChange}/>
                                     {/* if loginSignUpBoolean is false show signup page elements */
-                                        
+
                                         !this.props.loginSignUpBoolean &&
                                         <div>
                                             <br />
@@ -110,16 +110,16 @@ export default class Login extends Component {
                                     </div>
                                         <div className="card-footer text-muted" id='AloginFooter'>
                                         {/* if loginSignUpBoolean is false show signup page elements else show only login elements */
-                                            
+
                                             !this.props.loginSignUpBoolean ?
-                                            <button className="btn btn-primary" onClick={this.handleClickSignUp}  id='AloginBtn'>Sign Up</button>
+                                            <button className="btn" onClick={this.handleClickSignUp}  id='AloginBtn'>Sign Up</button>
                                             :
-                                            <button className="btn btn-primary" onClick={this.handleClickLogin}  id='AloginBtn'>Login</button>
+                                            <button className="btn" onClick={this.handleClickLogin}  id='AloginBtn'>Login</button>
                                         }
                                         </div>
                                     </form>
                                     {/* if loginSignUpBoolean is true show signup page elements else show only login elements */
-                                        
+
                                         this.props.loginSignUpBoolean ?
                                         <div>
                                             Need an account? <span className="dClickable" onClick={this.handleLoginSignUp}>Sign up today!</span>
@@ -128,11 +128,11 @@ export default class Login extends Component {
                                         <div>
                                             Have an account? <span className="dClickable" onClick={this.handleLoginSignUp}>Login!</span>
                                         </div>
-                                    } 
+                                    }
                             </div>
                         </div>
                     </div>
-                </div>           
+                </div>
             </div>
         );
     }
