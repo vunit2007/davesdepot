@@ -2,7 +2,8 @@ const defaultState = {
     orders: null,
     statusPurchase: null,
     statusListings: null,
-    sellerItems: null
+    sellerItems: null,
+    remove: null
 };
 
 export default function historyReducer (state = defaultState, action) {
@@ -56,6 +57,20 @@ export default function historyReducer (state = defaultState, action) {
             return {
                 ...state,
                 statusListings: "Failed"
+            }
+        }
+
+        case "REMOVE_FROM_HISTORY": {
+            return {
+                ...state,
+                remove: payload
+            }
+        }
+
+        case "REMOVE_SET_NULL": {
+            return {
+                ...state,
+                remove: payload
             }
         }
 

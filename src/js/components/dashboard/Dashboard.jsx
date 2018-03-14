@@ -7,10 +7,20 @@ import {
     setUserType
 } from "../login/loginActions";
 
+import {
+    updatePostedFalse
+} from "../addListing/addListingActions";
+
 class Seller extends React.Component {
     constructor(props) {
         super(props);
 
+        this.handleUpdatePostedFalse = this.handleUpdatePostedFalse.bind(this);
+    }
+
+    handleUpdatePostedFalse(){
+        const { dispatch } = this.props;
+        dispatch(updatePostedFalse());
     }
 
     render() {
@@ -28,7 +38,7 @@ class Seller extends React.Component {
                     <div>
                         <h3 className="dTextCenter">Your Listings</h3>
                         <History purchaseOrListing={true}/>
-                        <Link to="/AddListing" className="btn btn-primary">Add Products</Link>
+                        <Link to="/AddListing" onClick={this.handleUpdatePostedFalse} className="btn btn-primary">Add Products</Link>
                     </div>  
                 }
                 <h3 className="dTextCenter">Your Purchase History</h3>
