@@ -102,8 +102,6 @@ class Details extends React.Component {
                                 <p>Description: {listing.description} </p>
                             </div>
 
-
-                            <Link to="/" className='btn' onClick={this.handleHomeRedirectFalse} id='EdetailsBackBtn'>Back </Link>
                             <Link to="cart" className='btn' onClick={this.handleAddToCart} id='EdetailsBtn'>Add to cart </Link>
                         </div>
                     </div>

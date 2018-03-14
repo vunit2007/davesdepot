@@ -42,7 +42,7 @@ export default class History extends React.Component{
         if(purchaseOrListing){
             listItems = sellerItems;
         } else {
-            console.log("orders: ", orders)
+
             orders && orders.map(order => {
                 listItems.push(order._listings[0]);
             });
