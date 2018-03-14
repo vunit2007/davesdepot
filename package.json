@@ -1,6 +1,6 @@
 {
   "name": "davesdepot",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "main": "server/server.js",
   "engines": {
     "node": ">=4"
@@ -64,6 +64,6 @@
     "type": "",
     "url": ""
   },
-  "license": "UNLICENSED by davesdepot",
+  "license": "UNLICENSED",
   "description": "davesdepot"
 }
