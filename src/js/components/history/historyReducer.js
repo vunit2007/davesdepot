@@ -21,7 +21,7 @@ export default function historyReducer (state = defaultState, action) {
         case "GET_ORDER_HISTORY_FULFILLED": {
             let orders = null;
             if (payload.length > 0){
-                orders = payload[0]._listings;
+                orders = payload;
             }
             return {
                 ...state,

@@ -37,12 +37,15 @@ export default class History extends React.Component{
 
     render(){
         //get orders from props
-        const { orders, status, sellerItems, purchaseOrListing, remove } = this.props;
-        let listItems;
+        const { orders, status, sellerItems, purchaseOrListing, remove, dispatch, user } = this.props;
+        let listItems = [];
         if(purchaseOrListing){
             listItems = sellerItems;
         } else {
-            listItems = orders;
+            console.log("orders: ", orders)
+            orders && orders.map(order => {
+                listItems.push(order._listings[0]);
+            });
         }
         if (purchaseOrListing && remove){
             listItems.splice(remove);
