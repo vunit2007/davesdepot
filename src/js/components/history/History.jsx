@@ -69,7 +69,7 @@ export default class History extends React.Component{
                                                 <tr key={index}>
                                                     <th>{item.id}</th>
                                                     <td>{item.total_quantity}</td>
-                                                    <td>{item.total_price}</td>
+                                                    <td>{item.total_price.toFixed(2)}</td>
                                                         {/* <td>
                                                             <select name="items" id="items">
                                                                 {item._listings.map(itemInOrder =>{
