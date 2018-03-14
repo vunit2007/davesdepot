@@ -63,7 +63,7 @@ class Listings extends React.Component {
             <div>
                 
                 <center>
-                    <div className="jumbotron jumbotron-fluid">
+                    <div className="jumbotron jumbotron-fluid alert-primary" id='catJumbo'>
                         <div className="container">
                             <h1 className="display-4" id="VcatTitle">{category === undefined ? "All Categories": (this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1))}</h1>
                         </div>
@@ -74,9 +74,9 @@ class Listings extends React.Component {
 
                                 <div to="/details" key={catitem.id} className="Vitem1">
                                     <div className="Vinfo">
-                                        <div className="Vimage"><img onClick={this.handleSetListingId} data-index={index} src={catitem.images[0]} height="200px" width="200px" /></div>
-                                        <p>{catitem.name}</p>
-                                        <p>${catitem.price}</p>
+                                     <div className="Vimage"><img onClick={this.handleSetListingId} data-index={index} src={catitem.images[0]} height="200px" width="200px" /></div>
+                                     <p>{catitem.name}</p>
+                                     <p id='priceColor'>${catitem.price}</p>
                                     </div>
                                 </div>
                             )
