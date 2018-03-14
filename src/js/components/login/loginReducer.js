@@ -8,7 +8,7 @@ const defaultState = {
     address: null,
     redirect: false,
     error: false,
-    user: {id: ""},
+    user: null,
     loginSignUpBoolean: true,
     completeFirstAxios: false
 
