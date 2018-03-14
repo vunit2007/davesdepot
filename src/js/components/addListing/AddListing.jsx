@@ -186,7 +186,7 @@ class AddListing extends React.Component {
         <div className="Vposted">
           <h1> Your {this.props.postedItem.name} has been posted for ${this.props.postedItem.price}.
             </h1>
-          <button className="btn btn-primary" onClick={this.handlePostedFalse}>Add New Posting</button>
+          <button className="btn" onClick={this.handlePostedFalse}>Add New Posting</button>
         </div>
       )
     }
@@ -283,7 +283,7 @@ class AddListing extends React.Component {
             </div>
             <br />
 
-            <button className="btn btn-primary" onClick={this.handlePost}>Post</button><br /><br />
+            <button className="btn" onClick={this.handlePost}>Post</button><br /><br />
             {/*   Erik's code
       <button className="btn" onClick={this.handlePost}>Post</button><br/><br/>
  {/*   Erik's code

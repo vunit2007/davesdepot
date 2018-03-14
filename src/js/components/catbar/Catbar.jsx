@@ -6,7 +6,8 @@ import {
 } from "./catbarActions";
 
 import {
-    categoryUpdate,
+    categoryUpdate, 
+    listingRedirectFalse,
 } from "../listings/listingsActions";
 
 class Catbar extends React.Component {
@@ -20,6 +21,7 @@ class Catbar extends React.Component {
         const { dispatch } = this.props;
         const { category } = e.target.dataset;
         dispatch(categoryUpdate(category));
+        dispatch(listingRedirectFalse());
 
     }
     

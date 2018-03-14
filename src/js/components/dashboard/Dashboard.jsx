@@ -38,7 +38,11 @@ class Seller extends React.Component {
                     <div>
                         <h3 className="dTextCenter">Your Listings</h3>
                         <History purchaseOrListing={true}/>
-                        <Link to="/AddListing" onClick={this.handleUpdatePostedFalse} className="btn btn-primary">Add Products</Link>
+                        <br/><br/><br/><br/>
+                        <center>
+                        <Link to="/AddListing" onClick={this.handleUpdatePostedFalse} className="btn ">Add Products</Link>
+                        </center>
+                        <br/> <br/> <br/> <br/>
                     </div>  
                 }
                 <h3 className="dTextCenter">Your Purchase History</h3>
