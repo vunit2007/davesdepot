@@ -44,15 +44,17 @@ class Cart extends React.Component {
                                                 <p className="VproductPrice">Product Price: {item.price}</p><br />
 
                                                 <span>Qty: {item.quantity}</span>
-                                                <br /><br /><br /><br />
-
-                                                <div data-index={index} onClick={this.handleRemoveButton} className="btn btn-warning" id='VcartRemoveBtn'>Remove Item</div>
+                                                <br /><br />
+                                                <div data-index={index} onClick={this.handleRemoveButton} className="btn " id='VcartRemoveBtn'>Remove Item</div>
+                                                <br /><br />
+                                                
                                             </div>
                                         </div>
                                     )
                                 })}
 
-                                    <a href="#" className="btn" id='VcartRemoveBtn'>Remove Item</a>
+                               
+                                    
 
                                     <Link to="/Checkout" className="btn" id='VcartAddBtn'>Check Out</Link>
                                 </div>
