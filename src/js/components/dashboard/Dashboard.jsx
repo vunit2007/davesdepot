@@ -40,7 +40,7 @@ class Seller extends React.Component {
                         <History purchaseOrListing={true}/>
                         <br/><br/><br/><br/>
                         <center>
-                        <Link to="/AddListing" onClick={this.handleUpdatePostedFalse} className="btn ">Add Products</Link>
+                        <Link to="/addListing" onClick={this.handleUpdatePostedFalse} className="btn ">Add Products</Link>
                         </center>
                         <br/> <br/> <br/> <br/>
                     </div>  

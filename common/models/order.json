@@ -21,7 +21,7 @@
     },
     "order_date": {
       "type": "date",
-      "required": true
+      "default" : "$now"
     }
   },
   "validations": [],

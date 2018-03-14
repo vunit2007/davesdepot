@@ -20,15 +20,15 @@ class Checkout extends React.Component {
     handleCheckout(e){
         const { dispatch, user, cart } = this.props;
         const { subtotal, numberitems } = e.target.dataset;
+            if (user === null){
+                return alert("Please sign in first");
+            }
         let orderObj = {
             total_quantity: numberitems,
             total_price: subtotal,
             shipping_address: user.address,
             userId: user.id,
             _listings: cart
-        }
-        if (user === null){
-            return alert("Please sign in first");
         }
         dispatch(checkout(user, orderObj));
         dispatch(resetCart());
