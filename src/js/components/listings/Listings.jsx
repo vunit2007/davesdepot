@@ -74,8 +74,8 @@ class Listings extends React.Component {
 
                                 <div to="/details" key={catitem.id} className="Vitem1">
                                     <div className="Vinfo">
-                                        <p>{catitem.name}</p>
                                         <div className="Vimage"><img onClick={this.handleSetListingId} data-index={index} src={catitem.images[0]} height="200px" width="200px" /></div>
+                                        <p>{catitem.name}</p>
                                         <p>${catitem.price}</p>
                                     </div>
                                 </div>

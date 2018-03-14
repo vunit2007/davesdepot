@@ -3,7 +3,8 @@ import Checkout from "./Checkout";
 
 function mapStoreToProps(store) {
     return {
-        input: store.checkout.input
+        cart: store.cart.cart,
+        user: store.login.user
     }
 }
 

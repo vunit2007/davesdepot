@@ -1,25 +1,9 @@
 import axios from "axios";
 
-export function checkout(input) {
+export function checkout(user, obj) {
     
     return {
         type: "CHECKOUT",
-        payload: {input}
-    }
-}
-
-export const checkoutBtn = (input) => {
-
-    return {
-        type: "CHECKOUT_BTN",
-        payload: {input}
-    }
-}
-
-export const checkoutCache = (obj) => {
-
-    return {
-        type: "CHECKOUT_CACHE",
-        payload: obj
+        payload: axios.post(`/user/${user.id}/orders`, obj).then(res => res.data)
     }
 }

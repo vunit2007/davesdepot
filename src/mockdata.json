@@ -4,7 +4,7 @@
     "description": "The Macbook Air is thin, light, powerful, and ready for anything.  This product has a flash storage that is housed in a package that's the same size as a conventional hard drive. The chip iself occupies a very small portion of that housing. And just like that, there's room for other important things, like a bigger battery. Now you have a notebook that weighs practically nothing and runs for hours on a single charge. That's mobility mastered.",
     "price": 999.99,
     "condition": "fair",
-    "sale": false,
+    "sale": true,
     "images": [
       "https://i5.walmartimages.com/asr/222ca03d-5418-4624-886d-ac1fb2479a41_1.456ad5c8a21579bed8213c9a598232d3.jpeg",
       "https://i5.walmartimages.com/asr/09942a90-cbd4-4ba0-bd06-65f7d4789484_1.e3995d54465c00577bea0b1b8e49531a.jpeg",
@@ -18,7 +18,7 @@
     "description": "The GoPro HERO Session is a strong choice for both first time GoPro users and enthusiasts looking for a no fuss secondary camera. It packs power into a convenient grab-and-go product for your adventures. Convenience and simplicity usually come at the expense of quality, but not in this case. This GoPro action camera offers stunning 1080p video at 60 frames per second, allowing you to capture every second of your adventures with stunning clarity. As well as video, the HERO Session offers 8 megapixel photo capture. All of these features are activated through a single button. Their ultra simple operation, high quality capture, and rugged design make the GoPro HERO Session the perfect small camera to take on any outdoor or sporting trip.",
     "price": 199.99,
     "condition": "Excellent",
-    "sale": false,
+    "sale": true,
     "images": [
       "https://i5.walmartimages.com/asr/7e19488b-d07e-45fa-8b53-a894f6674331_1.cf17f24733dfc92245f2c50014d624a2.jpeg",
       "https://i5.walmartimages.com/asr/599107e5-c959-49e7-9b96-f60f768da570_1.1e4e9f20ac463fcddce884c747513624.jpeg",

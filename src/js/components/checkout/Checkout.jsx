@@ -1,41 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {Table} from "reactstrap";
 
 import {
     checkout,
-    checkoutBtn,
-    checkoutCache
-} from "./checkoutActions"
+} from "./checkoutActions";
 
 class Checkout extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleChangeCheckout = this.handleChangeCheckout.bind(this);
-        this.handleCheckoutBtn = this.handleCheckoutBtn.bind(this);
+        this.handleCheckout = this.handleCheckout.bind(this);        
     }
 
-    handleChangeCheckout(e) {
-        let input = e.target.value;
-        const { dispatch } = this.props;
-        dispatch(checkout(input));
-    }
-
-    handleCheckoutBtn(e) {
-        const { dispatch } = this.props;
-        dispatch(checkoutBtn());
+    handleCheckout(){
+        const { dispatch, user, cart } = this.props;
+        let orderObj = {
+            ...user,
+            _listings: cart
+        }
+        dispatch(checkout(user, orderObj));
     }
 
     render() {
-
+        const { cart } = this.props;
+        let subtotal = 0;
         return (
             <div>
                 <center>
-
-                    <h1>Hello {this.props.input}</h1>
-                    <input type="text" onChange={this.handleChangeCheckout} />
-                    <button type="button" onClick={this.handleCheckoutBtn}>Change</button>
-                    <Link to="/"><button type="button">Login</button></Link>
                     <div className="jumbotron jumbotron-fluid alert-primary" id='VcheckoutJumbo'>
                         <div className="container">
                             <h1 className="display-3 alert-primary">Checkout</h1>
@@ -106,8 +98,34 @@ class Checkout extends React.Component {
                         <div className="card">
                             <h5 className="card-header alert-primary" id='VcheckoutHeader'>Order Summary</h5>
                             <div className="card-body" id='VcheckoutBody'>
-                                <h5 className="card-title">Subtotal</h5>
-                                <p className="card-text" id="VsubTotal">$250</p>
+                            <Table striped bordered id="dAliceBlue" className="dTextCenter">
+                                <thead>
+                                    <tr>
+                                        <th>Item #</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {cart.map((item,index) => {
+                                        // console.log("checkoutItem: ", item)
+                                        subtotal += item.price;
+                                        return (
+                                            <tr key={index}>
+                                                <th>#{index + 1}</th>
+                                                <td>{item.name}</td>
+                                                <td>{item.price}</td>
+                                                <td>{item.quantity}</td>
+                                            </tr>
+                                        )
+                                    })}
+
+                                </tbody>
+                            </Table>
+                                        <h3 className="card-title">Subtotal</h3>
+                                <p className="card-text" id="VsubTotal">${subtotal.toFixed(2)}</p>
                             </div>
                         </div>
 
@@ -115,7 +133,7 @@ class Checkout extends React.Component {
                     </div>
 
                     <br /><br />
-                    <Link to="/Thanks" className="btn btn-primary" id='VcheckoutBtn'>Place Order</Link><br /><br /><br />
+                    <Link to="/thanks" className="btn btn-primary" id='VcheckoutBtn' onClick={this.handleCheckout}>Place Order</Link><br /><br /><br />
 
 
                 </center>

@@ -1,7 +1,5 @@
 const defaultState = {
-   
-    listings: {}
-    
+    cart: []
 };
 
 export default function cartReducer (state = defaultState, action) {
@@ -10,16 +8,22 @@ export default function cartReducer (state = defaultState, action) {
     switch (type) {
         
         case "REMOVE_BUTTON": {
-            const {index} = actions.payload;
-            console.log(index)
-            const lineItems = [...state.lineItems];
-            lineItems.splice(index,1);
+            console.log("cartReducer index: ",payload);
+            let cart = [...state.cart];
+            cart.splice(payload, 1);
             return {
                 ...state,
-                lineItems
+                cart
             }
         }
 
+        case "ADD_TO_CART": {
+            
+            return {
+                ...state,
+                cart: [...state.cart, payload]
+            }
+        }
 
         default: {
             return state;

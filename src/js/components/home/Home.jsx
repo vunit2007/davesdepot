@@ -57,7 +57,7 @@ class Home extends React.Component {
                     }
                     })
                 }
-                <Link to="/AddListing" className="btn btn-primary">Add Products</Link>
+                
             </div>
 
         )

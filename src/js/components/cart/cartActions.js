@@ -1,8 +1,15 @@
 import axios from "axios";
 
-export function removeButton(){
+export function removeButton(index){
     return{
         type:"REMOVE_BUTTON",
-        payload:{index}
+        payload: index
+    }
+}
+
+export function addToCart(obj){
+    return {
+        type: "ADD_TO_CART",
+        payload: obj
     }
 }

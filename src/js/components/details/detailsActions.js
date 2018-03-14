@@ -15,3 +15,11 @@ export function setListingId(index) {
         payload: index
     }
 }
+
+export function updateQuantity(quantity) {
+    
+    return {
+        type: "UPDATE_QUANTITY",
+        payload: quantity
+    }
+}
